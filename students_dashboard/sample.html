@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: #f5f6fa;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: #fff;
+            padding: 2rem 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            width: 320px;
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .login-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 0.7rem;
+            background: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background: #2980b9;
+        }
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" novalidate>
+            <div id="errorMsg" class="error-message" style="display:none;"></div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            var username = document.getElementById('username').value.trim();
+            var password = document.getElementById('password').value.trim();
+            var errorMsg = document.getElementById('errorMsg');
+            errorMsg.style.display = 'none';
+            errorMsg.textContent = '';
+
+            if (username === '' || password === '') {
+                errorMsg.textContent = 'Please enter both username and password.';
+                errorMsg.style.display = 'block';
+                e.preventDefault();
+                return;
+            }
+            if (username.length < 3) {
+                errorMsg.textContent = 'Username must be at least 3 characters.';
+                errorMsg.style.display = 'block';
+                e.preventDefault();
+                return;
+            }
+            if (password.length < 6) {
+                errorMsg.textContent = 'Password must be at least 6 characters.';
+                errorMsg.style.display = 'block';
+                e.preventDefault();
+                return;
+            }
+        });
+    </script>
+</body>
+</html>

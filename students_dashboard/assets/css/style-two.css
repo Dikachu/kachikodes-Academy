@@ -1,0 +1,15 @@
+.main-content {
+    height: 200vh;
+}
+
+.dashboard-hero {
+    background-color: #f0f0f0;
+    padding: var(--space-16);
+    text-align: center;
+
+    h3 {
+        display: inline-flex;
+        align-items: center;
+        gap: 20px;
+    }
+}

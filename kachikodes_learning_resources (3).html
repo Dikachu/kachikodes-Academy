@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kachikodes - Learning Resources</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: var(--color-text-inverse);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-family: var(--font-family-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            opacity: 0.9;
+            color: var(--color-text-muted);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--color-surface);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(255, 249, 0, 0.1);
+        }
+
+        .filter-section {
+            margin-bottom: 24px;
+        }
+
+        .filter-section h3 {
+            font-family: var(--font-family-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--color-primary);
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-option:hover {
+            background: var(--color-bg-secondary);
+        }
+
+        .filter-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--color-accent);
+        }
+
+        .filter-option label {
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+        }
+
+        .clear-filters {
+            background: var(--color-error);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .clear-filters:hover {
+            background: var(--color-error-dark);
+        }
+
+        /* Content Area */
+        .content-area {
+            min-height: 600px;
+            /* background-color: red; */
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .content-header .show-side-bar {
+            display: none;
+        }
+
+        .results-count {
+            font-size: 14px;
+            color: var(--color-text-muted);
+        }
+
+        .sort-dropdown {
+            padding: 8px 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            background: var(--color-surface);
+            cursor: pointer;
+        }
+
+        /* Resource Grid */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-rows: repeat(auto);
+            gap: 24px;
+            /* background-color: green; */
+        }
+
+        /* Resource Cards */
+        .resource-card {
+            background: var(--color-surface);
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            /* cursor: pointer; */
+            height: fit-content;
+            /* background-color: red; */
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-header {
+            padding: 10px;
+            position: relative;
+        }
+
+        .card-type-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            color: white;
+            background-color: red;
+            z-index: 1000;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: var(--color-bg-secondary);
+            border-radius: 8px;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+            }
+        }
+
+        /* .card-type-video {
+            background: var(--color-error);
+        }
+
+        .card-type-pdf {
+            background: var(--color-info);
+        }
+
+        .card-type-tutorial {
+            background: var(--color-success);
+        }
+
+        .card-type-code {
+            background: var(--color-warning);
+        }
+
+        .card-type-project {
+            background: var(--color-primary);
+        }
+
+        .card-type-quiz {
+            background: var(--color-secondary);
+        }
+
+        .card-type-link {
+            background: var(--color-info-dark);
+        } */
+
+        .card-image-overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            font-size: 24px;
+            color: white;
+            animation: 3s iconZoom linear infinite ;
+            cursor: pointer;
+        }
+
+        @keyframes iconZoom {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.3);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .card-title {
+            margin-bottom: 8px;
+            color: var(--color-text);
+        }
+
+        .card-description {
+            font-size: var(--font-size-xs);
+            margin-bottom: 16px;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            color: var(--color-text-muted);
+        }
+
+        .difficulty-badge {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .difficulty-beginner {
+            background: var(--color-success-light);
+            color: var(--color-success-dark);
+        }
+
+        .difficulty-intermediate {
+            background: var(--color-warning-light);
+            color: var(--color-warning-dark);
+        }
+
+        .difficulty-advanced {
+            background: var(--color-error-light);
+            color: var(--color-error-dark);
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            background: var(--color-bg-secondary);
+            color: var(--color-text-secondary);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+            padding: 0 20px 20px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-dark);
+        }
+
+        .btn-secondary {
+            background: var(--color-bg-secondary);
+            color: var(--color-text-secondary);
+            border: 1px solid var(--color-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bg-tertiary);
+        }
+
+        /* Video Card Specific */
+        
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--color-text-muted);
+        }
+
+        .pdf-preview {
+            width: 100%;
+            height: 600px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--color-text-muted);
+        }
+
+        .no-results h3 {
+            font-family: var(--font-family-heading);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                position: relative;
+            }
+
+            .sidebar {
+                position: absolute;
+                top: 40px;
+                left: 0;
+                bottom: 0;
+                min-height: 100vh;
+                width: 50%;
+                padding: 20px;
+                box-shadow: none;
+                background: var(--color-bg-secondary);
+                z-index: 10;
+                transition: transform 0.3s ease;
+                transform: translateX(-100%);
+                padding: 30px 20px;
+                /* padding-top: 100px; */
+                /* background-color: red; */
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .content-header .show-side-bar {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                padding: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .header {
+                padding: 40px 0;
+            }
+
+            .main-content {
+                margin: 20px 0;
+                gap: 20px;
+            }
+
+            /* .content-header {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            } */
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .resource-grid {
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            #resultsCount {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Learning Resources</h1>
+                <p>Comprehensive collection of tutorials, projects, and materials to accelerate your coding journey</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="main-content">
+            <aside class="sidebar">
+                <input type="text" class="search-box" placeholder="Search resources..." id="searchInput">
+
+                <div class="filter-section">
+                    <h3>Categories</h3>
+                    <div class="filter-group" id="categoryFilters">
+                        <div class="filter-option">
+                            <input type="checkbox" id="frontend" value="frontend">
+                            <label for="frontend">Frontend</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="backend" value="backend">
+                            <label for="backend">Backend</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="fullstack" value="fullstack">
+                            <label for="fullstack">Full-stack</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="frameworks" value="frameworks">
+                            <label for="frameworks">Frameworks</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Resource Type</h3>
+                    <div class="filter-group" id="typeFilters">
+                        <div class="filter-option">
+                            <input type="checkbox" id="video" value="video">
+                            <label for="video">Videos</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="pdf" value="pdf">
+                            <label for="pdf">PDFs</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="tutorial" value="tutorial">
+                            <label for="tutorial">Tutorials</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="code" value="code">
+                            <label for="code">Code Snippets</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="project" value="project">
+                            <label for="project">Projects</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="quiz" value="quiz">
+                            <label for="quiz">Quizzes</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="link" value="link">
+                            <label for="link">External Links</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Difficulty</h3>
+                    <div class="filter-group" id="difficultyFilters">
+                        <div class="filter-option">
+                            <input type="checkbox" id="beginner" value="beginner">
+                            <label for="beginner">Beginner</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="intermediate" value="intermediate">
+                            <label for="intermediate">Intermediate</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="advanced" value="advanced">
+                            <label for="advanced">Advanced</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="clear-filters" onclick="clearAllFilters()">
+                    Clear All Filters
+                </button>
+            </aside>
+
+            <section class="content-area">
+                <div class="content-header">
+                    <div class="show-side-bar" onclick="document.querySelector('.sidebar').classList.toggle('active')">
+                        <button class="btn btn-secondary">
+                            Toggle Filters
+                        </button>
+                    </div>
+                    <div class="results-count" id="resultsCount">Loading resources...</div>
+                    <select class="sort-dropdown" id="sortSelect">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="title">Title A-Z</option>
+                        <option value="difficulty">Difficulty</option>
+                        <option value="duration">Duration</option>
+                    </select>
+                </div>
+
+                <div class="resource-grid" id="resourceGrid">
+                    <div class="resource-card" data-id="1">
+                        <div class="card-header">
+                            <div class="card-type-badge card-type-video">VIDEO</div>
+                            <!-- <div class="card-icon card-type-video">
+                                ▶️
+                            </div> -->
+
+                            <div class="card-image">
+                                <img src="assets/images/class-room-1.avif" alt="">
+                                <div class="card-image-overlay">
+                                    ▶️
+                                </div>
+                            </div>
+
+                            <h6 class="card-title">Complete React Tutorial for Beginners</h6>
+                            <p class="card-description">Learn React from scratch with hands-on examples and projects.
+                                Perfect for beginners starting their frontend journey.</p>
+                            <div class="card-meta">
+                                <div class="meta-item">
+                                    <span class="difficulty-badge difficulty-beginner">beginner</span>
+                                </div>
+                                <div class="meta-item">
+                                    ⏱️ 45 min
+                                </div>
+                                <div class="meta-item">
+                                    📂 frontend
+                                </div>
+                            </div>
+                            <div class="card-tags">
+                                <span class="tag">React</span><span class="tag">JavaScript</span><span
+                                    class="tag">Frontend</span>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-primary">
+                                ▶️ Watch Video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="no-results" id="noResults" style="display: none;">
+                    <h3>No resources found</h3>
+                    <p>Try adjusting your search or filter criteria</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal for previews -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Resource Preview</h3>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody">
+                <!-- Preview content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const filterSectionInputs = [...document.querySelectorAll('.filter-section input[type="checkbox"]')];
+        // console.log(filterSectionInputs);
+        // console.log(window.screen.width);
+        // console.log('1024');
+        // console.log(1024);
+
+        if (window.screen.width <= 1024) {
+            // console.log('Anything');
+
+            filterSectionInputs.forEach((input) => {
+                input.addEventListener('click', () => {
+                    // console.log(input);
+
+                    document.querySelector('.sidebar').classList.remove('active')
+                })
+            })
+
+            document.querySelector('.clear-filters').addEventListener('click', () => {
+                document.querySelector('.sidebar').classList.remove('active')
+            })
+        }
+
+        // Sample data - in a real application, this would come from an API
+        const resources = [
+            {
+                id: 1,
+                title: "Complete React Tutorial for Beginners",
+                description: "Learn React from scratch with hands-on examples and projects. Perfect for beginners starting their frontend journey.",
+                type: "video",
+                category: "frontend",
+                difficulty: "beginner",
+                duration: "45 min",
+                tags: ["React", "JavaScript", "Frontend"],
+                videoURL: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                created: "2024-01-15"
+            },
+            {
+                id: 2,
+                title: "Node.js Best Practices Guide",
+                description: "Comprehensive PDF guide covering Node.js best practices, security, and performance optimization.",
+                type: "pdf",
+                category: "backend",
+                difficulty: "intermediate",
+                pages: "128",
+                tags: ["Node.js", "Backend", "Security"],
+                pdfUrl: "https://example.com/nodejs-guide.pdf",
+                created: "2024-01-10"
+            },
+            {
+                id: 3,
+                title: "Building a Full-Stack E-commerce App",
+                description: "Complete tutorial series for building a modern e-commerce application with React and Node.js.",
+                type: "zip",
+                category: "fullstack",
+                difficulty: "advanced",
+                duration: "8 hours",
+                tags: ["React", "Node.js", "MongoDB", "E-commerce"],
+                zipUrl: "https://example.com/ecommerce-zip",
+                created: "2024-01-20"
+            },
+            {
+                id: 4,
+                title: "JavaScript Array Methods Cheat Sheet",
+                description: "Quick reference for all JavaScript array methods with examples and use cases.",
+                type: "code",
+                category: "frontend",
+                difficulty: "beginner",
+                duration: "15 min",
+                tags: ["JavaScript", "Arrays", "Cheat Sheet"],
+                codeSnippet: "const arr = [1, 2, 3];\narr.map(x => x * 2);",
+                created: "2024-01-05"
+            },
+            {
+                id: 5,
+                title: "Todo App with React Hooks",
+                description: "Build a complete todo application using React hooks and local storage.",
+                type: "project",
+                category: "frontend",
+                difficulty: "intermediate",
+                duration: "3 hours",
+                tags: ["React", "Hooks", "Project"],
+                projectUrl: "https://github.com/example/todo-app",
+                created: "2024-01-25"
+            },
+            {
+                id: 6,
+                title: "JavaScript Fundamentals Quiz",
+                description: "Test your knowledge of JavaScript basics with this interactive quiz.",
+                type: "quiz",
+                category: "frontend",
+                difficulty: "beginner",
+                duration: "20 min",
+                tags: ["JavaScript", "Quiz", "Assessment"],
+                quizUrl: "https://example.com/js-quiz",
+                created: "2024-01-12"
+            },
+            {
+                id: 7,
+                title: "Express.js Documentation",
+                description: "Official Express.js documentation and API reference.",
+                type: "link",
+                category: "backend",
+                difficulty: "intermediate",
+                duration: "Variable",
+                tags: ["Express.js", "Documentation", "API"],
+                externalUrl: "https://expressjs.com/",
+                created: "2024-01-08"
+            },
+            {
+                id: 8,
+                title: "Advanced CSS Animations",
+                description: "Master CSS animations and transitions with practical examples and techniques.",
+                type: "video",
+                category: "frontend",
+                difficulty: "advanced",
+                duration: "1 hour",
+                tags: ["CSS", "Animations", "Frontend"],
+                videoURL: "dQw4w9WgXcQ",
+                created: "2024-01-18"
+            },
+            {
+                id: 9,
+                title: "Vue.js Component Guide",
+                description: "Comprehensive guide to building reusable Vue.js components.",
+                type: "pdf",
+                category: "frameworks",
+                difficulty: "intermediate",
+                duration: "1.5 hours",
+                tags: ["Vue.js", "Components", "Framework"],
+                pdfUrl: "https://example.com/vue-components.pdf",
+                created: "2024-01-22"
+            },
+            {
+                id: 10,
+                title: "REST API Design Principles",
+                description: "Learn the fundamental principles of designing RESTful APIs.",
+                type: "zip",
+                category: "backend",
+                difficulty: "intermediate",
+                duration: "2 hours",
+                tags: ["REST", "API", "Design"],
+                zipUrl: "https://example.com/rest-api-guide",
+                created: "2024-01-14"
+            }
+        ];
+
+        let filteredResources = [...resources];
+        let currentFilters = {
+            search: '',
+            categories: [],
+            types: [],
+            difficulties: []
+        };
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function () {
+            renderResources();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // Search functionality
+            document.getElementById('searchInput').addEventListener('input', handleSearch);
+
+            // Filter checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', handleFilterChange);
+            });
+
+            // Sort dropdown
+            document.getElementById('sortSelect').addEventListener('change', handleSort);
+
+            // Modal close on outside click
+            document.getElementById('previewModal').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+        }
+
+        function handleSearch(e) {
+            currentFilters.search = e.target.value.toLowerCase();
+            applyFilters();
+        }
+
+        function handleFilterChange(e) {
+            const filterType = e.target.closest('.filter-group').id;
+            const value = e.target.value;
+
+            if (filterType === 'categoryFilters') {
+                if (e.target.checked) {
+                    currentFilters.categories.push(value);
+                } else {
+                    currentFilters.categories = currentFilters.categories.filter(c => c !== value);
+                }
+            } else if (filterType === 'typeFilters') {
+                if (e.target.checked) {
+                    currentFilters.types.push(value);
+                } else {
+                    currentFilters.types = currentFilters.types.filter(t => t !== value);
+                }
+            } else if (filterType === 'difficultyFilters') {
+                if (e.target.checked) {
+                    currentFilters.difficulties.push(value);
+                } else {
+                    currentFilters.difficulties = currentFilters.difficulties.filter(d => d !== value);
+                }
+            }
+
+            applyFilters();
+        }
+
+        function applyFilters() {
+            filteredResources = resources.filter(resource => {
+                // Search filter
+                if (currentFilters.search && !resource.title.toLowerCase().includes(currentFilters.search)
+                    && !resource.description.toLowerCase().includes(currentFilters.search)
+                    && !resource.tags.some(tag => tag.toLowerCase().includes(currentFilters.search))) {
+                    return false;
+                }
+
+                // Category filter
+                if (currentFilters.categories.length > 0 && !currentFilters.categories.includes(resource.category)) {
+                    return false;
+                }
+
+                // Type filter
+                if (currentFilters.types.length > 0 && !currentFilters.types.includes(resource.type)) {
+                    return false;
+                }
+
+                // Difficulty filter
+                if (currentFilters.difficulties.length > 0 && !currentFilters.difficulties.includes(resource.difficulty)) {
+                    return false;
+                }
+
+                return true;
+            });
+
+            renderResources();
+        }
+
+        function handleSort(e) {
+            const sortBy = e.target.value;
+
+            filteredResources.sort((a, b) => {
+                switch (sortBy) {
+                    case 'newest':
+                        return new Date(b.created) - new Date(a.created);
+                    case 'oldest':
+                        return new Date(a.created) - new Date(b.created);
+                    case 'title':
+                        return a.title.localeCompare(b.title);
+                    case 'difficulty':
+                        const difficultyOrder = { 'beginner': 1, 'intermediate': 2, 'advanced': 3 };
+                        return difficultyOrder[a.difficulty] - difficultyOrder[b.difficulty];
+                    case 'duration':
+                        return parseDuration(a.duration) - parseDuration(b.duration);
+                    default:
+                        return 0;
+                }
+            });
+
+            renderResources();
+        }
+
+        function parseDuration(duration) {
+            const match = duration.match(/(\d+(?:\.\d+)?)\s*(min|hour|hours)/i);
+            if (!match) return 0;
+
+            const value = parseFloat(match[1]);
+            const unit = match[2].toLowerCase();
+
+            return unit.startsWith('hour') ? value * 60 : value;
+        }
+
+        function renderResources() {
+            const grid = document.getElementById('resourceGrid');
+            const resultsCount = document.getElementById('resultsCount');
+            const noResults = document.getElementById('noResults');
+
+            resultsCount.textContent = `${filteredResources.length} resource${filteredResources.length !== 1 ? 's' : ''} found`;
+
+            if (filteredResources.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            grid.style.display = 'grid';
+            noResults.style.display = 'none';
+
+            grid.innerHTML = filteredResources.map(resource => createResourceCard(resource)).join('');
+        }
+
+        function createResourceCard(resource) {
+            const iconMap = {
+                video: '▶️',
+                pdf: '📄',
+                zip: '📚',
+                code: '💻',
+                project: '🚀',
+                quiz: '❓',
+                link: '🔗'
+            };
+
+            const typeColorMap = {
+                video: 'card-type-video',
+                pdf: 'card-type-pdf',
+                zip: 'card-type-tutorial',
+                code: 'card-type-code',
+                project: 'card-type-project',
+                quiz: 'card-type-quiz',
+                link: 'card-type-link'
+            };
+
+            const difficultyClass = `difficulty-${resource.difficulty}`;
+            const typeClass = typeColorMap[resource.type];
+            const icon = iconMap[resource.type];
+
+            // let specificContent = '';
+            let primaryAction = '';
+            let secondaryAction = '';
+
+            switch (resource.type) {
+                case 'video':
+                    primaryAction = `<button class="btn btn-primary" onclick="playVideo('${resource.videoURL}')">▶️ Watch Video</button>`;
+                    break;
+
+                case 'pdf':
+                    primaryAction = `<button class="btn btn-primary" onclick="previewPDF('${resource.id}')">📄 Preview PDF</button>`;
+                    secondaryAction = `<button class="btn btn-secondary" onclick="downloadPDF('${resource.pdfUrl}')">⬇️ Download</button>`;
+                    break;
+
+                case 'zip':
+                    primaryAction = `<button class="btn btn-primary" onclick="openTutorial('${resource.zipUrl}')">📚 Download Zip</button>`;
+                    break;
+
+                case 'code':
+                    primaryAction = `<button class="btn btn-primary" onclick="viewCode('${resource.id}')">💻 View Code</button>`;
+                    secondaryAction = `<button class="btn btn-secondary" onclick="copyCode('${resource.codeSnippet}')">📋 Copy</button>`;
+                    break;
+
+                case 'project':
+                    primaryAction = `<button class="btn btn-primary" onclick="viewProject('${resource.projectUrl}')">🚀 View Project</button>`;
+                    break;
+
+                case 'quiz':
+                    primaryAction = `<button class="btn btn-primary" onclick="startQuiz('${resource.quizUrl}')">❓ Take Quiz</button>`;
+                    break;
+
+                case 'link':
+                    primaryAction = `<button class="btn btn-primary" onclick="openLink('${resource.externalUrl}')">🔗 Visit Link</button>`;
+
+                    break;
+            }
+
+            return `
+                <div class="resource-card" data-id="${resource.id}">
+                    <div class="card-header">
+                        <div class="card-type-badge ${typeClass}">${resource.type.toUpperCase()}</div>
+                        <div class="card-image">
+                            <img src="assets/images/class-room-1.avif" alt="">
+                            <div class="card-image-overlay" onclick="playVideo('${resource.videoURL}')">
+                                ${icon}
+                            </div>
+                        </div>
+                        <h6 class="card-title">${resource.title}</h6>
+                        <p class="card-description">${resource.description}</p>
+                        <div class="card-meta">
+                            <div class="meta-item">
+                                <span class="difficulty-badge ${difficultyClass}">${resource.difficulty}</span>
+                            </div>
+                            <div class="meta-item">
+                                ⏱️ ${resource.duration}
+                            </div>
+                            <div class="meta-item">
+                                📂 ${resource.category}
+                            </div>
+                        </div>
+                        <div class="card-tags">
+                            ${resource.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        ${primaryAction}
+                        ${secondaryAction}
+                    </div>
+                </div>
+            `;
+        }
+
+        function clearAllFilters() {
+            // Clear search
+            document.getElementById('searchInput').value = '';
+
+            // Clear all checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+
+            // Reset filters
+            currentFilters = {
+                search: '',
+                categories: [],
+                types: [],
+                difficulties: []
+            };
+
+            // Reset sort
+            document.getElementById('sortSelect').value = 'newest';
+
+            // Apply filters
+            applyFilters();
+        }
+
+        // Resource action handlers
+        function playVideo(videoURL) {
+            const modal = document.getElementById('previewModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            modalTitle.textContent = 'Video Player';
+            modalBody.innerHTML = `
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                    <iframe 
+                        src="https://www.youtube.com/embed/${videoURL}" 
+                        frameborder="0" 
+                        allowfullscreen
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                    </iframe>
+                </div>
+            `;
+
+            modal.style.display = 'block';
+        }
+
+        function previewPDF(resourceId) {
+            const resource = resources.find(r => r.id == resourceId);
+            const modal = document.getElementById('previewModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            modalTitle.textContent = `PDF Preview - ${resource.title}`;
+            modalBody.innerHTML = `
+                <div style="text-align: center; padding: 40px;">
+                    <div style="font-size: 48px; margin-bottom: 20px;">📄</div>
+                    <h3>${resource.title}</h3>
+                    <p style="color: var(--color-text-secondary); margin-bottom: 20px;">
+                        PDF preview would be displayed here in a real application
+                    </p>
+                    <button class="btn btn-primary" onclick="downloadPDF('${resource.pdfUrl}')">
+                        ⬇️ Download PDF
+                    </button>
+                </div>
+            `;
+
+            modal.style.display = 'block';
+        }
+
+        function downloadPDF(url) {
+            // In a real application, this would trigger a download
+            alert('PDF download would start here: ' + url);
+        }
+
+        function openTutorial(url) {
+            window.open(url, '_blank');
+        }
+
+        function viewCode(resourceId) {
+            const resource = resources.find(r => r.id == resourceId);
+            const modal = document.getElementById('previewModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            modalTitle.textContent = `Code Snippet - ${resource.title}`;
+            modalBody.innerHTML = `
+                <div style="background: var(--color-bg-secondary); padding: 20px; border-radius: 8px; font-family: var(--font-family-mono);">
+                    <pre style="margin: 0; overflow-x: auto;"><code>${resource.codeSnippet}</code></pre>
+                </div>
+                <div style="margin-top: 20px;">
+                    <button class="btn btn-primary" onclick="copyCode('${resource.codeSnippet}')">
+                        📋 Copy Code
+                    </button>
+                </div>
+            `;
+
+            modal.style.display = 'block';
+        }
+
+        function copyCode(code) {
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Code copied to clipboard!');
+            });
+        }
+
+        function viewProject(url) {
+            window.open(url, '_blank');
+        }
+
+        function startQuiz(url) {
+            window.open(url, '_blank');
+        }
+
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+
+        function closeModal() {
+            document.getElementById('previewModal').style.display = 'none';
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Initialize page
+        renderResources();
+    </script>
+</body>
+</html>

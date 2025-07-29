@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Code Editor</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            /* Limit width on larger screens */
+        }
+
+        .code-editor {
+            display: flex;
+            flex-direction: column;
+            /* Stacks panels on small screens */
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 768px) {
+
+            /* Side-by-side on larger screens */
+            .code-editor {
+                flex-direction: row;
+            }
+        }
+
+        .code-panel {
+            flex: 1;
+            /* Distribute space equally */
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            /* Fixed height for input areas */
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            resize: vertical;
+            /* Allow vertical resizing */
+            box-sizing: border-box;
+            /* Include padding/border in width */
+        }
+
+        #run-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        #run-button:hover {
+            background-color: #0056b3;
+        }
+
+        .preview-panel {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            height: 300px;
+            /* Fixed height for preview */
+            display: flex;
+            flex-direction: column;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            background-color: #fff;
+            /* Ensure white background for iframe */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="code-editor">
+            <div class="code-panel">
+                <label for="html-code">HTML</label>
+                <textarea id="html-code" placeholder="Write your HTML here..."></textarea>
+            </div>
+            <div class="code-panel">
+                <label for="css-code">CSS</label>
+                <textarea id="css-code" placeholder="Write your CSS here..."></textarea>
+            </div>
+            <div class="code-panel">
+                <label for="js-code">JavaScript</label>
+                <textarea id="js-code" placeholder="Write your JavaScript here..."></textarea>
+            </div>
+        </div>
+        <button id="run-button">Run Code</button>
+        <div class="preview-panel">
+            <label>Preview</label>
+            <iframe id="preview-frame"></iframe>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlCode = document.getElementById('html-code');
+            const cssCode = document.getElementById('css-code');
+            const jsCode = document.getElementById('js-code');
+            const runButton = document.getElementById('run-button');
+            const previewFrame = document.getElementById('preview-frame');
+
+            const runCode = () => {
+                const html = htmlCode.value;
+                const css = `<style>${cssCode.value}</style>`; // Wrap CSS in <style> tags
+                const js = `<script>${jsCode.value}<\/script>`; // Wrap JS in <script> tags
+
+                // Combine all code into a single HTML string
+                const fullCode = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Preview</title>
+                ${css}
+            </head>
+            <body>
+                ${html}
+                ${js}
+            </body>
+            </html>
+        `;
+
+                // Write the combined code into the iframe's document
+                // The iframe's contentDocument refers to the document object inside the iframe.
+                // open(), write(), and close() are used to write new content to the document.
+                previewFrame.contentWindow.document.open();
+                previewFrame.contentWindow.document.write(fullCode);
+                previewFrame.contentWindow.document.close();
+            };
+
+            // Attach the runCode function to the button's click event
+            runButton.addEventListener('click', runCode);
+
+            // Optional: Run code automatically when a student types (like CodePen)
+            // You can uncomment these lines if you prefer live updates over a "Run" button
+            // htmlCode.addEventListener('input', runCode);
+            // cssCode.addEventListener('input', runCode);
+            // jsCode.addEventListener('input', runCode);
+
+            // Initial run when the page loads, in case there's default code
+            runCode();
+        });
+    </script>
+</body>
+
+</html>

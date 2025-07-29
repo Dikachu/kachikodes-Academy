@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags/Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Kachikodes Tech Community</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Swipper Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.css">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/courses.css">
+    <link rel="stylesheet" href="assets/css/faq.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="assets/images/white-logo.png" alt="">
+            </a>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="learn.html" class="nav-link">Learning Resources</a></li>
+                    <!-- <li><a href="playground.html" class="nav-link">Playground</a></li> -->
+                    <!-- <li><a href="service.html" class="nav-link">Services</a></li> -->
+                    <li><a href="courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-actions">
+                <a href="#" class="cta-button">Become a Student</a>
+                <!-- <div class="profile-dropdown" id="profileDropdown">
+                    <div class="profile-trigger" onclick="toggleProfileDropdown()">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Profile" class="profile-avatar">
+                        <span class="profile-name">John Doe</span>
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="#" class="dropdown-item">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7" rx="2" />
+                                <rect x="14" y="3" width="7" height="7" rx="2" />
+                                <rect x="3" y="14" width="7" height="7" rx="2" />
+                                <rect x="14" y="14" width="7" height="7" rx="2" />
+                            </svg>
+                            Dashboard
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 11 3.09V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                            Settings
+                        </a>
+                        <button class="dropdown-item logout">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
+                                <polyline points="16,17 21,12 16,7"/>
+                                <line x1="21" y1="12" x2="9" y2="12"/>
+                            </svg>
+                            Logout
+                        </button>
+                    </div>
+                </div> -->
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+                <li class="mobile-nav-item"><a href="learn.html" class="mobile-nav-link">Learning Resources</a></li>
+                <!-- <li class="mobile-nav-item"><a href="playground.html" class="mobile-nav-link">Playground</a></li> -->
+                <!-- <li class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></li> -->
+                <li class="mobile-nav-item"><a href="courses.html" class="mobile-nav-link">Courses</a></li>
+                <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-cta">
+                <a href="#" class="cta-button">Become a Student</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+        <!-- <section class="course-header-section">
+            <div class="container">
+                <h1>Master Web Development</h1>
+                <p class="subtitle">Transform your career with our comprehensive courses</p>
+            </div>
+        </section> -->
+
+        <section class="hero">
+            <!-- Floating circles -->
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+            <div class="circle circle4"></div>
+            <div class="circle circle5"></div>
+            <div class="circle circle6"></div>
+            <div class="circle circle7"></div>
+            <div class="circle circle8"></div>
+            <div class="circle circle9"></div>
+            <div class="circle circle10"></div>
+
+            <div class="hero-content">
+                <h1>Explore Our Courses</h1>
+                <p>From beginner to advanced, we have courses for every level. Learn at your own pace with hands-on
+                    projects and real-world applications.
+                </p>
+                <!-- <a href="#courses" class="cta-button">Start Learning Today</a> -->
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <!-- Frontend Courses -->
+                <div class="category-section">
+                    <h4 class="category-title">Frontend Development Courses</h4>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <h5 class="course-title">Complete React.js Mastery</h5>
+                            <div class="course-price">
+                                <div class="old-price">
+                                    <span class="currency">$</span><s>999</s>
+                                </div>
+                                <div class="new-price">
+                                    <span class="currency">$</span>99
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('react-course')">View
+                                Course</button>
+                        </div>
+                        <div class="course-card">
+                            <h5 class="course-title">Modern JavaScript & ES6+</h5>
+                            <div class="course-price">
+                                <div><span class="currency">$</span>79</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('js-course')">View Course</button>
+                        </div>
+                        <div class="course-card">
+                            <h5 class="course-title">CSS Grid & Flexbox Pro</h5>
+                            <div class="course-price">
+                                <div><span class="currency">$</span>59</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('css-course')">View
+                                Course</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Courses -->
+                <div class="category-section">
+                    <h4 class="category-title">Backend Development Courses</h4>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <h5 class="course-title">Complete React.js Mastery</h5>
+                            <div class="course-price">
+                                <div class="old-price">
+                                    <span class="currency">$</span><s>999</s>
+                                </div>
+                                <div class="new-price">
+                                    <span class="currency">$</span>99
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('react-course')">View
+                                Course</button>
+                        </div>
+                        <div class="course-card">
+                            <h5 class="course-title">Modern JavaScript & ES6+</h5>
+                            <div class="course-price">
+                                <div><span class="currency">$</span>79</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('js-course')">View Course</button>
+                        </div>
+                        <div class="course-card">
+                            <h5 class="course-title">CSS Grid & Flexbox Pro</h5>
+                            <div class="course-price">
+                                <div><span class="currency">$</span>59</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('css-course')">View
+                                Course</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Stack Courses -->
+                <div class="category-section">
+                    <h4 class="category-title">Full Stack Development Courses</h4>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <h5 class="course-title">Complete React.js Mastery</h5>
+                            <div class="course-price">
+                                <div class="old-price">
+                                    <span class="currency">$</span><s>999</s>
+                                </div>
+                                <div class="new-price">
+                                    <span class="currency">$</span>99
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('react-course')">View
+                                Course</button>
+                        </div>
+                        <div class="course-card">
+                            <h5 class="course-title">Modern JavaScript & ES6+</h5>
+                            <div class="course-price">
+                                <div><span class="currency">$</span>79</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('js-course')">View Course</button>
+                        </div>
+                        <div class="course-card">
+                            <h5 class="course-title">CSS Grid & Flexbox Pro</h5>
+                            <div class="course-price">
+                                <div><span class="currency">$</span>59</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('css-course')">View
+                                Course</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks Courses-->
+                <div class="category-section">
+                    <h4 class="category-title">Framework Courses</h4>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <h5 class="course-title">Complete React.js Mastery</h5>
+                            <div class="course-price">
+                                <div class="old-price">
+                                    <span class="currency">$</span><s>999</s>
+                                </div>
+                                <div class="new-price">
+                                    <span class="currency">$</span>99
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('react-course')">View
+                                Course</button>
+                        </div>
+                        <div class="course-card">
+                            <h5 class="course-title">Modern JavaScript & ES6+</h5>
+                            <div class="course-price">
+                                <div><span class="currency">$</span>79</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('js-course')">View Course</button>
+                        </div>
+                        <div class="course-card">
+                            <h5 class="course-title">CSS Grid & Flexbox Pro</h5>
+                            <div class="course-price">
+                                <div><span class="currency">$</span>59</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('css-course')">View
+                                Course</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Career Development -->
+                <div class="category-section">
+                    <h4 class="category-title">Other Web Development Related Courses </h4>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <h5 class="course-title">Complete React.js Mastery</h5>
+                            <div class="course-price">
+                                <div class="old-price">
+                                    <span class="currency">$</span><s>999</s>
+                                </div>
+                                <div class="new-price">
+                                    <span class="currency">$</span>99
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('react-course')">View
+                                Course</button>
+                        </div>
+                        <div class="course-card">
+                            <h5 class="course-title">Modern JavaScript & ES6+</h5>
+                            <div class="course-price">
+                                <div><span class="currency">$</span>79</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('js-course')">View Course</button>
+                        </div>
+                        <div class="course-card">
+                            <h5 class="course-title">CSS Grid & Flexbox Pro</h5>
+                            <div class="course-price">
+                                <div><span class="currency">$</span>59</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openModal('css-course')">View
+                                Course</button>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Payment Options -->
+        <section class="payment-section">
+            <div class="container">
+                <h4 class="payment-title">Flexible Payment Options</h4>
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <h5>One-Time Payment</h5>
+                        <p>Pay once and get lifetime access to all course materials and future updates.</p>
+                    </div>
+                    <div class="payment-option">
+                        <h5>3-Month Plan</h5>
+                        <p>Split your payment into 3 monthly installments with no additional fees.</p>
+                    </div>
+                    <div class="payment-option">
+                        <h5>Student Discount</h5>
+                        <p>Get 20% off with valid student ID. Perfect for college students and bootcamp graduates.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Guarantee -->
+        <section class="guarantee-section">
+            <div class="container">
+                <h5 class="guarantee-title">💯 30-Day Money-Back Guarantee</h5>
+                <p class="guarantee-text">
+                    We're confident you'll love our courses. If you're not completely satisfied within 30 days, we'll
+                    refund your money, no questions asked.
+                </p>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h3 class="testimonials-title">What Our Students Say</h3>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <p class="testimonial-text">
+                            Kachikodes completely transformed my career. I went from zero coding
+                            experience to landing a front-end developer job in just 4 months!
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SM</div>
+                            <div class="testimonial-info">
+                                <h6>Sarah Miller</h6>
+                                <p>Frontend Developer at TechCorp</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">The hands-on projects and mentor support made all the difference. I
+                            now
+                            have a portfolio that showcases real-world applications.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JD</div>
+                            <div class="testimonial-info">
+                                <h6>James Davis</h6>
+                                <p>Full-Stack Developer at StartupXYZ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">Best investment I've made in my career. The course content is
+                            up-to-date
+                            and the community is incredibly supportive.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">AK</div>
+                            <div class="testimonial-info">
+                                <h6>Aisha Khan</h6>
+                                <p>Software Engineer at Google</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-container">
+            <div class="faq-header">
+                <h3 class="faq-title">Frequently Asked Questions</h3>
+                <p class="faq-subtitle">Everything you need to know about our service</p>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    What is your return policy?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We offer a 30-day return policy for all unused items in their original packaging. Simply contact
+                        our customer service team to initiate a return, and we'll provide you with a prepaid shipping
+                        label. Refunds are processed within 5-7 business days after we receive your return.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    How long does shipping take?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Standard shipping typically takes 3-5 business days within the continental US. Express shipping
+                        (1-2 business days) and overnight shipping options are also available. International shipping
+                        times vary by destination but generally take 7-14 business days.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Do you offer customer support?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! Our customer support team is available 24/7 through live chat, email, and phone. You can
+                        reach us at support@example.com or call 1-800-SUPPORT. We're here to help with any questions or
+                        concerns you may have.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    What payment methods do you accept?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, Apple
+                        Pay, Google Pay, and bank transfers. All transactions are secured with 256-bit SSL encryption to
+                        protect your personal information.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Can I modify or cancel my order?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Orders can be modified or cancelled within 1 hour of placement. After this time, your order
+                        enters our fulfillment process and cannot be changed. Please contact us immediately if you need
+                        to make changes to your order.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Is my personal information secure?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely. We use industry-standard security measures including SSL encryption, secure payment
+                        processing, and regular security audits. We never share your personal information with third
+                        parties without your explicit consent, and you can review our full privacy policy on our
+                        website.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modals -->
+        <div id="react-course" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('react-course')">&times;</span>
+                <h4 class="modal-title">Complete React.js Mastery</h4>
+                <div class="modal-price">
+                    <div class="old-price">
+                        <span class="currency">$</span><s>999</s>
+                    </div>
+                    <div class="new-price">
+                        <span class="currency">$</span>99
+                    </div>
+                </div>
+                <p class="modal-description">Master React.js from the ground up with hands-on projects. Learn hooks,
+                    context
+                    API, state management, and build real-world applications that employers love.</p>
+                <div class="modal-features">
+                    <h2>What You'll Learn:</h2>
+                    <ul class="feature-list">
+                        <li>React fundamentals and JSX</li>
+                        <li>Component lifecycle and hooks</li>
+                        <li>State management with Redux</li>
+                        <li>React Router for navigation</li>
+                        <li>API integration and data fetching</li>
+                        <li>Testing with Jest and React Testing Library</li>
+                        <li>Deployment strategies</li>
+                    </ul>
+                </div>
+                <button class="enroll-btn" onclick="enrollCourse('react-course')">Enroll Now</button>
+            </div>
+        </div>
+
+        <div id="js-course" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('js-course')">&times;</span>
+                <h2 class="modal-title">Modern JavaScript & ES6+</h2>
+                <div class="modal-price">$79</div>
+                <p class="modal-description">Deep dive into modern JavaScript features and best practices. Master ES6+
+                    syntax, async programming, and advanced JavaScript concepts.</p>
+                <div class="modal-features">
+                    <h3>What You'll Learn:</h3>
+                    <ul class="feature-list">
+                        <li>ES6+ syntax and features</li>
+                        <li>Async/await and Promises</li>
+                        <li>Destructuring and spread operators</li>
+                        <li>Array and object methods</li>
+                        <li>Module system and imports</li>
+                        <li>Error handling and debugging</li>
+                        <li>Performance optimization</li>
+                    </ul>
+                </div>
+                <button class="enroll-btn" onclick="enrollCourse('js-course')">Enroll Now</button>
+            </div>
+        </div>
+
+        <div id="css-course" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('css-course')">&times;</span>
+                <h2 class="modal-title">CSS Grid & Flexbox Pro</h2>
+                <div class="modal-price">$59</div>
+                <p class="modal-description">Master modern CSS layout techniques with Grid and Flexbox. Create
+                    responsive,
+                    professional layouts that work across all devices.</p>
+                <div class="modal-features">
+                    <h3>What You'll Learn:</h3>
+                    <ul class="feature-list">
+                        <li>CSS Grid fundamentals</li>
+                        <li>Flexbox mastery</li>
+                        <li>Responsive design principles</li>
+                        <li>CSS custom properties</li>
+                        <li>Animation and transitions</li>
+                        <li>Mobile-first approach</li>
+                        <li>Browser compatibility</li>
+                    </ul>
+                </div>
+                <button class="enroll-btn" onclick="enrollCourse('css-course')">Enroll Now</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info Section -->
+                <div class="footer-section company-info">
+                    <div class="logo-container">
+                        <!-- <div class="logo">K</div>
+                        <span class="logo-text">Kachikodes</span> -->
+
+                        <img src="assets/images/white-logo.png" alt="">
+                    </div>
+                    <p class="company-description">
+                        Empowering the next generation of developers through comprehensive coding education and hands-on
+                        learning experiences. Join thousands of students who have transformed their careers with us.
+                    </p>
+                    <a href="#" class="become-student-btn">Become a Student</a>
+
+                    <!-- Contact & Social -->
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            <span>hello@kachikodes.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                            <span>+234 (0) 123 456 789</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <span>Lagos, Nigeria</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="X (Twitter)">
+                            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.113.82-.261.82-.577v-2.234c-3.338.726-4.033-1.617-4.033-1.617-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.807 1.305 3.492.998.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.93 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.498 6.186a2.997 2.997 0 0 0-2.112-2.12C19.24 3.5 12 3.5 12 3.5s-7.24 0-9.386.566A2.997 2.997 0 0 0 .502 6.186C0 8.34 0 12 0 12s0 3.66.502 5.814a2.997 2.997 0 0 0 2.112 2.12C4.76 20.5 12 20.5 12 20.5s7.24 0 9.386-.566a2.997 2.997 0 0 0 2.112-2.12C24 15.66 24 12 24 12s0-3.66-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Instructors</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Career Services</a></li>
+                        <li><a href="#">Student Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Learning Resources Section -->
+                <div class="footer-section">
+                    <h3>Learning Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile App Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Machine Learning</a></li>
+                        <li><a href="#">Cloud Computing</a></li>
+                        <li><a href="#">DevOps</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="footer-year"></span> Kachikodes. All rights reserved.
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/courses.js"></script>
+</body>
+
+</html>

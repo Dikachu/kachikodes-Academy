@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags/Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Kachikodes Tech Community</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Swipper Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.css">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="../assets/images/white-logo.png" alt="">
+            </a>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="learn.html" class="nav-link">Learning Resources</a></li>
+                    <!-- <li><a href="playground.html" class="nav-link">Playground</a></li> -->
+                    <!-- <li><a href="service.html" class="nav-link">Services</a></li> -->
+                    <li><a href="courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-actions">
+                <!-- <a href="#" class="cta-button">Become a Student</a> -->
+                <div class="profile-dropdown" id="profileDropdown">
+                    <div class="profile-trigger" onclick="toggleProfileDropdown()">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+                            alt="Profile" class="profile-avatar">
+                        <span class="profile-name">John Doe</span>
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </div>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="index-two.html" class="dropdown-item">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7" rx="2" />
+                                <rect x="14" y="3" width="7" height="7" rx="2" />
+                                <rect x="3" y="14" width="7" height="7" rx="2" />
+                                <rect x="14" y="14" width="7" height="7" rx="2" />
+                            </svg>
+                            Dashboard
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 11 3.09V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                            </svg>
+                            Settings
+                        </a>
+                        <button class="dropdown-item logout">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
+                                <polyline points="16,17 21,12 16,7" />
+                                <line x1="21" y1="12" x2="9" y2="12" />
+                            </svg>
+                            Logout
+                        </button>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+                <li class="mobile-nav-item"><a href="learn.html" class="mobile-nav-link">Learning Resources</a></li>
+                <!-- <li class="mobile-nav-item"><a href="playground.html" class="mobile-nav-link">Playground</a></li> -->
+                <!-- <li class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></li> -->
+                <li class="mobile-nav-item"><a href="courses.html" class="mobile-nav-link">Courses</a></li>
+                <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-cta">
+                <a href="#" class="cta-button">Become a Student</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-hero">
+        <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="4" y="4" width="24" height="24" rx="6" stroke="#222" stroke-width="2" fill="#fff" />
+                <rect x="8" y="8" width="7" height="7" rx="2" fill="#222" opacity="0.8" />
+                <rect x="17" y="8" width="7" height="7" rx="2" fill="#222" opacity="0.5" />
+                <rect x="8" y="17" width="7" height="7" rx="2" fill="#222" opacity="0.5" />
+                <rect x="17" y="17" width="7" height="7" rx="2" fill="#222" opacity="0.8" />
+            </svg>
+
+            Student Dashboard
+        </h3>
+        <p>Welcome back, <span class="username">John Doe</span>! Here’s a quick overview of your progress.</p>
+    </div>
+
+    <main>
+        <div class="dashboard_header">
+            <div class="view-menu" id="menu-toggle">
+                <button class="menu-toggle"> >
+                    <!-- <ion-icon name="list-outline"></ion-icon> -->
+                </button>
+            </div>
+
+            <div class="student_profile">
+                <div class="profile_img">
+                    <img src="assets/images/My Life.jpg" alt="">
+                    <span class="profile_badge">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+                </div>
+
+                <div class="profile_info">
+                    <h4>
+                        John Doe
+                        <a href="#" class="edit_profile">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                    </h4>
+                    <p>Student ID: 123456</p>
+                </div>
+            </div>
+
+            <div class="dashboard_links">
+                <a href="#" class="link">
+                    <i class="fa-solid fa-bell"></i>
+                    <!-- Notifications -->
+                </a>
+                <a href="#" class="link">
+                    <i class="fa-solid fa-cog"></i>
+                    <!-- Settings -->
+                </a>
+                <a href="#" class="link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <!-- Logout -->
+                </a>
+            </div>
+        </div>
+
+        <div class="main-content-container">
+
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar_header">
+                    <h3>Kachikodes</h3>
+                    <span>Students Dashboard</span>
+                </div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                                <i class="fas fa-home"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#courses" class="nav-link" data-section="courses">
+                                <i class="fas fa-book"></i>
+                                My Courses
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#assignments" class="nav-link" data-section="assignments">
+                                <i class="fas fa-tasks"></i>
+                                Assignments
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#nofications" class="nav-link" data-section="nofications">
+                                <i class="fas fa-chart-line"></i>
+                                Nofications
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#quiz" class="nav-link" data-section="quiz">
+                                <i class="fas fa-chart-line"></i>
+                                Quiz
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#calendar" class="nav-link" data-section="calendar">
+                                <i class="fas fa-calendar-alt"></i>
+                                Calendar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#chat" class="nav-link" data-section="chat">
+                                <i class="fas fa-comments"></i>
+                                Chat
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#certificates" class="nav-link" data-section="certificates">
+                                <i class="fas fa-chart-line"></i>
+                                My Certificates
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#all-invoices" class="nav-link" data-section="all-invoices">
+                                <i class="fas fa-chart-line"></i>
+                                All invoices
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#profile" class="nav-link" data-section="profile">
+                                <i class="fas fa-user"></i>
+                                Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#settings" class="nav-link" data-section="settings">
+                                <i class="fas fa-chart-line"></i>
+                                Settings
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+
+            <!-- Main Contents -->
+            <section id="main-content" class="main-content">
+
+                <!-- Dashboard Content -->
+                <div id="dashboard-content">
+                    <div class="main-content-header">
+                        <h4>Dashboard</h4>
+
+                        <div class="search-box">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" class="search-input" placeholder="Search courses, assignments...">
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="course-stats-container">
+                        <div class="stat-card">
+                            <div class="stat-icon enrolled">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="stat-label">
+                                <p>Enrolled Course(s)</p>
+                                <strong>04</strong>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon active">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="stat-label">
+                                <p>Active Course(s)</p>
+                                <strong>02</strong>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon completed">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="stat-label">
+                                <p>Completed Course(s)</p>
+                                <strong>01</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="active-courses-container">
+                        <div class="active-courses-header">
+                            <h5>Active Courses</h5>
+                            <a href="#" class="btn btn-outline btn-sm">View All Courses</a>
+                        </div>
+                        <div class="active-courses">
+                            <div class="active-course-card">
+                                <div class="course-avatar">JS</div>
+                                <div class="course-info">
+                                    <h6>JavaScript Fundamentals</h6>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque a vel,
+                                        sapiente dignissimos rem culpa ...
+                                    </p>
+                                </div>
+                                <button class="btn btn-primary btn-sm">
+                                    View Course
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                            <div class="active-course-card">
+                                <div class="course-avatar">JS</div>
+                                <div class="course-info">
+                                    <h6>JavaScript Fundamentals</h6>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque a vel,
+                                        sapiente dignissimos rem culpa ...
+                                    </p>
+                                </div>
+                                <button class="btn btn-primary btn-sm">
+                                    View Course
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                            <div class="active-course-card">
+                                <div class="course-avatar">JS</div>
+                                <div class="course-info">
+                                    <h6>JavaScript Fundamentals</h6>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque a vel,
+                                        sapiente dignissimos rem culpa ...
+                                    </p>
+                                </div>
+                                <button class="btn btn-primary btn-sm">
+                                    View Course
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Dashboard Grid -->
+                    <div class="dashboard-grid">
+                        <!-- Course Progress -->
+                        <!-- <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Course Progress</h3>
+                                <a href="#" class="card-action">View All</a>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-avatar">JS</div>
+                                <div class="course-info">
+                                    <div class="course-name">JavaScript Fundamentals</div>
+                                    <div class="course-instructor">John Doe</div>
+                                </div>
+                                <div class="course-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 85%"></div>
+                                    </div>
+                                    <span class="progress-text">85%</span>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-avatar">PY</div>
+                                <div class="course-info">
+                                    <div class="course-name">Python for Beginners</div>
+                                    <div class="course-instructor">Jane Smith</div>
+                                </div>
+                                <div class="course-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 62%"></div>
+                                    </div>
+                                    <span class="progress-text">62%</span>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-avatar">RE</div>
+                                <div class="course-info">
+                                    <div class="course-name">React Development</div>
+                                    <div class="course-instructor">Mike Johnson</div>
+                                </div>
+                                <div class="course-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 45%"></div>
+                                    </div>
+                                    <span class="progress-text">45%</span>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- Upcoming Classes -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="card-title">Upcoming Classes</h6>
+                                <a href="#" class="btn btn-outline btn-sm">View Schedule</a>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-time">2:00 PM</div>
+                                <div class="class-info">
+                                    <div class="class-name">Advanced JavaScript</div>
+                                    <div class="class-instructor">Instructor: <strong>John Doe</strong></div>
+                                </div>
+                                <div class="class-status live">Live</div>
+                            </div>
+                            <!-- <div class="class-item">
+                                <div class="class-time">4:30 PM</div>
+                                <div class="class-info">
+                                    <div class="class-name">Python Data Structures</div>
+                                    <div class="class-instructor">Instructor: <strong>John Doe</strong></div>
+                                </div>
+                                <div class="class-status upcoming">Upcoming</div>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-time">6:00 PM</div>
+                                <div class="class-info">
+                                    <div class="class-name">React Components</div>
+                                    <div class="class-instructor">Instructor: <strong>John Doe</strong></div>
+                                </div>
+                                <div class="class-status upcoming">Upcoming</div>
+                            </div> -->
+                        </div>
+
+                        <!-- Recent Assignments -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="card-title">Recent Assignments</h6>
+                                <a href="#" class="btn btn-outline btn-sm">View All</a>
+                            </div>
+                            <div class="assignment-item">
+                                <div class="assignment-icon quiz">
+                                    <i class="fas fa-question-circle"></i>
+                                </div>
+                                <div class="assignment-info">
+                                    <div class="assignment-title">JavaScript Quiz #3</div>
+                                    <div class="assignment-course">JavaScript Fundamentals</div>
+                                </div>
+                                <div class="assignment-due urgent">Due Tomorrow</div>
+                            </div>
+                            <div class="assignment-item">
+                                <div class="assignment-icon project">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="assignment-info">
+                                    <div class="assignment-title">Build a Calculator</div>
+                                    <div class="assignment-course">Python for Beginners</div>
+                                </div>
+                                <div class="assignment-due">Due in 3 days</div>
+                            </div>
+                            <div class="assignment-item">
+                                <div class="assignment-icon homework">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="assignment-info">
+                                    <div class="assignment-title">Component Lifecycle</div>
+                                    <div class="assignment-course">React Development</div>
+                                </div>
+                                <div class="assignment-due">Due in 1 week</div>
+                            </div>
+                        </div>
+
+                        <!-- Notifications -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="card-title">Recent Notifications</h6>
+                                <a href="#" class="btn btn-outline btn-sm">View All</a>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-icon announcement">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <div class="notification-title">New Course Available</div>
+                                    <div class="notification-message">Advanced Node.js Development is now available for
+                                        enrollment.</div>
+                                    <div class="notification-time">2 hours ago</div>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-icon grade">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <div class="notification-title">Grade Updated</div>
+                                    <div class="notification-message">Your JavaScript Quiz #2 has been graded - 95/100
+                                    </div>
+                                    <div class="notification-time">5 hours ago</div>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-icon reminder">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <div class="notification-title">Assignment Reminder</div>
+                                    <div class="notification-message">JavaScript Quiz #3 is due tomorrow at 11:59 PM
+                                    </div>
+                                    <div class="notification-time">1 day ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Courses Content -->
+                <div id="courses-content" class="other-contents" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">My Courses</h5>
+                            <a href="#" class="btn btn-outline btn-sm">Enroll New Course</a>
+                        </div>
+                        <div class="course-item course-item-card">
+                            <div class="course-item-head">
+                                <div class="course-avatar">JS</div>
+                                <div class="course-info">
+                                    <div class="course-name">JavaScript Fundamentals</div>
+                                    <div class="course-instructor">John Doe • 24 Lessons</div>
+                                </div>
+                                <div class="course-view btn btn-ghost btn-sm">
+                                    <ion-icon name="chevron-down-outline"></ion-icon>
+                                </div>
+                            </div>
+                            <div class="progress-summary">
+                                <div class="progress-text">Course Progress: 4 of 10 topics completed</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint completed">
+                                        <svg class="checkmark completed" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content completed">
+                                        <h6 class="topic-title completed">HTML Elements & Structure</h6>
+                                        <p class="topic-description">Understanding basic HTML structure, DOCTYPE, html,
+                                            head, and body elements</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint completed">
+                                        <svg class="checkmark completed" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content completed">
+                                        <h6 class="topic-title completed">Text Formatting Tags</h6>
+                                        <p class="topic-description">Working with headings, paragraphs, bold, italic,
+                                            and other text formatting elements</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint completed">
+                                        <svg class="checkmark completed" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content completed">
+                                        <h6 class="topic-title completed">Links & Navigation</h6>
+                                        <p class="topic-description">Creating hyperlinks, anchor tags, and navigation
+                                            menus</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint completed">
+                                        <svg class="checkmark completed" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content completed">
+                                        <h6 class="topic-title completed">Images & Media</h6>
+                                        <p class="topic-description">Embedding images, videos, and other media content
+                                            with proper attributes</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint pending">
+                                        <svg class="checkmark pending" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="topic-title">Lists & Organization</h6>
+                                        <p class="topic-description">Creating ordered and unordered lists, definition
+                                            lists, and nested structures</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint pending">
+                                        <svg class="checkmark pending" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="topic-title">Tables & Data</h6>
+                                        <p class="topic-description">Building tables for data presentation with proper
+                                            headers and structure</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint pending">
+                                        <svg class="checkmark pending" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="topic-title">Forms & Input Elements</h6>
+                                        <p class="topic-description">Creating interactive forms with input fields,
+                                            buttons, and validation</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint pending">
+                                        <svg class="checkmark pending" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="topic-title">Semantic HTML5</h6>
+                                        <p class="topic-description">Using modern HTML5 semantic elements for better
+                                            structure and accessibility</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint pending">
+                                        <svg class="checkmark pending" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="topic-title">Meta Tags & SEO</h6>
+                                        <p class="topic-description">Optimizing HTML for search engines and social media
+                                            sharing</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint pending">
+                                        <svg class="checkmark pending" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="topic-title">Best Practices & Accessibility</h6>
+                                        <p class="topic-description">Writing clean, accessible HTML code following
+                                            modern standards</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-item course-item-card">
+                            <div class="course-item-head">
+                                <div class="course-avatar">JS</div>
+                                <div class="course-info">
+                                    <div class="course-name">JavaScript Fundamentals</div>
+                                    <div class="course-instructor">John Doe • 24 Lessons</div>
+                                </div>
+                                <div class="course-view btn btn-ghost btn-sm">
+                                    <ion-icon name="chevron-down-outline"></ion-icon>
+                                </div>
+                            </div>
+                            <div class="progress-summary">
+                                <div class="progress-text">Course Progress: 4 of 10 topics completed</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint completed">
+                                        <svg class="checkmark completed" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content completed">
+                                        <h6 class="topic-title completed">HTML Elements & Structure</h6>
+                                        <p class="topic-description">Understanding basic HTML structure, DOCTYPE, html,
+                                            head, and body elements</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint completed">
+                                        <svg class="checkmark completed" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content completed">
+                                        <h6 class="topic-title completed">Text Formatting Tags</h6>
+                                        <p class="topic-description">Working with headings, paragraphs, bold, italic,
+                                            and other text formatting elements</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint completed">
+                                        <svg class="checkmark completed" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content completed">
+                                        <h6 class="topic-title completed">Links & Navigation</h6>
+                                        <p class="topic-description">Creating hyperlinks, anchor tags, and navigation
+                                            menus</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint completed">
+                                        <svg class="checkmark completed" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content completed">
+                                        <h6 class="topic-title completed">Images & Media</h6>
+                                        <p class="topic-description">Embedding images, videos, and other media content
+                                            with proper attributes</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint pending">
+                                        <svg class="checkmark pending" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="topic-title">Lists & Organization</h6>
+                                        <p class="topic-description">Creating ordered and unordered lists, definition
+                                            lists, and nested structures</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint pending">
+                                        <svg class="checkmark pending" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="topic-title">Tables & Data</h6>
+                                        <p class="topic-description">Building tables for data presentation with proper
+                                            headers and structure</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint pending">
+                                        <svg class="checkmark pending" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="topic-title">Forms & Input Elements</h6>
+                                        <p class="topic-description">Creating interactive forms with input fields,
+                                            buttons, and validation</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint pending">
+                                        <svg class="checkmark pending" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="topic-title">Semantic HTML5</h6>
+                                        <p class="topic-description">Using modern HTML5 semantic elements for better
+                                            structure and accessibility</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint pending">
+                                        <svg class="checkmark pending" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="topic-title">Meta Tags & SEO</h6>
+                                        <p class="topic-description">Optimizing HTML for search engines and social media
+                                            sharing</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-checkpoint pending">
+                                        <svg class="checkmark pending" viewBox="0 0 24 24">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="topic-title">Best Practices & Accessibility</h6>
+                                        <p class="topic-description">Writing clean, accessible HTML code following
+                                            modern standards</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="assignments-content" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">All Assignments</h3>
+                            <a href="#" class="card-action">Filter</a>
+                        </div>
+                        <div class="assignment-item">
+                            <div class="assignment-icon quiz">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div class="assignment-info">
+                                <div class="assignment-title">JavaScript Quiz #3</div>
+                                <div class="assignment-course">JavaScript Fundamentals</div>
+                            </div>
+                            <div class="assignment-due urgent">Due Tomorrow</div>
+                        </div>
+                        <div class="assignment-item">
+                            <div class="assignment-icon project">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="assignment-info">
+                                <div class="assignment-title">Build a Calculator</div>
+                                <div class="assignment-course">Python for Beginners</div>
+                            </div>
+                            <div class="assignment-due">Due in 3 days</div>
+                        </div>
+                        <div class="assignment-item">
+                            <div class="assignment-icon homework">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="assignment-info">
+                                <div class="assignment-title">Component Lifecycle</div>
+                                <div class="assignment-course">React Development</div>
+                            </div>
+                            <div class="assignment-due">Due in 1 week</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="progress-content" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Learning Progress</h3>
+                            <a href="#" class="card-action">View Details</a>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-avatar">JS</div>
+                            <div class="course-info">
+                                <div class="course-name">JavaScript Fundamentals</div>
+                                <div class="course-instructor">20/24 Lessons Completed</div>
+                            </div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                                <span class="progress-text">85%</span>
+                            </div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-avatar">PY</div>
+                            <div class="course-info">
+                                <div class="course-name">Python for Beginners</div>
+                                <div class="course-instructor">19/30 Lessons Completed</div>
+                            </div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 62%"></div>
+                                </div>
+                                <span class="progress-text">62%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="calendar-content" style="display: none;">
+                    <div class="calendar-container">
+                        <div class="calendar-header">
+                            <div class="nav-buttons">
+                                <button class="nav-btn" id="prevMonth">‹</button>
+                                <button class="nav-btn" id="nextMonth">›</button>
+                            </div>
+                            <h4 class="month-year" id="monthYear">March</h4>
+                            <button class="add-event-btn" id="addEventBtn">Add Event</button>
+                        </div>
+
+                        <div class="calendar-grid">
+                            <div class="day-header">Sun</div>
+                            <div class="day-header">Mon</div>
+                            <div class="day-header">Tue</div>
+                            <div class="day-header">Wed</div>
+                            <div class="day-header">Thu</div>
+                            <div class="day-header">Fri</div>
+                            <div class="day-header">Sat</div>
+                        </div>
+                        <div class="calendar-days" id="calendarDays"></div>
+                    </div>
+
+                    <div class="tooltip" id="tooltip"></div>
+
+                    <div class="modal" id="eventModal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title">Add Event</h2>
+                                <button class="close-btn" id="closeModal">&times;</button>
+                            </div>
+                            <form id="eventForm">
+                                <div class="form-group">
+                                    <label class="form-label">Event Name</label>
+                                    <input type="text" class="form-input" id="eventName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Date</label>
+                                    <input type="date" class="form-input" id="eventDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Time</label>
+                                    <input type="time" class="form-input" id="eventTime" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Instructor/Details</label>
+                                    <input type="text" class="form-input" id="eventInstructor" placeholder="John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Description</label>
+                                    <textarea class="form-input" id="eventDescription" rows="3"
+                                        placeholder="Brief description of the event"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Event Type</label>
+                                    <div class="color-options">
+                                        <div class="color-option class selected" data-type="class" title="Class"></div>
+                                        <div class="color-option meeting" data-type="meeting" title="Meeting"></div>
+                                        <div class="color-option assignment" data-type="assignment" title="Assignment">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Add Event</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="chat-content" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Messages</h3>
+                            <a href="#" class="card-action">New Message</a>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-icon announcement">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-title">John Doe</div>
+                                <div class="notification-message">Great job on your latest assignment! Keep up the good
+                                    work.</div>
+                                <div class="notification-time">2 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-icon grade">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-title">Study Group</div>
+                                <div class="notification-message">Don't forget about our study session tomorrow at 3 PM
+                                </div>
+                                <div class="notification-time">1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="profile-content" style="display: none;">
+                    <!-- <div class="profile-container"> -->
+                    <div class="profile-card">
+                        <!-- Profile Header -->
+                        <div class="profile-header">
+                            <div class="profile-image-container">
+                                <img src="assets/images/My profile.jpg" alt="Profile" class="profile-image"
+                                    id="profileImage">
+                                <button class="image-upload-btn" onclick="changeProfileImage()">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                            <button class="edit-profile-btn" onclick="toggleEdit()">
+                                <i class="fas fa-edit" id="editIcon"></i>
+                            </button>
+                        </div>
+
+                        <!-- Profile Info -->
+                        <div class="profile-info">
+                            <div class="student-name" id="studentName">John Alexander Smith</div>
+                            <div class="student-id">Student ID: STU-2024-001</div>
+
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">First Name</span>
+                                    <span class="info-value" id="firstName">John</span>
+                                    <input type="text" class="form-input hidden" id="firstNameInput"
+                                        value="John Alexander">
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Last Name</span>
+                                    <span class="info-value" id="lastName">Smith</span>
+                                    <input type="text" class="form-input hidden" id="lastNameInput" value="Smith">
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Email</span>
+                                    <span class="info-value" id="email">john.smith@email.com</span>
+                                    <input type="email" class="form-input hidden" id="emailInput"
+                                        value="john.smith@email.com">
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Phone</span>
+                                    <span class="info-value" id="phone">+1 (555) 123-4567</span>
+                                    <input type="tel" class="form-input hidden" id="phoneInput"
+                                        value="+1 (555) 123-4567">
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Username</span>
+                                    <span class="info-value" id="username">@johnsmith2024</span>
+                                    <input type="text" class="form-input hidden" id="usernameInput"
+                                        value="@johnsmith2024">
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Date of Birth</span>
+                                    <span class="info-value" id="dob">March 15, 1998</span>
+                                    <input type="date" class="form-input hidden" id="dobInput" value="1998-03-15">
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Join Date</span>
+                                    <span class="info-value">January 15, 2024</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Performance Rate</span>
+                                    <span class="info-value">
+                                        <span class="performance-badge performance-average">
+                                            <i class="fas fa-star"></i>
+                                            Average (62%)
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Current Level</span>
+                                    <span class="info-value">Intermediate</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Last Purchase</span>
+                                    <span class="info-value">Dec 10, 2024</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Total Points</span>
+                                    <span class="info-value">2,450 pts</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Completion Rate</span>
+                                    <span class="info-value">85%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Edit Actions -->
+                        <div class="edit-actions" id="editActions">
+                            <button class="btn btn-primary btn-md" onclick="saveChanges()">
+                                <i class="fas fa-save"></i>
+                                Save Changes
+                            </button>
+                            <button class="btn btn-outline btn-md" onclick="cancelEdit()">
+                                <i class="fas fa-times"></i>
+                                Cancel
+                            </button>
+                        </div>
+
+                        <!-- Course Statistics -->
+                        <div class="course-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">Enrolled</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Active</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Completed</span>
+                            </div>
+                        </div>
+
+                        <!-- Referral Section -->
+                        <div class="referral-section">
+                            <div class="referral-code">
+                                <span class="referral-text">REF-JS2024</span>
+                                <button class="copy-btn" onclick="copyReferralCode()">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <!-- <div class="quick-actions">
+                                <button class="btn btn-primary btn-md">
+                                    <i class="fas fa-book"></i>
+                                    View Courses
+                                </button>
+                                <button class="btn btn-secondary btn-md">
+                                    <i class="fas fa-chart-line"></i>
+                                    Progress
+                                </button>
+                                <button class="btn btn-outline btn-md">
+                                    <i class="fas fa-certificate"></i>
+                                    Certificates
+                                </button>
+                            </div> -->
+
+                        <!-- Recent Activity -->
+                        <div class="recent-activity">
+                            <h3 class="section-title">Recent Activity</h3>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">Started "Advanced JavaScript Concepts" course</div>
+                                    <div class="activity-time">2 hours ago</div>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">Completed "React Fundamentals" with 95% score</div>
+                                    <div class="activity-time">1 day ago</div>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">Earned "Frontend Developer" certificate</div>
+                                    <div class="activity-time">3 days ago</div>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">Referred 2 new students using your code</div>
+                                    <div class="activity-time">1 week ago</div>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">Purchased "Python for Data Science" course</div>
+                                    <div class="activity-time">2 weeks ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info Section -->
+                <div class="footer-section company-info">
+                    <div class="logo-container">
+                        <!-- <div class="logo">K</div>
+                        <span class="logo-text">Kachikodes</span> -->
+
+                        <img src="assets/images/white-logo.png" alt="">
+                    </div>
+                    <p class="company-description">
+                        Empowering the next generation of developers through comprehensive coding education and hands-on
+                        learning experiences. Join thousands of students who have transformed their careers with us.
+                    </p>
+                    <a href="#" class="become-student-btn">Become a Student</a>
+
+                    <!-- Contact & Social -->
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            <span>hello@kachikodes.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                            <span>+234 (0) 123 456 789</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <span>Lagos, Nigeria</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="X (Twitter)">
+                            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.113.82-.261.82-.577v-2.234c-3.338.726-4.033-1.617-4.033-1.617-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.807 1.305 3.492.998.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.93 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.498 6.186a2.997 2.997 0 0 0-2.112-2.12C19.24 3.5 12 3.5 12 3.5s-7.24 0-9.386.566A2.997 2.997 0 0 0 .502 6.186C0 8.34 0 12 0 12s0 3.66.502 5.814a2.997 2.997 0 0 0 2.112 2.12C4.76 20.5 12 20.5 12 20.5s7.24 0 9.386-.566a2.997 2.997 0 0 0 2.112-2.12C24 15.66 24 12 24 12s0-3.66-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Instructors</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Career Services</a></li>
+                        <li><a href="#">Student Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Learning Resources Section -->
+                <div class="footer-section">
+                    <h3>Learning Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile App Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Machine Learning</a></li>
+                        <li><a href="#">Cloud Computing</a></li>
+                        <li><a href="#">DevOps</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="footer-year"></span> Kachikodes. All rights reserved.
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+        </svg>
+    </button>
+
+    <!-- Iocn JS -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/header.js"></script>
+    <script src="../assets/js/footer.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kachikodes Tech Community</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <style>
+        .box {
+            width: 20px;
+            height: 20px;
+            margin: 20px;
+            display: inline-block;
+            background-color: black;
+            /* border-radius: 10px; */
+        }
+
+        .box:hover {
+            height: 100px;
+            width: 100px;
+        }
+
+        .box:nth-child(1) {
+            /* background-color: var(--color-primary);  */
+            /* box-shadow: var(--shadow-sm);
+            border-radius: var(--radius-sm); */
+            transition: var(--transition-fast);
+        }
+        .box:nth-child(2) {
+            /* background-color: var(--color-primary-dark);  */
+            /* box-shadow: var(--shadow-md);
+            border-radius: var(--radius-md); */
+            transition: var(--transition-base);
+        }
+        .box:nth-child(3) {
+            /* background-color: var(--color-primary-light);  */
+            /* box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-lg); */
+            transition: var(--transition-slow);
+        }
+        .box:nth-child(4) {
+            /* background-color: var(--color-secondary);  */
+            /* box-shadow: var(--shadow-xl);
+            border-radius: var(--radius-xl); */
+            transition: var(--transition-bounce);
+        }
+        .box:nth-child(5) {
+            /* background-color: var(--color-secondary-dark);  */
+            box-shadow: var(--shadow-primary);
+            border-radius: var(--radius-2xl);
+        }
+        .box:nth-child(6) {
+            /* background-color: var(--color-secondary-light);  */
+            box-shadow: var(--shadow-secondary);
+            border-radius: var(--radius-3xl);
+        }
+        .box:nth-child(7) {
+            /* background-color: var(--color-accent);  */
+            box-shadow: var(--shadow-accent);
+            border-radius: var(--radius-full);
+        }
+        .box:nth-child(8) {
+            background-color: var(--color-accent-dark); 
+        }
+        .box:nth-child(9) {
+            background-color: var(--color-accent-light);
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="assets/images/white-logo.png" alt="">
+            </a>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link">Learnings</a></li>
+                    <li><a href="#" class="nav-link">Playground</a></li>
+                    <li><a href="#" class="nav-link">Services</a></li>
+                    <li><a href="#" class="nav-link">Pricing</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-actions">
+                <a href="#" class="cta-button">Become a Student</a>
+                <!-- <div class="profile-dropdown" id="profileDropdown">
+                    <div class="profile-trigger" onclick="toggleProfileDropdown()">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Profile" class="profile-avatar">
+                        <span class="profile-name">John Doe</span>
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="#" class="dropdown-item">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7" rx="2" />
+                                <rect x="14" y="3" width="7" height="7" rx="2" />
+                                <rect x="3" y="14" width="7" height="7" rx="2" />
+                                <rect x="14" y="14" width="7" height="7" rx="2" />
+                            </svg>
+                            Dashboard
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 11 3.09V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                            Settings
+                        </a>
+                        <button class="dropdown-item logout">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
+                                <polyline points="16,17 21,12 16,7"/>
+                                <line x1="21" y1="12" x2="9" y2="12"/>
+                            </svg>
+                            Logout
+                        </button>
+                    </div>
+                </div> -->
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">About</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Learnings</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Playground</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Services</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Pricing</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-cta">
+                <a href="#" class="cta-button">Become a Student</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div style="background-color: black; padding: 20px; text-align: center;">
+        <button class="btn btn-primary btn-sm">Button One</button>
+        <button class="btn btn-secondary btn-sm">Button Two</button>
+        <button class="btn btn-outline btn-sm">Button Three</button>
+        <button class="btn btn-accent btn-sm">Button Four</button>
+        <button class="btn btn-ghost btn-sm">Button Five</button>
+        <button class="btn btn-success btn-sm">Button Six</button>
+        <button class="btn btn-warning btn-sm">Button Six</button>
+        <button class="btn btn-error btn-sm">Button Six</button>
+    </div>
+
+    <h1>Heading One</h1>
+    <h2>Heading Two</h2>    
+    <h3>Heading Three</h3>
+    <h4>Heading Four</h4>
+    <h5>Heading Five</h5>
+    <h6>Heading Six</h6>
+
+    <script src="assets/js/header.js"></script>
+</body>
+</html>
