@@ -345,63 +345,6 @@ h1 {
   color: var(--color-text-muted);
 } */
 
-
-/* Modal Styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: var(--z-modal);
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(5px);
-}
-
-.modal-content {
-  background: var(--color-bg);
-  margin: 5vh auto;
-  padding: var(--space-8);
-  border-radius: var(--radius-lg);
-  width: 90%;
-  max-width: 600px;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  animation: modalSlideIn var(--transition-slow);
-  /* scrollbar-width: 0; */
-}
-
-.modal-content::-webkit-scrollbar {
-  display: none;
-  width: 0;
-}
-
-.close {
-  position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
-  background: none;
-  border: none;
-  font-size: var(--font-size-xl);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: color var(--transition-fast);
-}
-
-.close:hover {
-  color: var(--color-text);
-}
-
-.modal-title {
-  color: var(--color-text);
-  font-family: var(--font-family-heading);
-  font-size: var(--font-size-3xl); 
-  font-weight: var(--font-weight-bold);
-  margin-bottom: var(--space-4);
-  text-align: center;
-}
-
 .modal-price {
   display: flex;
   justify-content: center;

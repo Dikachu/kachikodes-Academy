@@ -61,23 +61,28 @@
                         </svg>
                     </div>
                     <div class="dropdown-menu" id="dropdownMenu">
-                        <a href="index-two.html" class="dropdown-item">
-                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <rect x="3" y="3" width="7" height="7" rx="2" />
-                                <rect x="14" y="3" width="7" height="7" rx="2" />
-                                <rect x="3" y="14" width="7" height="7" rx="2" />
-                                <rect x="14" y="14" width="7" height="7" rx="2" />
+                        <a href="students_dashboard/index.html" class="dropdown-item">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
+                                <rect width="24" height="24" rx="6" stroke="#222" stroke-width="2" fill="#fff" />
+                                <rect x="4" y="4" width="7" height="7" rx="2" fill="#004d49" />
+                                <rect x="14" y="4" width="7" height="7" rx="2" fill="#269d84" />
+                                <rect x="4" y="14" width="7" height="7" rx="2" fill="#269d84" />
+                                <rect x="14" y="14" width="7" height="7" rx="2" fill="#004d49" />
                             </svg>
                             Dashboard
                         </a>
+                        <a href="notifications.html" class="dropdown-item">
+                            <i class="fa-regular fa-bell"></i>
+                            Notifications
+                            <span class="notify">5</span>
+                        </a>
+                        <a href="chats.html" class="dropdown-item">
+                            <i class="fa-regular fa-comments"></i>
+                            Chats
+                            <span class="notify">5</span>
+                        </a>
                         <a href="#" class="dropdown-item">
-                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <circle cx="12" cy="12" r="3" />
-                                <path
-                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 11 3.09V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-                            </svg>
+                            <i class="fas fa-user-cog"></i>
                             Settings
                         </a>
                         <button class="dropdown-item logout">
@@ -111,21 +116,21 @@
                 <li class="mobile-nav-item"><a href="courses.html" class="mobile-nav-link">Courses</a></li>
                 <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
             </ul>
-            <div class="mobile-cta">
+            <!-- <div class="mobile-cta">
                 <a href="#" class="cta-button">Become a Student</a>
-            </div>
+            </div> -->
         </div>
     </header>
 
     <div class="dashboard-hero">
         <h3>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                 <rect x="4" y="4" width="24" height="24" rx="6" stroke="#222" stroke-width="2" fill="#fff" />
                 <rect x="8" y="8" width="7" height="7" rx="2" fill="#222" opacity="0.8" />
                 <rect x="17" y="8" width="7" height="7" rx="2" fill="#222" opacity="0.5" />
                 <rect x="8" y="17" width="7" height="7" rx="2" fill="#222" opacity="0.5" />
                 <rect x="17" y="17" width="7" height="7" rx="2" fill="#222" opacity="0.8" />
-            </svg>
+            </svg> -->
 
             Student Dashboard
         </h3>
@@ -134,8 +139,11 @@
 
     <main>
         <div class="dashboard_header">
+            <!-- <div class="overlay"></div> -->
             <div class="view-menu" id="menu-toggle">
-                <button class="menu-toggle"> >
+                <button class="menu-toggle">
+                    Toggle Menu
+                    &RightArrow;
                     <!-- <ion-icon name="list-outline"></ion-icon> -->
                 </button>
             </div>
@@ -204,7 +212,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#nofications" class="nav-link" data-section="nofications">
+                            <a href="#notifications" class="nav-link" data-section="notifications">
                                 <i class="fas fa-chart-line"></i>
                                 Nofications
                             </a>
@@ -230,13 +238,7 @@
                         <li class="nav-item">
                             <a href="#certificates" class="nav-link" data-section="certificates">
                                 <i class="fas fa-chart-line"></i>
-                                My Certificates
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#all-invoices" class="nav-link" data-section="all-invoices">
-                                <i class="fas fa-chart-line"></i>
-                                All invoices
+                                Certificates and Invoices
                             </a>
                         </li>
                         <li class="nav-item">
@@ -262,11 +264,11 @@
                 <!-- Dashboard Content -->
                 <div id="dashboard-content">
                     <div class="main-content-header">
-                        <h4>Dashboard</h4>
+                        <h5>Dashboard</h5>
 
                         <div class="search-box">
                             <i class="fas fa-search search-icon"></i>
-                            <input type="text" class="search-input" placeholder="Search courses, assignments...">
+                            <input type="text" class="search-input" placeholder="Search...">
                         </div>
                     </div>
 
@@ -302,8 +304,8 @@
                     </div>
 
                     <div class="active-courses-container">
-                        <div class="active-courses-header">
-                            <h5>Active Courses</h5>
+                        <div class="card-header">
+                            <h6>Active Courses</h6>
                             <a href="#" class="btn btn-outline btn-sm">View All Courses</a>
                         </div>
                         <div class="active-courses">
@@ -516,390 +518,653 @@
                 </div>
 
                 <!-- Courses Content -->
-                <div id="courses-content" class="other-contents" style="display: none;">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title">My Courses</h5>
-                            <a href="#" class="btn btn-outline btn-sm">Enroll New Course</a>
-                        </div>
-                        <div class="course-item course-item-card">
-                            <div class="course-item-head">
-                                <div class="course-avatar">JS</div>
-                                <div class="course-info">
-                                    <div class="course-name">JavaScript Fundamentals</div>
-                                    <div class="course-instructor">John Doe • 24 Lessons</div>
-                                </div>
-                                <div class="course-view btn btn-ghost btn-sm">
-                                    <ion-icon name="chevron-down-outline"></ion-icon>
-                                </div>
-                            </div>
-                            <div class="progress-summary">
-                                <div class="progress-text">Course Progress: 4 of 10 topics completed</div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 40%"></div>
-                                </div>
-                            </div>
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint completed">
-                                        <svg class="checkmark completed" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content completed">
-                                        <h6 class="topic-title completed">HTML Elements & Structure</h6>
-                                        <p class="topic-description">Understanding basic HTML structure, DOCTYPE, html,
-                                            head, and body elements</p>
-                                    </div>
-                                </div>
+                <div id="courses-content" style="display: none;">
+                    <!-- <div class="card"> -->
+                    <div class="main-content-header">
+                        <h5 class="card-title">My Courses</h5>
+                        <a href="#" class="btn btn-outline btn-sm">Enroll New Course</a>
+                    </div>
 
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint completed">
-                                        <svg class="checkmark completed" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content completed">
-                                        <h6 class="topic-title completed">Text Formatting Tags</h6>
-                                        <p class="topic-description">Working with headings, paragraphs, bold, italic,
-                                            and other text formatting elements</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint completed">
-                                        <svg class="checkmark completed" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content completed">
-                                        <h6 class="topic-title completed">Links & Navigation</h6>
-                                        <p class="topic-description">Creating hyperlinks, anchor tags, and navigation
-                                            menus</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint completed">
-                                        <svg class="checkmark completed" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content completed">
-                                        <h6 class="topic-title completed">Images & Media</h6>
-                                        <p class="topic-description">Embedding images, videos, and other media content
-                                            with proper attributes</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint pending">
-                                        <svg class="checkmark pending" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <h6 class="topic-title">Lists & Organization</h6>
-                                        <p class="topic-description">Creating ordered and unordered lists, definition
-                                            lists, and nested structures</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint pending">
-                                        <svg class="checkmark pending" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <h6 class="topic-title">Tables & Data</h6>
-                                        <p class="topic-description">Building tables for data presentation with proper
-                                            headers and structure</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint pending">
-                                        <svg class="checkmark pending" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <h6 class="topic-title">Forms & Input Elements</h6>
-                                        <p class="topic-description">Creating interactive forms with input fields,
-                                            buttons, and validation</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint pending">
-                                        <svg class="checkmark pending" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <h6 class="topic-title">Semantic HTML5</h6>
-                                        <p class="topic-description">Using modern HTML5 semantic elements for better
-                                            structure and accessibility</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint pending">
-                                        <svg class="checkmark pending" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <h6 class="topic-title">Meta Tags & SEO</h6>
-                                        <p class="topic-description">Optimizing HTML for search engines and social media
-                                            sharing</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint pending">
-                                        <svg class="checkmark pending" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <h6 class="topic-title">Best Practices & Accessibility</h6>
-                                        <p class="topic-description">Writing clean, accessible HTML code following
-                                            modern standards</p>
-                                    </div>
-                                </div>
+                    <div class="course-item course-item-card card-row">
+                        <div class="course-avatar card-row-icon">JS</div>
+                        <div class="course-info card-row-summary">
+                            <h6 class="course-name card-row-summary-title">JavaScript Fundamentals</h6>
+                            <p class="course-instructor card-row-summary-para">Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Nemo, mollitia!</p>
+                            <!-- <p class="course-instructor card-row-summary-para">John Doe • 24 Lessons</p> -->
+                            <div class="card-row-summary-bottom">
+                                <span><i class="fas fa-clock"></i> 5 Months</span>
+                                <span><i class="fas fa-user"></i> Master Kingsley</span>
+                                <span><i class="fas fa-book"></i> 24 Lessons</span>
                             </div>
                         </div>
-                        <div class="course-item course-item-card">
-                            <div class="course-item-head">
-                                <div class="course-avatar">JS</div>
-                                <div class="course-info">
-                                    <div class="course-name">JavaScript Fundamentals</div>
-                                    <div class="course-instructor">John Doe • 24 Lessons</div>
-                                </div>
-                                <div class="course-view btn btn-ghost btn-sm">
-                                    <ion-icon name="chevron-down-outline"></ion-icon>
-                                </div>
+                        <div class="course-view card-row-actions">
+                            <!-- <ion-icon name="chevron-down-outline"></ion-icon> -->
+                            <button class="btn btn-error btn-sm">Delete Course</button>
+                            <button class="btn btn-outline btn-sm view-course-outline-btn">View Course</button>
+                        </div>
+                    </div>
+                    <div class="course-item course-item-card card-row">
+                        <div class="course-avatar card-row-icon">JS</div>
+                        <div class="course-info card-row-summary">
+                            <h6 class="course-name card-row-summary-title">JavaScript Fundamentals</h6>
+                            <p class="course-instructor card-row-summary-para">Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Nemo, mollitia!</p>
+                            <!-- <p class="course-instructor card-row-summary-para">John Doe • 24 Lessons</p> -->
+                            <div class="card-row-summary-bottom">
+                                <span><i class="fas fa-clock"></i> 5 Months</span>
+                                <span><i class="fas fa-user"></i> Master Kingsley</span>
+                                <span><i class="fas fa-book"></i> 24 Lessons</span>
                             </div>
-                            <div class="progress-summary">
-                                <div class="progress-text">Course Progress: 4 of 10 topics completed</div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 40%"></div>
-                                </div>
-                            </div>
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint completed">
-                                        <svg class="checkmark completed" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content completed">
-                                        <h6 class="topic-title completed">HTML Elements & Structure</h6>
-                                        <p class="topic-description">Understanding basic HTML structure, DOCTYPE, html,
-                                            head, and body elements</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint completed">
-                                        <svg class="checkmark completed" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content completed">
-                                        <h6 class="topic-title completed">Text Formatting Tags</h6>
-                                        <p class="topic-description">Working with headings, paragraphs, bold, italic,
-                                            and other text formatting elements</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint completed">
-                                        <svg class="checkmark completed" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content completed">
-                                        <h6 class="topic-title completed">Links & Navigation</h6>
-                                        <p class="topic-description">Creating hyperlinks, anchor tags, and navigation
-                                            menus</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint completed">
-                                        <svg class="checkmark completed" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content completed">
-                                        <h6 class="topic-title completed">Images & Media</h6>
-                                        <p class="topic-description">Embedding images, videos, and other media content
-                                            with proper attributes</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint pending">
-                                        <svg class="checkmark pending" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <h6 class="topic-title">Lists & Organization</h6>
-                                        <p class="topic-description">Creating ordered and unordered lists, definition
-                                            lists, and nested structures</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint pending">
-                                        <svg class="checkmark pending" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <h6 class="topic-title">Tables & Data</h6>
-                                        <p class="topic-description">Building tables for data presentation with proper
-                                            headers and structure</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint pending">
-                                        <svg class="checkmark pending" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <h6 class="topic-title">Forms & Input Elements</h6>
-                                        <p class="topic-description">Creating interactive forms with input fields,
-                                            buttons, and validation</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint pending">
-                                        <svg class="checkmark pending" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <h6 class="topic-title">Semantic HTML5</h6>
-                                        <p class="topic-description">Using modern HTML5 semantic elements for better
-                                            structure and accessibility</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint pending">
-                                        <svg class="checkmark pending" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <h6 class="topic-title">Meta Tags & SEO</h6>
-                                        <p class="topic-description">Optimizing HTML for search engines and social media
-                                            sharing</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-checkpoint pending">
-                                        <svg class="checkmark pending" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <h6 class="topic-title">Best Practices & Accessibility</h6>
-                                        <p class="topic-description">Writing clean, accessible HTML code following
-                                            modern standards</p>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="course-view card-row-actions">
+                            <!-- <ion-icon name="chevron-down-outline"></ion-icon> -->
+                            <button class="btn btn-error btn-sm">Delete Course</button>
+                            <button class="btn btn-outline btn-sm view-course-outline-btn">View Course</button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Assignment Content -->
                 <div id="assignments-content" style="display: none;">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">All Assignments</h3>
-                            <a href="#" class="card-action">Filter</a>
+                    <!-- <div class="card"> -->
+                    <div class="main-content-header">
+                        <h5 class="card-title">All Assignments</h5>
+                        <!-- <a href="#" class="card-action">Filter</a> -->
+
+                        <select name="" id="select" class="btn btn-outline btn-sm">
+                            <option value="">SortBy</option>
+                            <option value="lateast">Lateast</option>
+                            <option value="most-important">Most Important</option>
+                            <option value="submitted">Submitted</option>
+                            <option value="pending">Pending</option>
+                            <option value="graded">Graded</option>
+                        </select>
+
+                    </div>
+                    <div class="card-row">
+                        <div class="card-row-icon quiz">
+                            <i class="fas fa-question-circle"></i>
                         </div>
-                        <div class="assignment-item">
-                            <div class="assignment-icon quiz">
-                                <i class="fas fa-question-circle"></i>
+                        <div class="card-row-summary">
+                            <h6 class="card-row-summary-title">JavaScript Quiz #3</h6>
+                            <p class="card-row-summary-para">
+                                JavaScript Fundamentals
+
+                                <span class="assignmant-due">Due Tomorrow</span>
+                            </p>
+                            <div class="card-row-summary-bottom">
+                                <span><i class="fas fa-clock"></i> 5 Hours</span>
+                                <span><i class="fas fa-user"></i> Master Kingsley</span>
+                                <!-- <span><i class="fas fa-book"></i> 24 Lessons</span> -->
                             </div>
-                            <div class="assignment-info">
-                                <div class="assignment-title">JavaScript Quiz #3</div>
-                                <div class="assignment-course">JavaScript Fundamentals</div>
-                            </div>
-                            <div class="assignment-due urgent">Due Tomorrow</div>
                         </div>
-                        <div class="assignment-item">
-                            <div class="assignment-icon project">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="assignment-info">
-                                <div class="assignment-title">Build a Calculator</div>
-                                <div class="assignment-course">Python for Beginners</div>
-                            </div>
-                            <div class="assignment-due">Due in 3 days</div>
+                        <div class="card-row-actions">
+                            <!-- <button class="btn btn-primary btn-sm">Delete Course</button> -->
+                            <button class="btn btn-outline btn-sm view-assignment-btn">View Details</button>
                         </div>
-                        <div class="assignment-item">
-                            <div class="assignment-icon homework">
-                                <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="card-row">
+                        <div class="card-row-icon project">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="card-row-summary">
+                            <h6 class="card-row-summary-title">Build a Calculator</h6>
+                            <p class="card-row-summary-para">
+                                Python for Beginners
+
+                                <span class="assignmant-due">Due in 3 days</span>
+                            </p>
+                            <div class="card-row-summary-bottom">
+                                <span><i class="fas fa-clock"></i> 1 week</span>
+                                <span><i class="fas fa-user"></i> Master Kingsley</span>
+                                <!-- <span><i class="fas fa-book"></i> 24 Lessons</span> -->
                             </div>
-                            <div class="assignment-info">
-                                <div class="assignment-title">Component Lifecycle</div>
-                                <div class="assignment-course">React Development</div>
+                        </div>
+                        <div class="card-row-actions">
+                            <!-- <button class="btn btn-primary btn-sm">Delete Course</button> -->
+                            <button class="btn btn-outline btn-sm view-assignment-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="card-row">
+                        <div class="card-row-icon homework">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="card-row-summary">
+                            <h6 class="card-row-summary-title">Component Lifecycle</h6>
+                            <p class="card-row-summary-para">
+                                React Development
+
+                                <span class="assignmant-due">Due in 1 week</span>
+                            </p>
+                            <div class="card-row-summary-bottom">
+                                <span><i class="fas fa-clock"></i> 5 days</span>
+                                <span><i class="fas fa-user"></i> Master Kingsley</span>
+                                <!-- <span><i class="fas fa-book"></i> 24 Lessons</span> -->
                             </div>
-                            <div class="assignment-due">Due in 1 week</div>
+                        </div>
+                        <div class="card-row-actions">
+                            <!-- <button class="btn btn-primary btn-sm">Delete Course</button> -->
+                            <button class="btn btn-outline btn-sm view-assignment-btn">View Details</button>
                         </div>
                     </div>
                 </div>
 
-                <div id="progress-content" style="display: none;">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Learning Progress</h3>
-                            <a href="#" class="card-action">View Details</a>
+                <!-- Notification Content -->
+                <div id="notifications-content" style="display: none;">
+                    <div class="main-content-header">
+                        <h5 class="card-title"> All Notifications </h5>
+
+                        <button class="action-btn btn btn-outline btn-sm mark-all-read">
+                            <i class="fas fa-check-double"></i>
+                            Mark All Read
+                        </button>
+
+                        <!-- <select name="" id="select" class="btn btn-outline btn-sm">
+                                <option value="all">All</option>
+                                <option value="Assignments">Assignments</option>
+                                <option value="Grades">Grades</option>
+                                <option value="Announcements">Announcements</option>
+                                <option value="Messages">Messages</option>
+                                <option value="Deadlines">Deadlines</option>
+                            </select> -->
+                    </div>
+
+                    <div class="card-row notification-item unread">
+                        <div class="card-row-icon homework">
+                            <i class="fas fa-file-alt"></i>
                         </div>
-                        <div class="course-item">
-                            <div class="course-avatar">JS</div>
-                            <div class="course-info">
-                                <div class="course-name">JavaScript Fundamentals</div>
-                                <div class="course-instructor">20/24 Lessons Completed</div>
-                            </div>
-                            <div class="course-progress">
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 85%"></div>
-                                </div>
-                                <span class="progress-text">85%</span>
+                        <div class="card-row-summary">
+                            <h6 class="card-row-summary-title">New Grade: Python Basics Assignment #3</h6>
+                            <p class="card-row-summary-para">
+                                Your assignment has been graded. Score: 95/100
+
+                                <!-- <span class="assignmant-due">Due in 1 week</span> -->
+                            </p>
+                            <div class="card-row-summary-bottom">
+                                <span><i class="fas fa-clock"></i> 5 days</span>
+                                <span><i class="fas fa-user"></i> Master Kingsley</span>
+                                <span><i class="fas fa-book"></i> Python Basics</span>
                             </div>
                         </div>
-                        <div class="course-item">
-                            <div class="course-avatar">PY</div>
-                            <div class="course-info">
-                                <div class="course-name">Python for Beginners</div>
-                                <div class="course-instructor">19/30 Lessons Completed</div>
+                        <div class="card-row-actions">
+                            <button class="btn btn-outline btn-sm view-notification-btn" onclick="toggleStar(1)">
+                                <!-- <i class="fas fa-star"></i> -->
+                                View
+                            </button>
+                            <button class="btn btn-error btn-sm" onclick="deleteNotification(1)">
+                                <!-- <i class="fas fa-trash"></i> -->
+                                Delete
+                            </button>
+                        </div>
+                        <div class="swipe-actions swipe-left" style="opacity: 0;">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                        <div class="swipe-actions swipe-right" style="opacity: 0;">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="card-row notification-item">
+                        <div class="card-row-icon icon-announcement">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="card-row-summary">
+                            <h6 class="card-row-summary-title">Important: Class Schedule Change</h6>
+                            <p class="card-row-summary-para">
+                                React Advanced Components class moved to Friday
+
+                                <!-- <span class="assignmant-due">Due in 1 week</span> -->
+                            </p>
+                            <div class="card-row-summary-bottom">
+                                <span><i class="fas fa-clock"></i> 5 hours ago</span>
+                                <span><i class="fas fa-user"></i> Master Kingsley</span>
+                                <span><i class="fas fa-book"></i> React</span>
                             </div>
-                            <div class="course-progress">
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 62%"></div>
+                        </div>
+                        <div class="card-row-actions">
+                            <button class="btn btn-outline btn-sm view-notification-btn" onclick="toggleStar(1)">
+                                <!-- <i class="fas fa-star"></i> -->
+                                View
+                            </button>
+                            <button class="btn btn-error btn-sm" onclick="deleteNotification(1)">
+                                <!-- <i class="fas fa-trash"></i> -->
+                                Delete
+                            </button>
+                        </div>
+                        <div class="swipe-actions swipe-left" style="opacity: 0;">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                        <div class="swipe-actions swipe-right" style="opacity: 0;">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="card-row notification-item unread">
+                        <div class="card-row-icon icon-message">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="card-row-summary">
+                            <h6 class="card-row-summary-title">Message from Instructor: Office Hours</h6>
+                            <p class="card-row-summary-para">
+                                Additional office hours scheduled for this week
+
+                                <!-- <span class="assignmant-due">Due in 1 week</span> -->
+                            </p>
+                            <div class="card-row-summary-bottom">
+                                <span><i class="fas fa-clock"></i> 5 hours ago</span>
+                                <span><i class="fas fa-user"></i> Master Kingsley</span>
+                                <span><i class="fas fa-book"></i> Node.js</span>
+                            </div>
+                        </div>
+                        <div class="card-row-actions">
+                            <button class="btn btn-outline btn-sm view-notification-btn" onclick="toggleStar(1)">
+                                <!-- <i class="fas fa-star"></i> -->
+                                View
+                            </button>
+                            <button class="btn btn-error btn-sm" onclick="deleteNotification(1)">
+                                <!-- <i class="fas fa-trash"></i> -->
+                                Delete
+                            </button>
+                        </div>
+                        <div class="swipe-actions swipe-left" style="opacity: 0;">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                        <div class="swipe-actions swipe-right" style="opacity: 0;">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="card-row notification-item unread">
+                        <div class="card-row-icon icon-deadline">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="card-row-summary">
+                            <h6 class="card-row-summary-title">Reminder: Final Project Due Soon</h6>
+                            <p class="card-row-summary-para">
+                                React Portfolio Project due in 3 days
+
+                                <!-- <span class="assignmant-due">Due in 1 week</span> -->
+                            </p>
+                            <div class="card-row-summary-bottom">
+                                <span><i class="fas fa-clock"></i> 5 hours ago</span>
+                                <span><i class="fas fa-user"></i> Master Kingsley</span>
+                                <span><i class="fas fa-book"></i> React</span>
+                            </div>
+                        </div>
+                        <div class="card-row-actions">
+                            <button class="btn btn-outline btn-sm view-notification-btn" onclick="toggleStar(1)">
+                                <!-- <i class="fas fa-star"></i> -->
+                                View
+                            </button>
+                            <button class="btn btn-error btn-sm" onclick="deleteNotification(1)">
+                                <!-- <i class="fas fa-trash"></i> -->
+                                Delete
+                            </button>
+                        </div>
+                        <div class="swipe-actions swipe-left" style="opacity: 0;">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                        <div class="swipe-actions swipe-right" style="opacity: 0;">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Content -->
+                <div id="quiz-content" style="display: none;">
+                    <div class="main-content-header" id="quiz-header">
+                        <h5 class="card-title">Quick Quiz</h5>
+
+                        <select name="" id="select" class="btn btn-outline btn-sm">
+                            <option value="all">All</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="js">JavaScript</option>
+                            <option value="php">PHP</option>
+                        </select>
+                    </div>
+                    <div class="quiz-container">
+                        <div id="available-quiz">
+                            <div class="card-row">
+                                <div class="card-row-icon quiz">
+                                    <i class="fas fa-question-circle"></i>
                                 </div>
-                                <span class="progress-text">62%</span>
+                                <div class="card-row-summary">
+                                    <h6 class="card-row-summary-title">JavaScript Quiz #3</h6>
+                                    <p class="card-row-summary-para">
+                                        JavaScript Fundamentals
+
+                                        <span class="assignmant-due">Due Tomorrow</span>
+                                    </p>
+                                    <div class="card-row-summary-bottom">
+                                        <span><i class="fas fa-clock"></i> 5 Hours</span>
+                                        <span><i class="fas fa-user"></i> Master Kingsley</span>
+                                    </div>
+                                </div>
+                                <div class="card-row-actions">
+                                    <button class="btn btn-primary btn-sm start-quiz-btn">Start Quiz</button>
+                                </div>
+                            </div>
+                            <div class="card-row">
+                                <div class="card-row-icon quiz">
+                                    <i class="fas fa-question-circle"></i>
+                                </div>
+                                <div class="card-row-summary">
+                                    <h6 class="card-row-summary-title">JavaScript Quiz #3</h6>
+                                    <p class="card-row-summary-para">
+                                        JavaScript Fundamentals
+
+                                        <span class="assignmant-due">Due Tomorrow</span>
+                                    </p>
+                                    <div class="card-row-summary-bottom">
+                                        <span><i class="fas fa-clock"></i> 5 Hours</span>
+                                        <span><i class="fas fa-user"></i> Master Kingsley</span>
+                                    </div>
+                                </div>
+                                <div class="card-row-actions">
+                                    <button class="btn btn-primary btn-sm start-quiz-btn">Start Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="quiz-view" style="display: none;">
+                            <div class="quiz-header-bar">
+                                <div class="quiz-info">
+                                    <h5 id="currentQuizTitle">JavaScript Variables &amp; Data Types</h5>
+                                    <div class="progress-text" id="progressText">Question 1 of 5</div>
+                                </div>
+                                <div class="timer" id="timer">13:45</div>
+                            </div>
+
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill" style="width: 20%"></div>
+                            </div>
+
+                            <div class="question-container">
+                                <div class="question" id="currentQuestion">
+                                    <div class="question-type">multiple choice</div>
+                                    <div class="question-text">
+                                        Which of the following is the correct way to declare a
+                                        variable in JavaScript?
+                                    </div>
+
+                                    <div class="options">
+                                        <div class="option " onclick="selectOption(0)">
+                                            <input type="radio" name="q0" value="0">
+                                            <span>A. var myVar = 5;</span>
+                                        </div>
+
+                                        <div class="option " onclick="selectOption(1)">
+                                            <input type="radio" name="q0" value="1">
+                                            <span>B. variable myVar = 5;</span>
+                                        </div>
+
+                                        <div class="option " onclick="selectOption(2)">
+                                            <input type="radio" name="q0" value="2">
+                                            <span>C. v myVar = 5;</span>
+                                        </div>
+
+                                        <div class="option " onclick="selectOption(3)">
+                                            <input type="radio" name="q0" value="3">
+                                            <span>D. declare myVar = 5;</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="options">
+                                        <div class="option" onclick="toggleOption(0)">
+                                            <input type="checkbox" value="0">
+                                            <span>A. string</span>
+                                        </div>
+
+                                        <div class="option" onclick="toggleOption(1)">
+                                            <input type="checkbox" value="1">
+                                            <span>B. number</span>
+                                        </div>
+
+                                        <div class="option" onclick="toggleOption(2)">
+                                            <input type="checkbox" value="2">
+                                            <span>C. object</span>
+                                        </div>
+
+                                        <div class="option " onclick="toggleOption(3)">
+                                            <input type="checkbox" value="3">
+                                            <span>D. boolean</span>
+                                        </div>
+
+                                        <div class="option " onclick="toggleOption(4)">
+                                            <input type="checkbox" value="4">
+                                            <span>E. undefined</span>
+                                        </div>
+                                    </div> -->
+
+                                    <!-- <textarea class="text-input" placeholder="Type your answer here..." onchange="saveTextAnswer(this.value)"></textarea> -->
+                                </div>
+                            </div>
+
+                            <div class="quiz-navigation">
+                                <button class="btn btn-secondary btn-sm" id="cancelQuiz">Cancel Quiz</button>
+                                <div class="nav-buttons">
+                                    <button class="btn btn-secondary btn-sm" id="prevQuestion" disabled="">
+                                        Previous
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" id="nextQuestion"
+                                        style="display: inline-flex;">
+                                        Next
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" id="submitQuiz" style="display: none;">
+                                        Submit Quiz
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Calendar Event -->
                 <div id="calendar-content" style="display: none;">
+                    <!-- <div class="calendar-container"> -->
+                    <div class="calendar-main-header">
+                        <h4>Calendar & Events</h4>
+                        <p>Stay organized with your academic schedule and important dates</p>
+                    </div>
+
                     <div class="calendar-container">
-                        <div class="calendar-header">
+                        <div class="calendar-section">
+                            <div class="calendar-controls">
+                                <div class="nav-controls">
+                                    <button class="btn btn-outline btn-sm" id="prevMonth">‹</button>
+                                    <button class="btn btn-primary btn-sm today-btn" id="todayBtn">Today</button>
+                                    <button class="btn btn-outline btn-sm" id="nextMonth">›</button>
+                                </div>
+
+                                <h6 class="month-year-display" id="monthYearDisplay">January 2025</h6>
+
+                                <div style="display: flex; gap: var(--space-2);">
+                                    <select class="month-selector" id="monthSelector">
+                                        <option value="0">January</option>
+                                        <option value="1">February</option>
+                                        <option value="2">March</option>
+                                        <option value="3">April</option>
+                                        <option value="4">May</option>
+                                        <option value="5">June</option>
+                                        <option value="6">July</option>
+                                        <option value="7">August</option>
+                                        <option value="8">September</option>
+                                        <option value="9">October</option>
+                                        <option value="10">November</option>
+                                        <option value="11">December</option>
+                                    </select>
+
+                                    <select class="year-selector" id="yearSelector">
+                                        <option value="2025">2025</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="calendar-grid" id="calendarGrid">
+                                <div class="calendar-header">Sun</div>
+                                <div class="calendar-header">Mon</div>
+                                <div class="calendar-header">Tue</div>
+                                <div class="calendar-header">Wed</div>
+                                <div class="calendar-header">Thu</div>
+                                <div class="calendar-header">Fri</div>
+                                <div class="calendar-header">Sat</div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-number">1</div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="events-section">
+                            <div class="events-header">
+                                <h6>Upcoming Events</h6>
+                                <div class="event-type-legend">
+                                    <div class="legend-item">
+                                        <div class="legend-dot event-assignment"></div>
+                                        <span>Assignment</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-dot event-live-class"></div>
+                                        <span>Live Class</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-dot event-quiz"></div>
+                                        <span>Quiz</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-dot event-holiday"></div>
+                                        <span>Holiday</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="upcoming-events" id="upcomingEvents">
+                                <!-- Events will be populated by JavaScript -->
+                                <!-- <div class="event-item holiday">
+                                    <div class="event-icon holiday">
+                                        🏖️
+                                    </div>
+                                    <div class="event-details">
+                                        <h6>Public Holiday</h6>
+                                        <div class="event-meta">
+                                            02/08/2025 at 15:00 • N/A
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="event-item live-class">
+                                    <div class="event-icon live-class">
+                                        🎥
+                                    </div>
+                                    <div class="event-details">
+                                        <h6>Live Session: React Development</h6>
+                                        <div class="event-meta">
+                                            Tomorrow at 09:00 • React Development
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="event-item assignment">
+                                    <div class="event-icon assignment">
+                                        📝
+                                    </div>
+                                    <div class="event-details">
+                                        <h6>Project Submission - Data Structures</h6>
+                                        <div class="event-meta">
+                                            03/08/2025 at 18:00 • Data Structures
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="event-item quiz">
+                                    <div class="event-icon quiz">
+                                        📊
+                                    </div>
+                                    <div class="event-details">
+                                        <h6>Assessment - Web Design</h6>
+                                        <div class="event-meta">
+                                            04/08/2025 at 18:00 • Web Design
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="event-item assignment">
+                                    <div class="event-icon assignment">
+                                        📝
+                                    </div>
+                                    <div class="event-details">
+                                        <h6>Web Design - Assignment 1</h6>
+                                        <div class="event-meta">
+                                            11/08/2025 at 09:00 • Web Design
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- <div class="calendar-header">
                             <div class="nav-buttons">
                                 <button class="nav-btn" id="prevMonth">‹</button>
                                 <button class="nav-btn" id="nextMonth">›</button>
@@ -917,12 +1182,12 @@
                             <div class="day-header">Fri</div>
                             <div class="day-header">Sat</div>
                         </div>
-                        <div class="calendar-days" id="calendarDays"></div>
-                    </div>
+                        <div class="calendar-days" id="calendarDays"></div> -->
+                    <!-- </div> -->
 
-                    <div class="tooltip" id="tooltip"></div>
+                    <!-- <div class="tooltip" id="tooltip"></div> -->
 
-                    <div class="modal" id="eventModal">
+                    <!-- <div class="modal" id="eventModal">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h2 class="modal-title">Add Event</h2>
@@ -965,7 +1230,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div id="chat-content" style="display: none;">
@@ -1204,9 +1469,21 @@
 
     </main>
 
+    <!-- Modals -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" id="closeModal">&times;</span>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- To be filled dynamically -->
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
+    <footer class="footer" id="footer">
+        <div class="container">
             <div class="footer-content">
                 <!-- Company Info Section -->
                 <div class="footer-section company-info">
@@ -1214,13 +1491,13 @@
                         <!-- <div class="logo">K</div>
                         <span class="logo-text">Kachikodes</span> -->
 
-                        <img src="assets/images/white-logo.png" alt="">
+                        <img src="../assets/images/white-logo.png" alt="">
                     </div>
                     <p class="company-description">
                         Empowering the next generation of developers through comprehensive coding education and hands-on
                         learning experiences. Join thousands of students who have transformed their careers with us.
                     </p>
-                    <a href="#" class="become-student-btn">Become a Student</a>
+                    <a href="#" class="become-student-btn btn btn-accent btn-sm">Become a Student</a>
 
                     <!-- Contact & Social -->
                     <div class="contact-info">
@@ -1238,48 +1515,54 @@
                             </svg>
                             <span>+234 (0) 123 456 789</span>
                         </div>
-                        <div class="contact-item">
+                        <!-- <div class="contact-item">
                             <svg class="contact-icon" viewBox="0 0 24 24">
                                 <path
                                     d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                             </svg>
                             <span>Lagos, Nigeria</span>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/company/kachikodes" class="social-link" target="_blank"
+                            aria-label="LinkedIn">
                             <svg class="social-icon" viewBox="0 0 24 24">
                                 <path
                                     d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="Facebook">
+                        <a href="https://web.facebook.com/kachikodes" class="social-link" target="_blank"
+                            aria-label="Facebook">
                             <svg class="social-icon" viewBox="0 0 24 24">
                                 <path
                                     d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                             </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="X (Twitter)">
+                        <a href="https://x.com/kachikodes_" class="social-link" target="_blank"
+                            aria-label="X (Twitter)">
                             <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                 viewBox="0 0 16 16">
                                 <path
                                     d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
                             </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/kachikodes_/" class="social-link" target="_blank"
+                            aria-label="Instagram">
                             <svg class="social-icon" viewBox="0 0 24 24">
                                 <path
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="GitHub">
+                        <a href="https://github.com/kachikodes-git" class="social-link" target="_blank"
+                            aria-label="GitHub">
                             <svg class="social-icon" viewBox="0 0 24 24">
                                 <path
                                     d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.113.82-.261.82-.577v-2.234c-3.338.726-4.033-1.617-4.033-1.617-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.807 1.305 3.492.998.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.93 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                             </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
+                        <a href="http://www.youtube.com/@kachikodes" class="social-link" target="_blank"
+                            aria-label="YouTube">
                             <svg class="social-icon" viewBox="0 0 24 24">
                                 <path
                                     d="M23.498 6.186a2.997 2.997 0 0 0-2.112-2.12C19.24 3.5 12 3.5 12 3.5s-7.24 0-9.386.566A2.997 2.997 0 0 0 .502 6.186C0 8.34 0 12 0 12s0 3.66.502 5.814a2.997 2.997 0 0 0 2.112 2.12C4.76 20.5 12 20.5 12 20.5s7.24 0 9.386-.566a2.997 2.997 0 0 0 2.112-2.12C24 15.66 24 12 24 12s0-3.66-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -1290,7 +1573,7 @@
 
                 <!-- Quick Links Section -->
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h6>Quick Links</h6>
                     <ul class="footer-links">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About Us</a></li>
@@ -1304,18 +1587,25 @@
                 </div>
 
                 <!-- Learning Resources Section -->
-                <div class="footer-section">
-                    <h3>Learning Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Mobile App Development</a></li>
-                        <li><a href="#">Data Science</a></li>
-                        <li><a href="#">Machine Learning</a></li>
-                        <li><a href="#">Cloud Computing</a></li>
-                        <li><a href="#">DevOps</a></li>
-                        <li><a href="#">Cybersecurity</a></li>
-                        <li><a href="#">UI/UX Design</a></li>
-                    </ul>
+                <div class="footer-section two">
+                    <div class="learning-resources">
+                        <h6>Learning Resources</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Mobile App Development</a></li>
+                            <li><a href="#">Data Science</a></li>
+                            <li><a href="#">Machine Learning</a></li>
+                        </ul>
+                    </div>
+                    <div class="popular-courses">
+                        <h6>Some Popular Courses</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Mobile App Development</a></li>
+                            <li><a href="#">Data Science</a></li>
+                            <li><a href="#">Machine Learning</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
