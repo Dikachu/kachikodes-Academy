@@ -194,63 +194,63 @@
                 <nav>
                     <ul class="nav-menu">
                         <li class="nav-item">
-                            <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                            <a href="#dashboard" class="dashboard-link active" data-section="dashboard">
                                 <i class="fas fa-home"></i>
                                 Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#courses" class="nav-link" data-section="courses">
-                                <i class="fas fa-book"></i>
+                            <a href="#courses" class="dashboard-link" data-section="courses">
+                                <i class="fas fa-book-open"></i>
                                 My Courses
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#assignments" class="nav-link" data-section="assignments">
+                            <a href="#assignments" class="dashboard-link" data-section="assignments">
                                 <i class="fas fa-tasks"></i>
                                 Assignments
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#notifications" class="nav-link" data-section="notifications">
-                                <i class="fas fa-chart-line"></i>
+                            <a href="#notifications" class="dashboard-link" data-section="notifications">
+                                <i class="fas fa-bell"></i>
                                 Nofications
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#quiz" class="nav-link" data-section="quiz">
-                                <i class="fas fa-chart-line"></i>
+                            <a href="#quiz" class="dashboard-link" data-section="quiz">
+                                <i class="fas fa-question-circle"></i>
                                 Quiz
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#calendar" class="nav-link" data-section="calendar">
+                            <a href="#calendar" class="dashboard-link" data-section="calendar">
                                 <i class="fas fa-calendar-alt"></i>
                                 Calendar
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#chat" class="nav-link" data-section="chat">
+                            <a href="#chat" class="dashboard-link" data-section="chat">
                                 <i class="fas fa-comments"></i>
-                                Chat
+                                Messages
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#certificates" class="nav-link" data-section="certificates">
-                                <i class="fas fa-chart-line"></i>
-                                Certificates and Invoices
+                            <a href="#practise" class="dashboard-link" data-section="practise">
+                                <i class="fas fa-code"></i>
+                                Practise
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#profile" class="nav-link" data-section="profile">
+                            <a href="#profile" class="dashboard-link" data-section="profile">
                                 <i class="fas fa-user"></i>
                                 Profile
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#settings" class="nav-link" data-section="settings">
-                                <i class="fas fa-chart-line"></i>
-                                Settings
+                            <a href="#settings" class="dashboard-link" data-section="settings">
+                                <i class="fas fa-cog"></i>
+                                Account Settings
                             </a>
                         </li>
                     </ul>
@@ -1233,33 +1233,304 @@
                     </div> -->
                 </div>
 
+                <!-- Messages Content -->
                 <div id="chat-content" style="display: none;">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Messages</h3>
-                            <a href="#" class="card-action">New Message</a>
+                    <div class="main-content-header" id="quiz-header">
+                        <h5 class="card-title">Messages</h5>
+
+                        <button class="btn btn-outline btn-sm">Add New Chat</button>
+                    </div>
+
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Search conversations...">
+                    </div>
+
+                    <div class="chat-list" id="chatList" style="display: none;">
+                        <div class="chat-item">
+                            <div class="chat-avatar">
+                                CG
+                                <div class="status-indicator online"></div>
+                            </div>
+                            <div class="chat-info">
+                                <div class="chat-name">Class General</div>
+                                <div class="chat-preview">Assignment due tomorrow!</div>
+                            </div>
+                            <div class="chat-time">
+                                10:30 AM
+
+                                <span class="new-message">3</span>
+                            </div>
                         </div>
-                        <div class="notification-item">
-                            <div class="notification-icon announcement">
-                                <i class="fas fa-user"></i>
+                        <div class="chat-item">
+                            <div class="chat-avatar">
+                                DJ
+                                <div class="status-indicator online"></div>
                             </div>
-                            <div class="notification-content">
-                                <div class="notification-title">John Doe</div>
-                                <div class="notification-message">Great job on your latest assignment! Keep up the good
-                                    work.</div>
-                                <div class="notification-time">2 hours ago</div>
+                            <div class="chat-info">
+                                <div class="chat-name">Dr. John Smith</div>
+                                <div class="chat-preview">Here's the project template</div>
+                            </div>
+                            <div class="chat-time">9:45 AM</div>
+                        </div>
+                        <div class="chat-item">
+                            <div class="chat-avatar">
+                                SW
+                                <div class="status-indicator offline"></div>
+                            </div>
+                            <div class="chat-info">
+                                <div class="chat-name">Sarah Wilson</div>
+                                <div class="chat-preview">Thanks for the help!</div>
+                            </div>
+                            <div class="chat-time">Yesterday</div>
+                        </div>
+                        <div class="chat-item">
+                            <div class="chat-avatar">
+                                SG
+                                <div class="status-indicator online"></div>
+                            </div>
+                            <div class="chat-info">
+                                <div class="chat-name">Study Group - Web Dev</div>
+                                <div class="chat-preview">Let's meet at 3 PM</div>
+                            </div>
+                            <div class="chat-time">Yesterday</div>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages active" id="chatMessages">
+                        <div class="chat-header">
+                            <button class="back-btn" id="backBtn">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            <div class="chat-avatar" id="chatAvatar">JD</div>
+                            <div class="chat-header-info">
+                                <h3 id="chatName">John Doe</h3>
+                                <div class="chat-header-status" id="chatStatus">Online</div>
                             </div>
                         </div>
-                        <div class="notification-item">
-                            <div class="notification-icon grade">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="notification-content">
-                                <div class="notification-title">Study Group</div>
-                                <div class="notification-message">Don't forget about our study session tomorrow at 3 PM
+                        <div class="messages-content" id="messagesContent">
+                            <div class="message sent">
+                                <div class="message-bubble">
+                                    <div class="message-content">
+                                        Hey Sarah, did you finish the CSS assignment?
+                                    </div>
+                                    <div class="message-time">2:00 PM</div>
                                 </div>
-                                <div class="notification-time">1 day ago</div>
                             </div>
+                            <div class="message received">
+                                <div class="message-bubble">
+                                    <div class="message-content">Yes! It was challenging but I managed to complete it
+                                    </div>
+                                    <div class="message-time">2:15 PM</div>
+                                </div>
+                            </div>
+                            <div class="message sent">
+                                <div class="message-bubble">
+                                    <div class="message-content">Great! Can you share your approach for the responsive
+                                        layout?</div>
+                                    <div class="message-time">2:20 PM</div>
+                                </div>
+                            </div>
+                            <div class="message received">
+                                <div class="message-bubble">
+
+                                    <div class="message-content">Sure! Here's my CSS approach:</div>
+                                    <div class="code-message">
+                                        <div class="code-info">
+                                            <!-- <div class="code-icon">💻</div> -->
+                                            <div class="code-details">
+                                                <div class="code-title">Code (css)</div>
+                                                <div class="code-language">CSS</div>
+                                            </div>
+                                            <div class="message-actions">
+                                                <button class="action-btn" onclick="chatApp.previewCode('4', 'css')">
+                                                    <i class="fas fa-eye"></i>
+                                                    View
+                                                </button>
+                                                <button class="action-btn" onclick="chatApp.copyCodeFromMessage('4')">
+                                                    <i class="fas fa-copy"></i>
+                                                    Copy
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="code-preview">
+                                            @media (max-width: 768px) {
+                                            .container {
+                                            flex-direction: column;
+                                            padding: 1rem;
+                                            ...
+                                            <!-- @media (max-width: 768px) {
+                                            .container {
+                                            flex-direction: column;
+                                            padding: 1rem;
+                                            ... -->
+                                        </div>
+                                    </div>
+
+                                    <div class="message-time">2:25 PM</div>
+                                </div>
+                            </div>
+                            <div class="message sent">
+                                <div class="message-bubble">
+
+                                    <div class="message-content">Check out this helpful resource:</div>
+                                    <div class="link-message">
+                                        <div class="link-info">
+                                            <!-- <div class="link-icon">🔗</div> -->
+                                            <div class="link-details">
+                                                <div class="link-title">MDN - JavaScript Promises</div>
+                                                <div class="link-url">
+                                                    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+                                                </div>
+                                            </div>
+                                            <div class="message-actions">
+                                                <button class="action-btn">
+                                                    <i class="fas fa-external-link-alt"></i>
+                                                    Visit
+                                                </button>
+                                                <button class="action-btn">
+                                                    <i class="fas fa-copy"></i>
+                                                    Copy
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="message-time">1:10 PM</div>
+                                </div>
+                            </div>
+                            <div class="message received">
+                                <div class="message-bubble">
+                                    <div class="message-content">Thanks for the help!</div>
+                                    <div class="message-time">2:30 PM</div>
+                                </div>
+                            </div>
+                            <div class="message received instructor">
+                                <div class="message-bubble">
+
+                                    <div class="message-content">Here's the CSS file for today's lesson</div>
+                                    <div class="file-message">
+                                        <div class="file-info">
+                                            <!-- <div class="file-icon">📄</div> -->
+                                            <div class="file-details">
+                                                <div class="file-name">advanced-css-lesson.css</div>
+                                                <div class="file-size">2.3 KB</div>
+                                            </div>
+                                            <div class="message-actions">
+                                                <button class="action-btn"
+                                                    onclick="chatApp.downloadFile('advanced-css-lesson.css')">
+                                                    <i class="fas fa-download"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="message-time">8:10 AM</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message-input-container">
+                            <div class="message-input-wrapper">
+                                <div class="input-content">
+                                    <div class="message-type-selector">
+                                        <select class="type-select" id="messageType">
+                                            <option value="text">Text</option>
+                                            <option value="code">Code</option>
+                                            <option value="file">File</option>
+                                            <option value="link">Link</option>
+                                        </select>
+                                        <input type="file" class="file-input" id="fileInput"
+                                            accept=".pdf,.html,.css,.php,.js,.txt,.doc,.docx">
+                                        <label for="fileInput" class="file-input-label" id="fileInputLabel"
+                                            style="display: none;">Choose File</label>
+                                    </div>
+                                    <textarea class="message-input" id="messageInput" placeholder="Type a message..."
+                                        rows="1"></textarea>
+                                    <div class="error-message" id="errorMessage" style="display: none;"></div>
+                                </div>
+                                <button class="send-btn" id="sendBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="practise-content" style="display: none;">
+                    <div class="calendar-main-header">
+                        <h4>Learn & Practise</h4>
+                        <p>
+                            Learn and practise right here in your dashboard with our code editor. Write, run, and
+                            experiment with code instantly! You can also download your work as an HTML file by clicking
+                            the download button.
+                        </p>
+                    </div>
+                    <div class="editor-container">
+                        <!-- Editor Panel -->
+                        <div class="editor-panel">
+                            <div class="panel-header">
+                                <div class="tabs">
+                                    <button class="tab active" data-tab="html">
+                                        <i class="fab fa-html5"></i> HTML
+                                    </button>
+                                    <button class="tab" data-tab="css">
+                                        <i class="fab fa-css3-alt"></i> CSS
+                                    </button>
+                                    <button class="tab" data-tab="js">
+                                        <i class="fab fa-js"></i> JS
+                                    </button>
+                                </div>
+                                <div class="actions">
+                                    <button class="btn" id="run-btn">
+                                        <i class="fas fa-play"></i> Run
+                                    </button>
+                                    <button class="btn btn-secondary" id="download-btn">
+                                        <i class="fas fa-download"></i> Download
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="code-area">
+                                <textarea id="html-code" class="code-input" placeholder="Paste your HTML code here...">
+&lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;p&gt;This is a simple HTML document.&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;Click Me&lt;/button&gt;</textarea>
+                                <textarea id="css-code" class="code-input hidden"
+                                    placeholder="Paste your CSS code here...">
+h1 {
+    color: red;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    color: blue;
+    font-size: 18px;
+}
+
+button {
+    background: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</textarea>
+                                <textarea id="js-code" class="code-input hidden"
+                                    placeholder="Paste your JavaScript code here...">
+function myFunction() {
+    alert("Hello! Button clicked!");
+}
+</textarea>
+                            </div>
+                        </div>
+
+                        <!-- Preview Panel -->
+                        <div class="preview-panel">
+                            <div class="panel-header">
+                                <h5><i class="fas fa-eye"></i> Live Preview</h5>
+                            </div>
+                            <iframe id="preview-frame" class="preview-frame"></iframe>
                         </div>
                     </div>
                 </div>
@@ -1463,6 +1734,384 @@
                         </div>
                     </div>
                     <!-- </div> -->
+                </div>
+
+                <div id="account-settings" style="display: none;">
+                    <div class="main-content-header">
+                        <h5 class="card-title">
+                            <i class="fas fa-cog" style="margin-right: 8px;"></i>
+                            Account Settings
+                        </h5>
+
+                        <div class="dark-mode-toggle" id="darkModeToggle">
+                            <h5>Dark Mode</h5>
+                            <div class="toggle-switch dark-mode-toggle"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Navigation -->
+                    <div class="tab-navigation">
+                        <button class="tab-button active" data-tab="security">Security</button>
+                        <button class="tab-button" data-tab="notifications">Notifications</button>
+                        <button class="tab-button" data-tab="privacy">Privacy</button>
+                        <button class="tab-button" data-tab="preferences">Preferences</button>
+                        <button class="tab-button" data-tab="break">Take A Break</button>
+                        <button class="tab-button" data-tab="account">Account</button>
+                    </div>
+
+                    <!-- Security Tab -->
+                    <div class="tab-content active" id="security">
+                        <!-- Change Password Section -->
+                        <div class="section">
+                            <h5 class="section-title">Change Password</h5>
+                            <p class="section-description">
+                                Can't remember your current password?
+                                <a href="#" style="color: var(--color-primary); text-decoration: underline;">
+                                    Reset your password
+                                    via email
+                                </a>
+                            </p>
+
+                            <!-- <div class="alert alert-success" id="password-success">
+                                <i class="fas fa-check-circle"></i> Password changed successfully!
+                            </div>
+
+                            <div class="alert alert-error" id="password-error">
+                                <i class="fas fa-exclamation-circle"></i> <span id="password-error-text"></span>
+                            </div> -->
+
+                            <form id="password-form">
+                                <div class="form-group">
+                                    <label class="form-label" for="current-password">Current Password <span
+                                            class="required">*</span></label>
+                                    <div class="password-input-wrapper">
+                                        <input type="password" id="current-password" class="form-input" required="">
+                                        <button type="button" class="password-toggle" data-target="current-password">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="new-password">New Password <span
+                                            class="required">*</span></label>
+                                    <div class="password-input-wrapper">
+                                        <input type="password" id="new-password" class="form-input" required="">
+                                        <button type="button" class="password-toggle" data-target="new-password">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="password-strength" id="password-strength">
+                                        <div class="strength-bar"></div>
+                                        <div class="strength-bar"></div>
+                                        <div class="strength-bar"></div>
+                                        <div class="strength-bar"></div>
+                                    </div>
+                                    <div class="password-hint">Use 8 or more characters with a mix of letters, numbers
+                                        &amp; symbols.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="confirm-password">Confirm Password <span
+                                            class="required">*</span></label>
+                                    <div class="password-input-wrapper">
+                                        <input type="password" id="confirm-password" class="form-input" required="">
+                                        <button type="button" class="password-toggle" data-target="confirm-password">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-md">
+                                    <i class="fas fa-key"></i> Change Password
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Recovery Email Section -->
+                        <div class="section">
+                            <h5 class="section-title">Recovery Email</h5>
+                            <p class="section-description">
+                                Add a recovery email to help secure your account and recover access if needed.
+                            </p>
+
+                            <form id="recovery-email-form">
+                                <div class="form-group">
+                                    <label class="form-label" for="recovery-email">Recovery Email</label>
+                                    <input type="email" id="recovery-email" class="form-input"
+                                        placeholder="recovery@example.com">
+                                </div>
+                                <button type="submit" class="btn btn-secondary btn-md">
+                                    <i class="fas fa-envelope"></i> Update Recovery Email
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Contact Number Section -->
+                        <!-- <div class="section">
+                            <h2 class="section-title">Contact Number</h2>
+                            <p class="section-description">Your current contact number is <strong>+1 (555)
+                                    123-4567</strong></p>
+
+                            <form id="contact-form">
+                                <div class="form-group">
+                                    <label class="form-label" for="contact-number">Phone Number</label>
+                                    <input type="tel" id="contact-number" class="form-input"
+                                        placeholder="+1 (555) 123-4567" value="+1 (555) 123-4567">
+                                </div>
+                                <button type="submit" class="btn btn-secondary">
+                                    <i class="fas fa-phone"></i> Update Contact Number
+                                </button>
+                            </form>
+                        </div> -->
+
+                        <!-- Two-Factor Authentication Section -->
+                        <div class="section">
+                            <h5 class="section-title">Two-Factor Authentication (2FA)</h5>
+                            <p class="section-description">
+                                Add an extra layer of security to your account with
+                                two-factor authentication.
+                            </p>
+
+                            <div class="toggle-group">
+                                <div class="toggle-info">
+                                    <div class="toggle-title">Enable 2FA</div>
+                                    <div class="toggle-description">
+                                        Require a verification code from your phone when signing in
+                                    </div>
+                                </div>
+                                <div class="toggle-switch" id="2fa-toggle"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Tab -->
+                    <div class="tab-content" id="notifications">
+                        <div class="section">
+                            <h5 class="section-title">Notification Preferences</h5>
+                            <p class="section-description">
+                                Choose how you'd like to receive notifications about your
+                                courses and activities.
+                            </p>
+
+                            <!-- <div class="alert alert-success" id="notifications-success">
+                                <i class="fas fa-check-circle"></i> Notification preferences saved successfully!
+                            </div> -->
+
+                            <div class="toggle-group">
+                                <div class="toggle-info">
+                                    <div class="toggle-title">Assignment Reminders</div>
+                                    <div class="toggle-description">
+                                        Get notified about upcoming assignment deadlines
+                                    </div>
+                                </div>
+                                <div class="toggle-switch active" data-setting="assignment-reminders"></div>
+                            </div>
+
+                            <div class="toggle-group">
+                                <div class="toggle-info">
+                                    <div class="toggle-title">Grade Updates</div>
+                                    <div class="toggle-description">
+                                        Receive notifications when new grades are posted
+                                    </div>
+                                </div>
+                                <div class="toggle-switch active" data-setting="grade-updates"></div>
+                            </div>
+
+                            <div class="toggle-group">
+                                <div class="toggle-info">
+                                    <div class="toggle-title">Discussion Replies</div>
+                                    <div class="toggle-description">
+                                        Get notified when someone replies to your discussion
+                                        posts
+                                    </div>
+                                </div>
+                                <div class="toggle-switch" data-setting="discussion-replies"></div>
+                            </div>
+
+                            <div class="toggle-group">
+                                <div class="toggle-info">
+                                    <div class="toggle-title">Upcoming Classes</div>
+                                    <div class="toggle-description">Email notifications for upcoming classes and
+                                        lectures</div>
+                                </div>
+                                <div class="toggle-switch active" data-setting="upcoming-classes"></div>
+                            </div>
+
+                            <div class="toggle-group">
+                                <div class="toggle-info">
+                                    <div class="toggle-title">Email Notifications</div>
+                                    <div class="toggle-description">Receive all notifications via email</div>
+                                </div>
+                                <div class="toggle-switch active" data-setting="email-notifications"></div>
+                            </div>
+
+                            <div class="toggle-group">
+                                <div class="toggle-info">
+                                    <div class="toggle-title">In-App Notifications</div>
+                                    <div class="toggle-description">Show notifications within the dashboard</div>
+                                </div>
+                                <div class="toggle-switch active" data-setting="in-app-notifications"></div>
+                            </div>
+
+                            <button class="btn btn-primary btn-md" id="save-notifications">
+                                <i class="fas fa-save"></i> Save Notification Preferences
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Tab -->
+                    <div class="tab-content" id="privacy">
+                        <div class="section">
+                            <h5 class="section-title">Privacy Settings</h5>
+                            <p class="section-description">
+                                Control how your information is displayed to other students
+                                and instructors.
+                            </p>
+
+                            <!-- <div class="alert alert-success" id="privacy-success">
+                                <i class="fas fa-check-circle"></i> Privacy settings updated successfully!
+                            </div> -->
+
+                            <div class="toggle-group">
+                                <div class="toggle-info">
+                                    <div class="toggle-title">Show Online Status</div>
+                                    <div class="toggle-description">Let others see when you're online and active</div>
+                                </div>
+                                <div class="toggle-switch active" id="online-status-toggle"></div>
+                            </div>
+
+                            <button class="btn btn-primary btn-md" id="save-privacy">
+                                <i class="fas fa-save"></i> Save Privacy Settings
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Preferences Tab -->
+                    <div class="tab-content" id="preferences">
+                        <div class="section">
+                            <h5 class="section-title">Language &amp; Preferences</h5>
+                            <p class="section-description">
+                                Customize your learning experience with language and display
+                                preferences.</p>
+
+                            <div class="alert alert-success" id="preferences-success">
+                                <i class="fas fa-check-circle"></i> Preferences saved successfully!
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="language-select">Language Preference</label>
+                                <select id="language-select" class="form-select">
+                                    <option value="en">English</option>
+                                    <option value="es">Español</option>
+                                    <option value="fr">Français</option>
+                                    <option value="de">Deutsch</option>
+                                    <option value="it">Italiano</option>
+                                    <option value="pt">Português</option>
+                                    <option value="zh">中文</option>
+                                    <option value="ja">日本語</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="timezone-select">Timezone</label>
+                                <select id="timezone-select" class="form-select">
+                                    <option value="UTC-8">Pacific Time (UTC-8)</option>
+                                    <option value="UTC-7">Mountain Time (UTC-7)</option>
+                                    <option value="UTC-6">Central Time (UTC-6)</option>
+                                    <option value="UTC-5">Eastern Time (UTC-5)</option>
+                                    <option value="UTC+0">Greenwich Mean Time (UTC+0)</option>
+                                    <option value="UTC+1">Central European Time (UTC+1)</option>
+                                    <option value="UTC+8">China Standard Time (UTC+8)</option>
+                                    <option value="UTC+9">Japan Standard Time (UTC+9)</option>
+                                </select>
+                            </div>
+
+                            <button class="btn btn-primary btn-md" id="save-preferences">
+                                <i class="fas fa-save"></i>
+                                Save Preferences
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Take A Break Tab -->
+                    <div class="tab-content" id="break">
+                        <div class="section">
+                            <h5 class="section-title">Take a Break</h5>
+                            <p class="section-description">
+                                Sometimes you need a pause. You can take up to 3 breaks per course to help manage your
+                                schedule.
+                            </p>
+
+                            <div class="break-status">
+                                <div class="break-counter">Breaks Remaining: <span id="breaks-remaining">3</span> of 3
+                                </div>
+                                <div
+                                    style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--space-1);">
+                                    Breaks help you pause assignments and deadlines temporarily
+                                </div>
+                            </div>
+
+                            <div class="alert alert-success" id="break-success">
+                                <i class="fas fa-check-circle"></i>
+                                Break activated successfully! Your assignments and deadlines have been paused.
+                            </div>
+
+                            <!-- <div class="alert alert-error" id="break-error">
+                                <i class="fas fa-exclamation-circle"></i> <span id="break-error-text"></span>
+                            </div> -->
+
+                            <div class="form-group">
+                                <label class="form-label" for="break-duration">Break Duration</label>
+                                <select id="break-duration" class="form-select">
+                                    <option value="">Select duration...</option>
+                                    <option value="3">3 days</option>
+                                    <option value="7">1 week</option>
+                                    <option value="14">2 weeks</option>
+                                    <option value="21">3 weeks</option>
+                                    <option value="30">1 month</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="break-reason">Reason (Optional)</label>
+                                <textarea id="break-reason" class="form-input" rows="3"
+                                    placeholder="Let us know why you need a break (optional)"></textarea>
+                            </div>
+
+                            <button class="btn btn-primary btn-md" id="take-break-btn">
+                                <i class="fas fa-pause"></i>
+                                Take a Break
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Account Tab -->
+                    <div class="tab-content" id="account">
+                        <div class="section">
+                            <h5 class="section-title">Account Management</h5>
+                            <p class="section-description">Manage your account settings and data.</p>
+
+                            <!-- <div class="alert alert-success" id="account-success">
+                                <i class="fas fa-check-circle"></i> Account action completed successfully!
+                            </div> -->
+
+                            <div
+                                style="border: 1px solid var(--color-error-light); border-radius: var(--radius-md); padding: var(--space-6); background-color: rgba(239, 68, 68, 0.05);">
+                                <h5 style="color: var(--color-error); margin-bottom: var(--space-4);">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    Danger Zone
+                                </h5>
+                                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+                                    Once you delete your account, there is no going back. Please be certain.
+                                </p>
+                                <button class="btn btn-error btn-md" id="delete-account-btn">
+                                    <i class="fas fa-trash-alt"></i>
+                                    Delete Account Permanently
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

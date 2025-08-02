@@ -22,22 +22,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Toggle Courses Content
-  const courseItems = document.querySelectorAll(".course-item-card");
+  // const courseItems = document.querySelectorAll(".course-item-card");
   // console.log('Course Items:', courseItems);
 
-  if (courseItems.length > 0) {
-    courseItems.forEach((item) => {
-      const viewCourse = item.querySelector(".course-view");
+  // if (courseItems.length > 0) {
+  //   courseItems.forEach((item) => {
+  //     const viewCourse = item.querySelector(".course-view");
 
-      // console.log('View Course Button:', viewCourse);
-      viewCourse.addEventListener("click", function () {
-        item.classList.toggle("active");
-      });
-    });
-  }
+  //     // console.log('View Course Button:', viewCourse);
+  //     viewCourse.addEventListener("click", function () {
+  //       item.classList.toggle("active");
+  //     });
+  //   });
+  // }
 
   // Navigation
-  const navLinks = document.querySelectorAll(".nav-link");
+  const navLinks = document.querySelectorAll(".dashboard-link");
+  // console.log("Nav Links:", navLinks);
   const contentSections = {
     dashboard: document.getElementById("dashboard-content"),
     courses: document.getElementById("courses-content"),
@@ -46,14 +47,17 @@ document.addEventListener("DOMContentLoaded", function () {
     quiz: document.getElementById("quiz-content"),
     calendar: document.getElementById("calendar-content"),
     chat: document.getElementById("chat-content"),
+    practise: document.getElementById("practise-content"),
     profile: document.getElementById("profile-content"),
+    settings: document.getElementById("account-settings"),
   };
 
-  const headerTitle = document.querySelector(".header-title");
+  // const headerTitle = document.querySelector(".header-title");
 
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
+      // console.log("Link clicked:", link);
       const section = link.getAttribute("data-section");
 
       // Update active nav link
@@ -62,6 +66,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Show corresponding content
       Object.keys(contentSections).forEach((key) => {
+        if (contentSections[key] === null) {
+          // console.warn(`Content section "${key}" not found.`);
+          return;
+        }
         if (key === section) {
           contentSections[key].style.display = "block";
         } else {
@@ -93,12 +101,237 @@ document.addEventListener("DOMContentLoaded", function () {
   // Export calendar instance for external access
   window.calendar = calendar;
 
-
   //   Profile Scripts
   let isEditMode = false;
 
   // Initialize placeholder on load
   // updateLanguage()
+
+  // Practise Section
+  const htmlCode = document.getElementById("html-code");
+  const cssCode = document.getElementById("css-code");
+  const jsCode = document.getElementById("js-code");
+  const runButton = document.getElementById("run-btn");
+  const downloadButton = document.getElementById("download-btn");
+  const previewFrame = document.getElementById("preview-frame");
+  const tabs = document.querySelectorAll(".tab");
+  const codeInputs = document.querySelectorAll(".code-input");
+
+  // Tab switching
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const tabName = tab.dataset.tab;
+
+      // Remove active class from all tabs
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      // Hide all code inputs
+      codeInputs.forEach((input) => input.classList.add("hidden"));
+
+      // Show selected code input
+      document.getElementById(`${tabName}-code`).classList.remove("hidden");
+    });
+  });
+
+  // Run code function
+  const runCode = () => {
+    const html = htmlCode.value;
+    const css = `<style>${cssCode.value}</style>`;
+    const js = `<script>${jsCode.value}<\/script>`;
+
+    const fullCode = `
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>Preview</title>
+                        ${css}
+                    </head>
+                    <body>
+                        ${html}
+                        ${js}
+                    </body>
+                    </html>
+                `;
+    previewFrame.contentWindow.document.open();
+    previewFrame.contentWindow.document.write(fullCode);
+    previewFrame.contentWindow.document.close();
+  };
+
+  // Download function
+  const downloadCode = () => {
+    const html = htmlCode.value;
+    const css = cssCode.value;
+    const js = jsCode.value;
+
+    const fullCode = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>My Project</title>
+        <style>
+          ${css}
+        </style>
+    </head>
+    <body>
+        ${html}
+        <script>
+          ${js}
+        <\/script>
+    </body>
+    </html>
+    `;
+
+    const blob = new Blob([fullCode], { type: "text/html" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "practise.html";
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  // Event listeners
+  runButton.addEventListener("click", runCode);
+  downloadButton.addEventListener("click", downloadCode);
+
+  // Auto-run code when typing
+  // htmlCode.addEventListener('input', runCode);
+  // cssCode.addEventListener('input', runCode);
+  // jsCode.addEventListener('input', runCode);
+
+  // Run code on page load
+  runCode();
+
+  // Account Settings Scripts
+  // Tab Navigation
+  document.querySelectorAll(".tab-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const tabName = button.dataset.tab;
+
+      // Update active tab button
+      document.querySelectorAll(".tab-button").forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      // Update active tab content
+      document.querySelectorAll(".tab-content").forEach((content) => content.classList.remove("active"));
+      document.getElementById(tabName).classList.add("active");
+    });
+  });
+
+  // Password Toggle Functionality
+  document.querySelectorAll('.password-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const targetId = toggle.dataset.target;
+      const input = document.getElementById(targetId);
+      const icon = toggle.querySelector('i');
+
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'fas fa-eye-slash';
+      } else {
+        input.type = 'password';
+        icon.className = 'fas fa-eye';
+      }
+    });
+  });
+
+  // Password Strength Checker
+  document.getElementById('new-password').addEventListener('input', function () {
+    const password = this.value;
+    const strengthBars = document.querySelectorAll('#password-strength .strength-bar');
+
+    let strength = 0;
+    if (password.length >= 8) strength++;
+    if (/[a-z]/.test(password)) strength++;
+    if (/[A-Z]/.test(password)) strength++;
+    if (/[0-9]/.test(password)) strength++;
+    if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+    strengthBars.forEach((bar, index) => {
+      bar.classList.remove('active', 'weak', 'medium', 'strong');
+      if (index < strength) {
+        bar.classList.add('active');
+        if (strength <= 2) bar.classList.add('weak');
+        else if (strength <= 3) bar.classList.add('medium');
+        else bar.classList.add('strong');
+      }
+    });
+  });
+
+  // Password Form Submission
+  document.getElementById('password-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const current = document.getElementById('current-password').value;
+    const newPass = document.getElementById('new-password').value;
+    const confirm = document.getElementById('confirm-password').value;
+
+    const errorAlert = document.getElementById('password-error');
+    const successAlert = document.getElementById('password-success');
+    const errorText = document.getElementById('password-error-text');
+
+    // Reset alerts
+    errorAlert.classList.remove('show');
+    successAlert.classList.remove('show');
+
+    if (!current || !newPass || !confirm) {
+      errorText.textContent = 'All fields are required.';
+      errorAlert.classList.add('show');
+      return;
+    }
+
+    if (newPass !== confirm) {
+      errorText.textContent = 'New passwords do not match.';
+      errorAlert.classList.add('show');
+      return;
+    }
+
+    if (newPass.length < 8) {
+      errorText.textContent = 'Password must be at least 8 characters long.';
+      errorAlert.classList.add('show');
+      return;
+    }
+
+    // Simulate API call
+    setTimeout(() => {
+      successAlert.classList.add('show');
+      this.reset();
+      document.querySelectorAll('#password-strength .strength-bar').forEach(bar => {
+        bar.classList.remove('active', 'weak', 'medium', 'strong');
+      });
+    }, 500);
+  });
+
+  // Toggle Switch Functionality
+  document.querySelectorAll('.toggle-switch').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+    });
+  });
+
+
+  // Save Notifications
+        document.getElementById('save-notifications').addEventListener('click', () => {
+            const successAlert = document.getElementById('notifications-success');
+            successAlert.classList.add('show');
+            setTimeout(() => successAlert.classList.remove('show'), 3000);
+        });
+
+        // Save Privacy Settings
+        document.getElementById('save-privacy').addEventListener('click', () => {
+            const successAlert = document.getElementById('privacy-success');
+            successAlert.classList.add('show');
+            setTimeout(() => successAlert.classList.remove('show'), 3000);
+        });
+
+        // Save Language Preference
+        document.getElementById('save-language').addEventListener('click', () => {
+            const successAlert = document.getElementById('language-success');
+            successAlert.classList.add('show');
+            setTimeout(() => successAlert.classList.remove('show'), 3000);
+        });
+
 });
 
 // Utilitis
@@ -835,9 +1068,8 @@ function addFileToList(file) {
   fileItem.className = "file-item";
   fileItem.innerHTML = `
                 <span>${file.name} (${formatFileSize(file.size)})</span>
-                <button class="remove-file" onclick="removeFile('${
-                  file.name
-                }')">Remove</button>
+                <button class="remove-file" onclick="removeFile('${file.name
+    }')">Remove</button>
             `;
   fileList.appendChild(fileItem);
 }
@@ -1066,10 +1298,21 @@ if (startQuizBtn) {
   });
 }
 
+const cancelQuizBtn = document.getElementById("cancelQuiz");
+// console.log(startQuizBtn);
+
+cancelQuizBtn.addEventListener("click", closeQuiz);
+
 function viewQuiz() {
   document.getElementById("available-quiz").style.display = "none";
   document.getElementById("quiz-header").style.display = "none";
   document.getElementById("quiz-view").style.display = "block";
+}
+
+function closeQuiz() {
+  document.getElementById("available-quiz").style.display = "block";
+  document.getElementById("quiz-header").style.display = "flex";
+  document.getElementById("quiz-view").style.display = "none";
 }
 
 class KachikodesCalendar {
@@ -1150,8 +1393,8 @@ class KachikodesCalendar {
         endTime: `${Math.floor((startHour * 60 + duration) / 60)
           .toString()
           .padStart(2, "0")}:${((startHour * 60 + duration) % 60)
-          .toString()
-          .padStart(2, "0")}`,
+            .toString()
+            .padStart(2, "0")}`,
         duration: `${duration} minutes`,
         course: type === "holiday" ? "N/A" : course,
         location:
@@ -1279,9 +1522,8 @@ class KachikodesCalendar {
       "December",
     ];
 
-    monthYearDisplay.textContent = `${
-      monthNames[this.currentDate.getMonth()]
-    } ${this.currentDate.getFullYear()}`;
+    monthYearDisplay.textContent = `${monthNames[this.currentDate.getMonth()]
+      } ${this.currentDate.getFullYear()}`;
     monthSelector.value = this.currentDate.getMonth();
     yearSelector.value = this.currentDate.getFullYear();
 
@@ -1368,7 +1610,7 @@ class KachikodesCalendar {
     // Add click listener for events
     if (dayEvents.length > 0) {
       dayElement.style.cursor = "pointer";
-      dayElement.addEventListener("click", () => 
+      dayElement.addEventListener("click", () =>
         this.showEventDetails(dayEvents[0])
       );
     }
@@ -1390,36 +1632,36 @@ class KachikodesCalendar {
   //   }
   // }
 
-//   showMultipleEvents(date, events) {
-//     const modal = document.getElementById("modal");
-//     const modalBody = document.getElementById("modal-body");
+  //   showMultipleEvents(date, events) {
+  //     const modal = document.getElementById("modal");
+  //     const modalBody = document.getElementById("modal-body");
 
-//     let modalTitle = `Events for ${date.toLocaleDateString("en-GB")}`;
+  //     let modalTitle = `Events for ${date.toLocaleDateString("en-GB")}`;
 
-//     let content = '<div style="display: grid; gap: 1rem;">';
+  //     let content = '<div style="display: grid; gap: 1rem;">';
 
-//     events.forEach((event) => {
-//       content += `
-//                 <div class="event-item ${ event.type }" onclick="calendar.showEventDetails(calendar.events.find(e => e.id === ${ event.id }))" style="margin: 0; cursor: pointer;">
-//                   <div class="event-icon ${event.type}">
-//                     ${this.getEventIcon(event.type)}
-//                   </div>
-//                   <div class="event-details">
-//                     <h6>${event.title}</h6>
-//                     <div class="event-meta">${event.time} - ${ event.course }</div>
-//                   </div>
-//                 </div>
-// `;
-//     });
-//     content += "</div>";
+  //     events.forEach((event) => {
+  //       content += `
+  //                 <div class="event-item ${ event.type }" onclick="calendar.showEventDetails(calendar.events.find(e => e.id === ${ event.id }))" style="margin: 0; cursor: pointer;">
+  //                   <div class="event-icon ${event.type}">
+  //                     ${this.getEventIcon(event.type)}
+  //                   </div>
+  //                   <div class="event-details">
+  //                     <h6>${event.title}</h6>
+  //                     <div class="event-meta">${event.time} - ${ event.course }</div>
+  //                   </div>
+  //                 </div>
+  // `;
+  //     });
+  //     content += "</div>";
 
-//     modalBody.innerHTML = content;
-//     modal.style.display = "block";
-//   }
+  //     modalBody.innerHTML = content;
+  //     modal.style.display = "block";
+  //   }
 
   showEventDetails(event) {
     // console.log(event);
-    
+
     const modal = document.getElementById("modal");
     const modalBody = document.getElementById("modal-body");
 
@@ -1441,12 +1683,13 @@ class KachikodesCalendar {
                     <div class="detail-row">
                         <div class="detail-label">Date</div>
                         <div class="detail-value">${eventDate.toLocaleDateString(
-                          "en-GB"
-                        )}</div>
+      "en-GB"
+    )}</div>
                     </div>
                     <div class="detail-row">
                         <div class="detail-label">Time</div>
-                        <div class="detail-value">${event.time} - ${ event.endTime } (${event.timezone})</div>
+                        <div class="detail-value">${event.time} - ${event.endTime
+      } (${event.timezone})</div>
                     </div>
                     <div class="detail-row">
                         <div class="detail-label">Duration</div>
@@ -1464,7 +1707,8 @@ class KachikodesCalendar {
                         <div class="detail-label">Description</div>
                         <div class="detail-value">${event.description}</div>
                     </div>
-                    ${ event.link ? `
+                    ${event.link
+        ? `
                     <div class="detail-row">
                         <div class="detail-label">Link</div>
                         <div class="detail-value">
@@ -1473,11 +1717,13 @@ class KachikodesCalendar {
                             </a>
                         </div>
                     </div>
-                    `: "" }
+                    `
+        : ""
+      }
                   </div>
                 `;
 
-    modal.classList.add('show');
+    modal.classList.add("show");
   }
 
   getEventTypeLabel(type) {
@@ -1541,20 +1787,17 @@ class KachikodesCalendar {
         }
 
         return `
-                        <div class="event-item ${
-                          event.type
-                        }" onclick="calendar.showEventDetails(calendar.events.find(e => e.id === ${
-          event.id
-        }))">
+                        <div class="event-item ${event.type
+          }" onclick="calendar.showEventDetails(calendar.events.find(e => e.id === ${event.id
+          }))">
                             <div class="event-icon ${event.type}">
                                 ${this.getEventIcon(event.type)}
                             </div>
                             <div class="event-details">
                                 <h6>${event.title}</h6>
                                 <div class="event-meta">
-                                    ${dateDisplay} at ${event.time} • ${
-          event.course
-        }
+                                    ${dateDisplay} at ${event.time} • ${event.course
+          }
                                 </div>
                             </div>
                         </div>
@@ -1564,7 +1807,7 @@ class KachikodesCalendar {
   }
 
   closeModal() {
-    document.getElementById("modal").classList.remove('show');
+    document.getElementById("modal").classList.remove("show");
   }
 
   previousMonth() {
