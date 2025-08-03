@@ -9,6 +9,9 @@
     <!-- Title -->
     <title>Kachikodes Tech Community</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -731,12 +734,12 @@
                                 Delete
                             </button>
                         </div>
-                        <div class="swipe-actions swipe-left" style="opacity: 0;">
+                        <!-- <div class="swipe-actions swipe-left" style="opacity: 0;">
                             <i class="fas fa-trash"></i>
                         </div>
                         <div class="swipe-actions swipe-right" style="opacity: 0;">
                             <i class="fas fa-star"></i>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="card-row notification-item unread">
@@ -766,12 +769,12 @@
                                 Delete
                             </button>
                         </div>
-                        <div class="swipe-actions swipe-left" style="opacity: 0;">
+                        <!-- <div class="swipe-actions swipe-left" style="opacity: 0;">
                             <i class="fas fa-trash"></i>
                         </div>
                         <div class="swipe-actions swipe-right" style="opacity: 0;">
                             <i class="fas fa-star"></i>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="card-row notification-item unread">
@@ -801,12 +804,12 @@
                                 Delete
                             </button>
                         </div>
-                        <div class="swipe-actions swipe-left" style="opacity: 0;">
+                        <!-- <div class="swipe-actions swipe-left" style="opacity: 0;">
                             <i class="fas fa-trash"></i>
                         </div>
                         <div class="swipe-actions swipe-right" style="opacity: 0;">
                             <i class="fas fa-star"></i>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -1457,6 +1460,7 @@
 
                 </div>
 
+                <!-- Practise Content -->
                 <div id="practise-content" style="display: none;">
                     <div class="calendar-main-header">
                         <h4>Learn & Practise</h4>
@@ -1535,6 +1539,7 @@ function myFunction() {
                     </div>
                 </div>
 
+                <!-- Profile Content -->
                 <div id="profile-content" style="display: none;">
                     <!-- <div class="profile-container"> -->
                     <div class="profile-card">
@@ -1736,6 +1741,7 @@ function myFunction() {
                     <!-- </div> -->
                 </div>
 
+                <!-- Account Settings Content -->
                 <div id="account-settings" style="display: none;">
                     <div class="main-content-header">
                         <h5 class="card-title">
@@ -1743,10 +1749,10 @@ function myFunction() {
                             Account Settings
                         </h5>
 
-                        <div class="dark-mode-toggle" id="darkModeToggle">
+                        <!-- <div class="dark-mode-toggle" id="darkModeToggle">
                             <h5>Dark Mode</h5>
                             <div class="toggle-switch dark-mode-toggle"></div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <!-- Tab Navigation -->
@@ -1807,8 +1813,9 @@ function myFunction() {
                                         <div class="strength-bar"></div>
                                         <div class="strength-bar"></div>
                                     </div>
-                                    <div class="password-hint">Use 8 or more characters with a mix of letters, numbers
-                                        &amp; symbols.</div>
+                                    <div class="password-hint">
+                                        Use 8 or more characters with a mix of letters,numbers &amp; symbols.
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
@@ -2075,8 +2082,7 @@ function myFunction() {
 
                             <div class="form-group">
                                 <label class="form-label" for="break-reason">Reason (Optional)</label>
-                                <textarea id="break-reason" class="form-input" rows="3"
-                                    placeholder="Let us know why you need a break (optional)"></textarea>
+                                <textarea id="break-reason" class="form-input" rows="6" placeholder="Let us know why you need a break (optional)"></textarea>
                             </div>
 
                             <button class="btn btn-primary btn-md" id="take-break-btn">
@@ -2092,22 +2098,31 @@ function myFunction() {
                             <h5 class="section-title">Account Management</h5>
                             <p class="section-description">Manage your account settings and data.</p>
 
+                            <div class="toggle-group">
+                                <div class="toggle-info">
+                                    <div class="toggle-title">Dark Mode</div>
+                                    <div class="toggle-description">
+                                        Enable dark mode for a more comfortable viewing experience.
+                                    </div>
+                                </div>
+                                <div class="toggle-switch" data-setting="dark-mode"></div>
+                            </div>
+
                             <!-- <div class="alert alert-success" id="account-success">
                                 <i class="fas fa-check-circle"></i> Account action completed successfully!
                             </div> -->
 
-                            <div
-                                style="border: 1px solid var(--color-error-light); border-radius: var(--radius-md); padding: var(--space-6); background-color: rgba(239, 68, 68, 0.05);">
-                                <h5 style="color: var(--color-error); margin-bottom: var(--space-4);">
+                            <div class="danger-zone-card">
+                                <h5 class="danger-zone-title">
                                     <i class="fas fa-exclamation-triangle"></i>
                                     Danger Zone
                                 </h5>
-                                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+                                <p class="danger-zone-description">
                                     Once you delete your account, there is no going back. Please be certain.
                                 </p>
                                 <button class="btn btn-error btn-md" id="delete-account-btn">
                                     <i class="fas fa-trash-alt"></i>
-                                    Delete Account Permanently
+                                    Delete Account
                                 </button>
                             </div>
                         </div>

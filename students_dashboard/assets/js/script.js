@@ -355,7 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector(".chat-header .chat-avatar").textContent = chatAvatar;
 
       const chatName = item.querySelector(".chat-name").textContent;
-      console.log(document.querySelector(".chat-header .chat-name"));
+      // console.log(document.querySelector(".chat-header .chat-name"));
       
       document.querySelector(".chat-header .chat-name").textContent = chatName;
 
@@ -819,11 +819,11 @@ const courseOutline = `
         <ul class="sub-topics">
         <li class="sub-topic"> 
           <div class="timeline-checkpoint completed">
-          <svg class="checkmark completed" viewBox="0 0 24 24">
-            <path d="M20 6L9 17l-5-5"></path>
-          </svg>
+            <svg class="checkmark completed" viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"></path>
+            </svg>
           </div>
-          Introduction/History to HTML
+          <p>Introduction/History to HTML </p>
         </li>
         <li class="sub-topic"> 
           <div class="timeline-checkpoint completed">
@@ -831,7 +831,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
           </svg>
           </div>
-          Understanding HTML Document Structure
+          <p>Understanding HTML Document Structure</p>
         </li>
         <li class="sub-topic"> 
           <div class="timeline-checkpoint completed">
@@ -839,7 +839,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
           </svg>
           </div>
-          Basic HTML Tags and Attributes
+          <p>Basic HTML Tags and Attributes</p>
         </li>
         <li class="sub-topic"> 
           <div class="timeline-checkpoint completed">
@@ -847,7 +847,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
           </svg>
           </div>
-          HTML Tag Nesting and Hierarchy
+          <p>HTML Tag Nesting and Hierarchy</p>
         </li>
         <li class="sub-topic"> 
           <div class="timeline-checkpoint completed">
@@ -855,7 +855,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
           </svg>
           </div>
-          HTML Comments and Best Practices
+          <p>HTML Comments and Best Practices</p>
         </li>
         <li class="sub-topic"> 
           <div class="timeline-checkpoint completed">
@@ -863,7 +863,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
           </svg>
           </div>
-          HTML Tables and Lists
+          <p>HTML Tables and Lists</p>
         </li>
         <li class="sub-topic"> 
           <div class="timeline-checkpoint completed">
@@ -871,7 +871,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
           </svg>
           </div>
-          HTML Table Styling, Attributes and Accessibility
+          <p>HTML Table Styling, Attributes and Accessibility</p>
         </li>
         <li class="sub-topic"> 
           <div class="timeline-checkpoint completed">
@@ -879,7 +879,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
           </svg>
           </div>
-          HTML Forms and Input Elements
+          <p>HTML Forms and Input Elements</p>
         </li>
         <li class="sub-topic"> 
           <div class="timeline-checkpoint completed">
@@ -887,7 +887,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
           </svg>
           </div>
-          HTML Forms Attributes and Validation
+          <p>HTML Forms Attributes and Validation</p>
         </li>
         <li class="sub-topic"> 
           <div class="timeline-checkpoint completed">
@@ -895,12 +895,11 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
           </svg>
           </div>
-          HTML Forms Styling and Accessibility
+          <p>HTML Forms Styling and Accessibility</p>
         </li>
         </ul>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-checkpoint completed">
         <svg class="checkmark completed" viewBox="0 0 24 24">
@@ -922,7 +921,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Headings (h1-h6)
+          <p>Headings (h1-h6)</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint completed">
@@ -930,7 +929,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Paragraphs and line breaks
+          <p>Paragraphs and line breaks</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint completed">
@@ -938,7 +937,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Bold, Italic, Underline, and Emphasis tags
+          <p>Bold, Italic, Underline, and Emphasis tags</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint completed">
@@ -946,7 +945,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Superscript and Subscript
+          <p>Superscript and Subscript</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint completed">
@@ -954,12 +953,11 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Preformatted text and code blocks
+          <p>Preformatted text and code blocks</p>
           </li>
         </ul>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-checkpoint completed">
         <svg class="checkmark completed" viewBox="0 0 24 24">
@@ -981,7 +979,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Anchor tags and href attribute
+          <p>Anchor tags and href attribute</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint completed">
@@ -989,7 +987,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Opening links in new tabs
+          <p>Opening links in new tabs</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint completed">
@@ -997,7 +995,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Navigation menus and lists
+          <p>Navigation menus and lists</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint completed">
@@ -1005,12 +1003,11 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Internal page navigation
+          <p>Internal page navigation</p>
           </li>
         </ul>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-checkpoint completed">
         <svg class="checkmark completed" viewBox="0 0 24 24">
@@ -1032,7 +1029,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Image tags and attributes (src, alt, width, height)
+          <p>Image tags and attributes (src, alt, width, height)</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint">
@@ -1040,7 +1037,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Embedding audio and video
+          <p>Embedding audio and video</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint">
@@ -1048,7 +1045,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Responsive images and media
+          <p>Responsive images and media</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint">
@@ -1056,12 +1053,11 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          SVG and vector graphics
+          <p>SVG and vector graphics</p>
           </li>
         </ul>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-checkpoint pending">
         <svg class="checkmark pending" viewBox="0 0 24 24">
@@ -1083,7 +1079,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Unordered lists (<code>&lt;ul&gt;</code>)
+          <p>Unordered lists (<code>&lt;ul&gt;</code>)</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1091,7 +1087,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Ordered lists (<code>&lt;ol&gt;</code>)
+          <p>Ordered lists (<code>&lt;ol&gt;</code>)</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1099,7 +1095,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Definition lists (<code>&lt;dl&gt;</code>)
+          <p>Definition lists (<code>&lt;dl&gt;</code>)</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1107,7 +1103,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Nested lists
+          <p>Nested lists</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1115,12 +1111,11 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          List styling with CSS
+          <p>List styling with CSS</p>
           </li>
         </ul>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-checkpoint pending">
         <svg class="checkmark pending" viewBox="0 0 24 24">
@@ -1137,12 +1132,28 @@ const courseOutline = `
         </div>
         <ul class="sub-topics">
           <li class="sub-topic">
-          <div class="timeline-checkpoint pending">
-            <svg class="checkmark pending" viewBox="0 0 24 24">
-            <path d="M20 6L9 17l-5-5"></path>
-            </svg>
-          </div>
-          Table structure (<code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>)
+            <div class="timeline-checkpoint pending">
+              <svg class="checkmark pending" viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </div>
+            <p>Table structure (<code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>)</p>
+          </li>
+          <li class="sub-topic">
+            <div class="timeline-checkpoint pending">
+              <svg class="checkmark pending" viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </div>
+            <p>Table headers (<code>&lt;th&gt;</code>)</p>
+          </li>
+          <li class="sub-topic">
+            <div class="timeline-checkpoint pending">
+              <svg class="checkmark pending" viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </div>
+            <p>Table captions and summaries</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1150,7 +1161,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Table headers (<code>&lt;th&gt;</code>)
+          <p>Table styling and borders</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1158,28 +1169,11 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Table captions and summaries
-          </li>
-          <li class="sub-topic">
-          <div class="timeline-checkpoint pending">
-            <svg class="checkmark pending" viewBox="0 0 24 24">
-            <path d="M20 6L9 17l-5-5"></path>
-            </svg>
-          </div>
-          Table styling and borders
-          </li>
-          <li class="sub-topic">
-          <div class="timeline-checkpoint pending">
-            <svg class="checkmark pending" viewBox="0 0 24 24">
-            <path d="M20 6L9 17l-5-5"></path>
-            </svg>
-          </div>
-          Responsive tables
+          <p>Responsive tables</p>
           </li>
         </ul>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-checkpoint pending">
         <svg class="checkmark pending" viewBox="0 0 24 24">
@@ -1201,7 +1195,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Form structure (<code>&lt;form&gt;</code>)
+          <p>Form structure (<code>&lt;form&gt;</code>)</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1209,7 +1203,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Input types (text, email, password, etc.)
+          <p>Input types (text, email, password, etc.)</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1217,7 +1211,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Buttons and form controls
+          <p>Buttons and form controls</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1225,20 +1219,19 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Form validation (required, pattern, etc.)
+          <p>Form validation (required, pattern, etc.)</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
             <svg class="checkmark pending" viewBox="0 0 24 24">
             <path d="M20 6L9 17l-5-5"></path>
-            </svg>
+          </svg>
           </div>
-          Form accessibility
+          <p>Form accessibility</p>
           </li>
         </ul>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-checkpoint pending">
         <svg class="checkmark pending" viewBox="0 0 24 24">
@@ -1255,41 +1248,40 @@ const courseOutline = `
         </div>
         <ul class="sub-topics">
           <li class="sub-topic">
-          <div class="timeline-checkpoint pending">
-            <svg class="checkmark pending" viewBox="0 0 24 24">
-            <path d="M20 6L9 17l-5-5"></path>
-            </svg>
-          </div>
-          Semantic elements (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>)
+            <div class="timeline-checkpoint pending">
+              <svg class="checkmark pending" viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </div>
+            <p>Semantic elements (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>)</p>
           </li>
           <li class="sub-topic">
-          <div class="timeline-checkpoint pending">
-            <svg class="checkmark pending" viewBox="0 0 24 24">
-            <path d="M20 6L9 17l-5-5"></path>
-            </svg>
-          </div>
-          Sectioning content (<code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>)
+            <div class="timeline-checkpoint pending">
+              <svg class="checkmark pending" viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </div>
+            <p>Sectioning content (<code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>)</p>
           </li>
           <li class="sub-topic">
-          <div class="timeline-checkpoint pending">
-            <svg class="checkmark pending" viewBox="0 0 24 24">
-            <path d="M20 6L9 17l-5-5"></path>
-            </svg>
-          </div>
-          Accessibility with semantic tags
+            <div class="timeline-checkpoint pending">
+              <svg class="checkmark pending" viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </div>
+            <p>Accessibility with semantic tags</p>
           </li>
           <li class="sub-topic">
-          <div class="timeline-checkpoint pending">
-            <svg class="checkmark pending" viewBox="0 0 24 24">
-            <path d="M20 6L9 17l-5-5"></path>
-            </svg>
-          </div>
-          Using <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code>
+            <div class="timeline-checkpoint pending">
+              <svg class="checkmark pending" viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </div>
+            <p>Using <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code></p>
           </li>
         </ul>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-checkpoint pending">
         <svg class="checkmark pending" viewBox="0 0 24 24">
@@ -1306,12 +1298,12 @@ const courseOutline = `
         </div>
         <ul class="sub-topics">
           <li class="sub-topic">
-          <div class="timeline-checkpoint pending">
-            <svg class="checkmark pending" viewBox="0 0 24 24">
-            <path d="M20 6L9 17l-5-5"></path>
-            </svg>
-          </div>
-          Meta tags (<code>&lt;meta&gt;</code>) for charset, viewport, description
+            <div class="timeline-checkpoint pending">
+              <svg class="checkmark pending" viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </div>
+            <p>Meta tags (<code>&lt;meta&gt;</code>) for charset, viewport, description</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1319,7 +1311,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Open Graph and Twitter Card tags
+          <p>Open Graph and Twitter Card tags</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1327,7 +1319,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          SEO best practices for HTML
+          <p>SEO best practices for HTML</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1335,12 +1327,11 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Social media sharing optimization
+          <p>Social media sharing optimization</p>
           </li>
         </ul>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-checkpoint pending">
         <svg class="checkmark pending" viewBox="0 0 24 24">
@@ -1362,7 +1353,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Writing semantic and readable HTML
+          <p>Writing semantic and readable HTML</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1370,7 +1361,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Accessibility attributes (aria-label, alt, etc.)
+          <p>Accessibility attributes (aria-label, alt, etc.)</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1378,7 +1369,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Keyboard navigation and focus management
+          <p>Keyboard navigation and focus management</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1386,7 +1377,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Color contrast and visual accessibility
+          <p>Color contrast and visual accessibility</p>
           </li>
           <li class="sub-topic">
           <div class="timeline-checkpoint pending">
@@ -1394,7 +1385,7 @@ const courseOutline = `
             <path d="M20 6L9 17l-5-5"></path>
             </svg>
           </div>
-          Validating HTML code
+          <p>Validating HTML code</p>
           </li>
         </ul>
       </div>
@@ -1426,7 +1417,7 @@ function toggleSubTopics(clickedElement) {
 // Show Assignment details
 const assignmentDetails = `
 <h4 class="modal-title">Submit Assignment</h4>
-<div class="assignment-modal-body">
+<div class="assignment-modal-body>
   <div class="instructions">
     <h6>Assignment Instructions</h6>
     <p id="assignmentInstructions">
