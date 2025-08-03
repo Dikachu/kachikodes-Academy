@@ -59,8 +59,8 @@
   /* animation: slideInUp 1s ease-out 0.2s both; */
   color: var(--color-text-inverse); /* White for tagline */
   font-family: var(--font-family-body);
-  font-size: var(--font-size-2xl); /* Make it a strong supporting statement */
-  font-weight: var(--font-weight-semibold);
+  /* font-size: var(--font-size-2xl); */
+  /* font-weight: var(--font-weight-semibold); */
   margin-bottom: var(--space-6);
 }
 
@@ -68,16 +68,31 @@
   color: var(--color-text-inverse);
   max-width: 800px;
   margin: 0 auto;
-  font-weight: 500;
+  /* font-weight: 500; */
   /* animation: slideInUp 1s ease-out 0.4s both; */
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
+  /* font-size: var(--font-size-lg); */
+  /* line-height: var(--line-height-relaxed); */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 30px 0;
+  }
+
+  .hero .subtitle {
+    font-size: var(--font-size-lg);
+  }
+
+  .mission-statement {
+    font-size: var(--font-size-sm);
+  }
+  
 }
 
 /* Story Section */
 .story {
   background-color: var(--color-bg-secondary);
-  padding: var(--space-20) var(--space-4);
+  padding: var(--space-20) 0;
 }
 
 .story-content {
@@ -177,7 +192,7 @@
 /* Team Section */
 .team {
   background-color: var(--color-bg);
-  padding: var(--space-20) var(--space-4);
+  padding: var(--space-20) 0;
 }
 
 .team h2 {
@@ -188,7 +203,7 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-8);
   width: 100%;
 }
@@ -288,7 +303,7 @@
 /* Values Section */
 .values {
   background-color: var(--color-bg-secondary);
-  padding: var(--space-20) var(--space-4);
+  padding: var(--space-20) var(--space-0);
 }
 
 .values h2 {
@@ -427,8 +442,12 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .timeline {
+  .story, .team, .values, .statistics {
     padding: var(--space-10) 0;
+  }
+
+  .story h2, .team h2, .values h2, .statistics h2 {
+    margin-bottom: var(--space-12);
   }
 
   .timeline::before {

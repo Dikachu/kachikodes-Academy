@@ -207,6 +207,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   transition: background-color var(--transition-base), color var(--transition-base);
   overflow-x: hidden;
+  /* filter: grayscale(100%); */
 }
 
 /* Stop body from overflowing when modal is active */
