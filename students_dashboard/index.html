@@ -39,13 +39,13 @@
 
             <nav class="nav">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="learn.html" class="nav-link">Learning Resources</a></li>
-                    <!-- <li><a href="playground.html" class="nav-link">Playground</a></li> -->
-                    <!-- <li><a href="service.html" class="nav-link">Services</a></li> -->
-                    <li><a href="courses.html" class="nav-link">Courses</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="../index.html" class="nav-link active">Home</a></li>
+                    <li><a href="../about.html" class="nav-link">About</a></li>
+                    <li><a href="../learn.html" class="nav-link">Learning Resources</a></li>
+                    <!-- <li><a href="../playground.html" class="nav-link">Playground</a></li> -->
+                    <!-- <li><a href="../service.html" class="nav-link">Services</a></li> -->
+                    <li><a href="../courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
 
@@ -61,7 +61,7 @@
                         </svg>
                     </div>
                     <div class="dropdown-menu" id="dropdownMenu">
-                        <a href="students_dashboard/index.html" class="dropdown-item">
+                        <a href="#dashboard" class="dropdown-item">
                             <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
                                 <rect width="24" height="24" rx="6" stroke="#222" stroke-width="2" fill="#fff" />
                                 <rect x="4" y="4" width="7" height="7" rx="2" fill="#004d49" />
@@ -71,12 +71,12 @@
                             </svg>
                             Dashboard
                         </a>
-                        <a href="notifications.html" class="dropdown-item">
+                        <a href="#" class="dropdown-item">
                             <i class="fa-regular fa-bell"></i>
                             Notifications
                             <span class="notify">5</span>
                         </a>
-                        <a href="chats.html" class="dropdown-item">
+                        <a href="#" class="dropdown-item">
                             <i class="fa-regular fa-comments"></i>
                             Chats
                             <span class="notify">5</span>
@@ -108,13 +108,13 @@
 
         <div class="mobile-menu" id="mobileMenu">
             <ul class="mobile-nav-list">
-                <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
-                <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
-                <li class="mobile-nav-item"><a href="learn.html" class="mobile-nav-link">Learning Resources</a></li>
-                <!-- <li class="mobile-nav-item"><a href="playground.html" class="mobile-nav-link">Playground</a></li> -->
-                <!-- <li class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></li> -->
-                <li class="mobile-nav-item"><a href="courses.html" class="mobile-nav-link">Courses</a></li>
-                <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                <li class="mobile-nav-item"><a href="../index.html" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="../about.html" class="mobile-nav-link">About</a></li>
+                <li class="mobile-nav-item"><a href="../learn.html" class="mobile-nav-link">Learning Resources</a></li>
+                <!-- <li class="mobile-nav-item"><a href="../playground.html" class="mobile-nav-link">Playground</a></li> -->
+                <!-- <li class="mobile-nav-item"><a href="../services.html" class="mobile-nav-link">Services</a></li> -->
+                <li class="mobile-nav-item"><a href="../courses.html" class="mobile-nav-link">Courses</a></li>
+                <li class="mobile-nav-item"><a href="../contact.html" class="mobile-nav-link">Contact</a></li>
             </ul>
             <!-- <div class="mobile-cta">
                 <a href="#" class="cta-button">Become a Student</a>
@@ -540,7 +540,7 @@
                         </div>
                         <div class="course-view card-row-actions">
                             <!-- <ion-icon name="chevron-down-outline"></ion-icon> -->
-                            <button class="btn btn-error btn-sm">Delete Course</button>
+                            <!-- <button class="btn btn-error btn-sm">Delete Course</button> -->
                             <button class="btn btn-outline btn-sm view-course-outline-btn">View Course</button>
                         </div>
                     </div>
@@ -559,7 +559,7 @@
                         </div>
                         <div class="course-view card-row-actions">
                             <!-- <ion-icon name="chevron-down-outline"></ion-icon> -->
-                            <button class="btn btn-error btn-sm">Delete Course</button>
+                            <!-- <button class="btn btn-error btn-sm">Delete Course</button> -->
                             <button class="btn btn-outline btn-sm view-course-outline-btn">View Course</button>
                         </div>
                     </div>
@@ -575,10 +575,9 @@
                         <select name="" id="select" class="btn btn-outline btn-sm">
                             <option value="">SortBy</option>
                             <option value="lateast">Lateast</option>
-                            <option value="most-important">Most Important</option>
-                            <option value="submitted">Submitted</option>
-                            <option value="pending">Pending</option>
-                            <option value="graded">Graded</option>
+                            <option value="graded">Grade</option>
+                            <option value="atoz">A - Z</option>
+                            <option value="ztoa">Z - A</option>
                         </select>
 
                     </div>
@@ -697,12 +696,12 @@
                                 Delete
                             </button>
                         </div>
-                        <div class="swipe-actions swipe-left" style="opacity: 0;">
+                        <!-- <div class="swipe-actions swipe-left" style="opacity: 0;">
                             <i class="fas fa-trash"></i>
                         </div>
                         <div class="swipe-actions swipe-right" style="opacity: 0;">
                             <i class="fas fa-star"></i>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="card-row notification-item">
@@ -943,7 +942,7 @@
                             </div>
 
                             <div class="quiz-navigation">
-                                <button class="btn btn-secondary btn-sm" id="cancelQuiz">Cancel Quiz</button>
+                                <button class="btn btn-error btn-sm" id="cancelQuiz">Cancel Quiz</button>
                                 <div class="nav-buttons">
                                     <button class="btn btn-secondary btn-sm" id="prevQuestion" disabled="">
                                         Previous
@@ -1246,7 +1245,7 @@
                         <input type="text" class="search-input" placeholder="Search conversations...">
                     </div>
 
-                    <div class="chat-list" id="chatList" style="display: none;">
+                    <div class="chat-list" id="chatList">
                         <div class="chat-item">
                             <div class="chat-avatar">
                                 CG
@@ -1297,14 +1296,14 @@
                         </div>
                     </div>
 
-                    <div class="chat-messages active" id="chatMessages">
+                    <div class="chat-messages active" id="chatMessages"  style="display: none;">
                         <div class="chat-header">
-                            <button class="back-btn" id="backBtn">
+                            <button class="back-btn" id="closeChatBtn">
                                 <i class="fas fa-arrow-left"></i>
                             </button>
                             <div class="chat-avatar" id="chatAvatar">JD</div>
                             <div class="chat-header-info">
-                                <h3 id="chatName">John Doe</h3>
+                                <h5 id="chatName" class="chat-name">John Doe</h5>
                                 <div class="chat-header-status" id="chatStatus">Online</div>
                             </div>
                         </div>
@@ -1333,14 +1332,13 @@
                             </div>
                             <div class="message received">
                                 <div class="message-bubble">
-
                                     <div class="message-content">Sure! Here's my CSS approach:</div>
                                     <div class="code-message">
                                         <div class="code-info">
                                             <!-- <div class="code-icon">💻</div> -->
                                             <div class="code-details">
-                                                <div class="code-title">Code (css)</div>
-                                                <div class="code-language">CSS</div>
+                                                <div class="code-title">Code ( <span>CSS</span> )</div>
+                                                <!-- <div class="code-language">CSS</div> -->
                                             </div>
                                             <div class="message-actions">
                                                 <button class="action-btn" onclick="chatApp.previewCode('4', 'css')">
@@ -1354,16 +1352,18 @@
                                             </div>
                                         </div>
                                         <div class="code-preview">
-                                            @media (max-width: 768px) {
-                                            .container {
-                                            flex-direction: column;
-                                            padding: 1rem;
-                                            ...
-                                            <!-- @media (max-width: 768px) {
-                                            .container {
-                                            flex-direction: column;
-                                            padding: 1rem;
-                                            ... -->
+                                            .code-preview {
+                                                font-family: var(--font-family-mono);
+                                                font-size: var(--font-size-xs);
+                                                background: rgba(0, 0, 0, 0.1);
+                                                padding: var(--space-2);
+                                                border-radius: var(--radius-sm);
+                                                margin-top: var(--space-2);
+                                                white-space: nowrap;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;
+                                                height: 100px;
+                                            }
                                         </div>
                                     </div>
 

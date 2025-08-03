@@ -326,11 +326,44 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Save Language Preference
-        document.getElementById('save-language').addEventListener('click', () => {
-            const successAlert = document.getElementById('language-success');
-            successAlert.classList.add('show');
-            setTimeout(() => successAlert.classList.remove('show'), 3000);
-        });
+        // document.getElementById('save-language').addEventListener('click', () => {
+        //     const successAlert = document.getElementById('language-success');
+        //     successAlert.classList.add('show');
+        //     setTimeout(() => successAlert.classList.remove('show'), 3000);
+        // });
+
+
+  // Messeage Scripts
+  const closeChatBtn = document.getElementById("closeChatBtn");
+
+  if (closeChatBtn) {
+    closeChatBtn.addEventListener("click", () => {
+      document.getElementById("chatMessages").style.display = 'none';
+      document.getElementById("chatList").style.display = '';
+    });
+  }
+
+  // Open chat messages when clicking on a chat item
+  const chatItems = document.querySelectorAll(".chat-item");
+  chatItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      document.getElementById("chatMessages").style.display = 'block';
+      document.getElementById("chatList").style.display = 'none';
+
+      // Update chat header with selected chat name
+      const chatAvatar = item.querySelector(".chat-avatar").textContent;
+      document.querySelector(".chat-header .chat-avatar").textContent = chatAvatar;
+
+      const chatName = item.querySelector(".chat-name").textContent;
+      console.log(document.querySelector(".chat-header .chat-name"));
+      
+      document.querySelector(".chat-header .chat-name").textContent = chatName;
+
+      // Optionally, scroll to bottom of messages
+      const messagesContainer = document.getElementById("chatMessages");
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    });
+  });
 
 });
 
@@ -761,143 +794,612 @@ function copyReferralCode() {
 const courseOutline = `
 <h4 class="modal-title">JavaScript Fundamentals Course Outline</h4>
 <div class="course-outline">
-    <div class="progress-summary">
-        <div class="progress-text">Course Progress: 4 of 10 topics completed</div>
-        <div class="progress-bar">
-            <div class="progress-fill" style="width: 40%"></div>
-        </div>
+  <div class="progress-summary">
+    <div class="progress-text">Course Progress: 4 of 10 topics completed</div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: 40%"></div>
     </div>
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-checkpoint completed">
-                <svg class="checkmark completed" viewBox="0 0 24 24">
-                    <path d="M20 6L9 17l-5-5" />
-                </svg>
-            </div>
-            <div class="timeline-content completed">
-                <h6 class="topic-title completed">HTML Elements & Structure</h6>
-                <p class="topic-description">Understanding basic HTML structure, DOCTYPE, html,
-                    head, and body elements</p>
-            </div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-checkpoint completed">
+        <svg class="checkmark completed" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
+      </div>
+      <div class="timeline-content completed">
+        <h6 class="topic-title completed">HTML Elements & Structure</h6>
+        <p class="topic-description">
+        Understanding basic HTML structure, DOCTYPE, html, head, and body elements
+        </p>
+        <div class="topic-icon btn btn-outline btn-xs" onclick="toggleSubTopics(this)">
+        View Sub Topics
+        <i class="fas fa-chevron-right" style="margin-left: 6px;"></i>
         </div>
-
-        <div class="timeline-item">
-            <div class="timeline-checkpoint completed">
-                <svg class="checkmark completed" viewBox="0 0 24 24">
-                    <path d="M20 6L9 17l-5-5" />
-                </svg>
-            </div>
-            <div class="timeline-content completed">
-                <h6 class="topic-title completed">Text Formatting Tags</h6>
-                <p class="topic-description">Working with headings, paragraphs, bold, italic,
-                    and other text formatting elements</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-checkpoint completed">
-                <svg class="checkmark completed" viewBox="0 0 24 24">
-                    <path d="M20 6L9 17l-5-5" />
-                </svg>
-            </div>
-            <div class="timeline-content completed">
-                <h6 class="topic-title completed">Links & Navigation</h6>
-                <p class="topic-description">Creating hyperlinks, anchor tags, and navigation
-                    menus</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-checkpoint completed">
-                <svg class="checkmark completed" viewBox="0 0 24 24">
-                    <path d="M20 6L9 17l-5-5" />
-                </svg>
-            </div>
-            <div class="timeline-content completed">
-                <h6 class="topic-title completed">Images & Media</h6>
-                <p class="topic-description">Embedding images, videos, and other media content
-                    with proper attributes</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-checkpoint pending">
-                <svg class="checkmark pending" viewBox="0 0 24 24">
-                    <path d="M20 6L9 17l-5-5" />
-                </svg>
-            </div>
-            <div class="timeline-content">
-                <h6 class="topic-title">Lists & Organization</h6>
-                <p class="topic-description">Creating ordered and unordered lists, definition
-                    lists, and nested structures</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-checkpoint pending">
-                <svg class="checkmark pending" viewBox="0 0 24 24">
-                    <path d="M20 6L9 17l-5-5" />
-                </svg>
-            </div>
-            <div class="timeline-content">
-                <h6 class="topic-title">Tables & Data</h6>
-                <p class="topic-description">Building tables for data presentation with proper
-                    headers and structure</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-checkpoint pending">
-                <svg class="checkmark pending" viewBox="0 0 24 24">
-                    <path d="M20 6L9 17l-5-5" />
-                </svg>
-            </div>
-            <div class="timeline-content">
-                <h6 class="topic-title">Forms & Input Elements</h6>
-                <p class="topic-description">Creating interactive forms with input fields,
-                    buttons, and validation</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-checkpoint pending">
-                <svg class="checkmark pending" viewBox="0 0 24 24">
-                    <path d="M20 6L9 17l-5-5" />
-                </svg>
-            </div>
-            <div class="timeline-content">
-                <h6 class="topic-title">Semantic HTML5</h6>
-                <p class="topic-description">Using modern HTML5 semantic elements for better
-                    structure and accessibility</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-checkpoint pending">
-                <svg class="checkmark pending" viewBox="0 0 24 24">
-                    <path d="M20 6L9 17l-5-5" />
-                </svg>
-            </div>
-            <div class="timeline-content">
-                <h6 class="topic-title">Meta Tags & SEO</h6>
-                <p class="topic-description">Optimizing HTML for search engines and social media
-                    sharing</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-checkpoint pending">
-                <svg class="checkmark pending" viewBox="0 0 24 24">
-                    <path d="M20 6L9 17l-5-5" />
-                </svg>
-            </div>
-            <div class="timeline-content">
-                <h6 class="topic-title">Best Practices & Accessibility</h6>
-                <p class="topic-description">Writing clean, accessible HTML code following
-                    modern standards</p>
-            </div>
-        </div>
+        <ul class="sub-topics">
+        <li class="sub-topic"> 
+          <div class="timeline-checkpoint completed">
+          <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+          </div>
+          Introduction/History to HTML
+        </li>
+        <li class="sub-topic"> 
+          <div class="timeline-checkpoint completed">
+          <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+          </div>
+          Understanding HTML Document Structure
+        </li>
+        <li class="sub-topic"> 
+          <div class="timeline-checkpoint completed">
+          <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+          </div>
+          Basic HTML Tags and Attributes
+        </li>
+        <li class="sub-topic"> 
+          <div class="timeline-checkpoint completed">
+          <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+          </div>
+          HTML Tag Nesting and Hierarchy
+        </li>
+        <li class="sub-topic"> 
+          <div class="timeline-checkpoint completed">
+          <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+          </div>
+          HTML Comments and Best Practices
+        </li>
+        <li class="sub-topic"> 
+          <div class="timeline-checkpoint completed">
+          <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+          </div>
+          HTML Tables and Lists
+        </li>
+        <li class="sub-topic"> 
+          <div class="timeline-checkpoint completed">
+          <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+          </div>
+          HTML Table Styling, Attributes and Accessibility
+        </li>
+        <li class="sub-topic"> 
+          <div class="timeline-checkpoint completed">
+          <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+          </div>
+          HTML Forms and Input Elements
+        </li>
+        <li class="sub-topic"> 
+          <div class="timeline-checkpoint completed">
+          <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+          </div>
+          HTML Forms Attributes and Validation
+        </li>
+        <li class="sub-topic"> 
+          <div class="timeline-checkpoint completed">
+          <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+          </div>
+          HTML Forms Styling and Accessibility
+        </li>
+        </ul>
+      </div>
     </div>
+
+    <div class="timeline-item">
+      <div class="timeline-checkpoint completed">
+        <svg class="checkmark completed" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
+      </div>
+      <div class="timeline-content completed">
+        <h6 class="topic-title completed">Text Formatting Tags</h6>
+        <p class="topic-description">Working with headings, paragraphs, bold, italic,
+          and other text formatting elements</p>
+        <div class="topic-icon btn btn-outline btn-xs" onclick="toggleSubTopics(this)">
+          View Sub Topics
+          <i class="fas fa-chevron-right" style="margin-left: 6px;"></i>
+        </div>
+        <ul class="sub-topics">
+          <li class="sub-topic">
+          <div class="timeline-checkpoint completed">
+            <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Headings (h1-h6)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint completed">
+            <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Paragraphs and line breaks
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint completed">
+            <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Bold, Italic, Underline, and Emphasis tags
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint completed">
+            <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Superscript and Subscript
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint completed">
+            <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Preformatted text and code blocks
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-checkpoint completed">
+        <svg class="checkmark completed" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
+      </div>
+      <div class="timeline-content completed">
+        <h6 class="topic-title completed">Links & Navigation</h6>
+        <p class="topic-description">Creating hyperlinks, anchor tags, and navigation
+          menus</p>
+        <div class="topic-icon btn btn-outline btn-xs" onclick="toggleSubTopics(this)">
+          View Sub Topics
+          <i class="fas fa-chevron-right" style="margin-left: 6px;"></i>
+        </div>
+        <ul class="sub-topics">
+          <li class="sub-topic">
+          <div class="timeline-checkpoint completed">
+            <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Anchor tags and href attribute
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint completed">
+            <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Opening links in new tabs
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint completed">
+            <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Navigation menus and lists
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint completed">
+            <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Internal page navigation
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-checkpoint completed">
+        <svg class="checkmark completed" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
+      </div>
+      <div class="timeline-content completed">
+        <h6 class="topic-title completed">Images & Media</h6>
+        <p class="topic-description">Embedding images, videos, and other media content
+          with proper attributes</p>
+        <div class="topic-icon btn btn-outline btn-xs" onclick="toggleSubTopics(this)">
+          View Sub Topics
+          <i class="fas fa-chevron-right" style="margin-left: 6px;"></i>
+        </div>
+        <ul class="sub-topics">
+          <li class="sub-topic">
+          <div class="timeline-checkpoint completed">
+            <svg class="checkmark completed" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Image tags and attributes (src, alt, width, height)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Embedding audio and video
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Responsive images and media
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          SVG and vector graphics
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-checkpoint pending">
+        <svg class="checkmark pending" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
+      </div>
+      <div class="timeline-content">
+        <h6 class="topic-title">Lists & Organization</h6>
+        <p class="topic-description">Creating ordered and unordered lists, definition
+          lists, and nested structures</p>
+        <div class="topic-icon btn btn-outline btn-xs" onclick="toggleSubTopics(this)">
+          View Sub Topics
+          <i class="fas fa-chevron-right" style="margin-left: 6px;"></i>
+        </div>
+        <ul class="sub-topics">
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Unordered lists (<code>&lt;ul&gt;</code>)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Ordered lists (<code>&lt;ol&gt;</code>)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Definition lists (<code>&lt;dl&gt;</code>)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Nested lists
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          List styling with CSS
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-checkpoint pending">
+        <svg class="checkmark pending" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
+      </div>
+      <div class="timeline-content">
+        <h6 class="topic-title">Tables & Data</h6>
+        <p class="topic-description">Building tables for data presentation with proper
+          headers and structure</p>
+        <div class="topic-icon btn btn-outline btn-xs" onclick="toggleSubTopics(this)">
+          View Sub Topics
+          <i class="fas fa-chevron-right" style="margin-left: 6px;"></i>
+        </div>
+        <ul class="sub-topics">
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Table structure (<code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Table headers (<code>&lt;th&gt;</code>)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Table captions and summaries
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Table styling and borders
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Responsive tables
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-checkpoint pending">
+        <svg class="checkmark pending" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
+      </div>
+      <div class="timeline-content">
+        <h6 class="topic-title">Forms & Input Elements</h6>
+        <p class="topic-description">Creating interactive forms with input fields,
+          buttons, and validation</p>
+        <div class="topic-icon btn btn-outline btn-xs" onclick="toggleSubTopics(this)">
+          View Sub Topics
+          <i class="fas fa-chevron-right" style="margin-left: 6px;"></i>
+        </div>
+        <ul class="sub-topics">
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Form structure (<code>&lt;form&gt;</code>)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Input types (text, email, password, etc.)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Buttons and form controls
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Form validation (required, pattern, etc.)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Form accessibility
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-checkpoint pending">
+        <svg class="checkmark pending" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
+      </div>
+      <div class="timeline-content">
+        <h6 class="topic-title">Semantic HTML5</h6>
+        <p class="topic-description">Using modern HTML5 semantic elements for better
+          structure and accessibility</p>
+        <div class="topic-icon btn btn-outline btn-xs" onclick="toggleSubTopics(this)">
+          View Sub Topics
+          <i class="fas fa-chevron-right" style="margin-left: 6px;"></i>
+        </div>
+        <ul class="sub-topics">
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Semantic elements (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Sectioning content (<code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Accessibility with semantic tags
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Using <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-checkpoint pending">
+        <svg class="checkmark pending" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
+      </div>
+      <div class="timeline-content">
+        <h6 class="topic-title">Meta Tags & SEO</h6>
+        <p class="topic-description">Optimizing HTML for search engines and social media
+          sharing</p>
+        <div class="topic-icon btn btn-outline btn-xs" onclick="toggleSubTopics(this)">
+          View Sub Topics
+          <i class="fas fa-chevron-right" style="margin-left: 6px;"></i>
+        </div>
+        <ul class="sub-topics">
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Meta tags (<code>&lt;meta&gt;</code>) for charset, viewport, description
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Open Graph and Twitter Card tags
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          SEO best practices for HTML
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Social media sharing optimization
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-checkpoint pending">
+        <svg class="checkmark pending" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
+      </div>
+      <div class="timeline-content">
+        <h6 class="topic-title">Best Practices & Accessibility</h6>
+        <p class="topic-description">Writing clean, accessible HTML code following
+          modern standards</p>
+        <div class="topic-icon btn btn-outline btn-xs" onclick="toggleSubTopics(this)">
+          View Sub Topics
+          <i class="fas fa-chevron-right" style="margin-left: 6px;"></i>
+        </div>
+        <ul class="sub-topics">
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Writing semantic and readable HTML
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Accessibility attributes (aria-label, alt, etc.)
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Keyboard navigation and focus management
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Color contrast and visual accessibility
+          </li>
+          <li class="sub-topic">
+          <div class="timeline-checkpoint pending">
+            <svg class="checkmark pending" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          Validating HTML code
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -914,6 +1416,11 @@ if (viewCourseOutlineBtn) {
       openModal(courseOutline);
     });
   });
+}
+
+function toggleSubTopics(clickedElement) {
+  clickedElement.classList.toggle("active")
+  clickedElement.parentElement.classList.toggle("sub-topic-active")
 }
 
 // Show Assignment details
@@ -935,7 +1442,9 @@ const assignmentDetails = `
 
   <div id="fileTab" class="tab-content active">
     <div class="file-upload" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)" ondragleave="dragLeaveHandler(event)" onclick="document.getElementById('fileInput').click()">
-        <div class="file-upload-icon">📁</div>
+        <div class="file-upload-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+        </div>
         <h6>Drop files here or click to browse</h6>
         <p>Supported formats: PDF, ZIP, HTML, CSS, JS</p>
         <input type="file" id="fileInput" multiple accept=".pdf,.zip,.html,.css,.js" style="display: none;" onchange="handleFiles(this.files)">
@@ -946,12 +1455,7 @@ const assignmentDetails = `
   <div id="codeTab" class="tab-content">
       <div class="code-editor">
           <div class="editor-header">
-              <span>Code Editor</span>
-              <select class="language-select" id="languageSelect" onchange="updateLanguage()">
-                  <option value="html">HTML</option>
-                  <option value="css">CSS</option>
-                  <option value="javascript">JavaScript</option>
-              </select>
+            <h5>Paste Your Code</h5>
           </div>
           <textarea class="code-textarea" id="codeTextarea" placeholder="Write your code here..."></textarea>
       </div>
@@ -978,7 +1482,7 @@ const assignmentDetails = `
       </div>
   </div>
 
-  <button class="submit-btn" onclick="submitAssignment()">Submit Assignment</button>
+  <button class="submit-btn btn btn-outline btn-md" onclick="submitAssignment()">Submit Assignment</button>
   <div id="successMessage" class="success-message">
       Assignment submitted successfully! ✅
   </div>
@@ -1738,12 +2242,12 @@ class KachikodesCalendar {
 
   getEventIcon(type) {
     const icons = {
-      assignment: "📝",
-      "live-class": "🎥",
-      quiz: "📊",
-      holiday: "🏖️",
+      assignment: '<i class="fas fa-file-alt"></i>',
+      "live-class": '<i class="fas fa-chalkboard-teacher"></i>',
+      quiz: '<i class="fas fa-question-circle"></i>',
+      holiday: '<i class="fas fa-umbrella-beach"></i>',
     };
-    return icons[type] || "📅";
+    return icons[type] || '<i class="fas fa-calendar-alt"></i>';
   }
 
   renderUpcomingEvents() {
@@ -1762,7 +2266,9 @@ class KachikodesCalendar {
     if (upcomingEvents.length === 0) {
       upcomingEventsContainer.innerHTML = `
                         <div style="text-align: center; padding: 2rem; color: var(--text-light);">
-                            <div style="font-size: 3rem; margin-bottom: 1rem;">📅</div>
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">
+                              <i class="fas fa-calendar-alt"></i>
+                            </div>
                             <p>No upcoming events in the next 14 days</p>
                         </div>
                     `;
