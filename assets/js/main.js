@@ -4,9 +4,9 @@ function openModal(modalBody) {
 };
 
 
-// function closeModal() {
-//   document.getElementById('modal').classList.remove('show');
-// }
+function closeModal() {
+  document.getElementById('modal').classList.remove('show');
+}
 
 
 // Close modal when clicking outside

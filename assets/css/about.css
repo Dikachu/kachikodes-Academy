@@ -1,40 +1,16 @@
 /* Hero Section */
-.hero {
-  /* background: linear-gradient(
+/* .hero {
+  background: linear-gradient(
     135deg,
     var(--color-primary) 0%,
     var(--color-secondary) 100%
-  ); */
+  );
   background: var(--color-secondary) url("../images/class-room-3.avif") no-repeat center/cover;
   color: var(--color-text-inverse);
   padding: 50px 0;
   position: relative;
   overflow: hidden;
 }
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  /* background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="var(--color-accent)"/></svg>')
-    repeat;
-  background-color: var(--color-primary-dark);
-  opacity: 0.3; */
-  background-color: var(--color-primary-dark); /* Or var(--color-secondary) */
-  opacity: 0.8;
-}
-
-/* .hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="var(--color-accent)"/></svg>')
-    repeat;
-  opacity: 0.3;
-} */
 
 .hero-content {
   position: relative;
@@ -45,22 +21,10 @@
 .hero h1 {
   margin-bottom: var(--space-4);
   color: var(--color-accent);
-  /* background: linear-gradient(
-    45deg,
-    var(--color-text-inverse),
-    var(--color-accent)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; */
 }
 
 .hero .subtitle {
-  /* animation: slideInUp 1s ease-out 0.2s both; */
-  color: var(--color-text-inverse); /* White for tagline */
   font-family: var(--font-family-body);
-  /* font-size: var(--font-size-2xl); */
-  /* font-weight: var(--font-weight-semibold); */
   margin-bottom: var(--space-6);
 }
 
@@ -68,10 +32,6 @@
   color: var(--color-text-inverse);
   max-width: 800px;
   margin: 0 auto;
-  /* font-weight: 500; */
-  /* animation: slideInUp 1s ease-out 0.4s both; */
-  /* font-size: var(--font-size-lg); */
-  /* line-height: var(--line-height-relaxed); */
 }
 
 @media (max-width: 768px) {
@@ -87,7 +47,7 @@
     font-size: var(--font-size-sm);
   }
   
-}
+} */
 
 /* Story Section */
 .story {

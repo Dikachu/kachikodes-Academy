@@ -1,4 +1,4 @@
-.hero {
+/* .hero {
   background: linear-gradient(135deg,
       rgba(1, 36, 37, 0.9),
       rgba(0, 52, 50, 0.8)),
@@ -57,7 +57,7 @@
   color: var(--color-text-inverse);
   margin-bottom: 2rem;
   opacity: 0.9;
-}
+} */
 
 .contact-section {
   margin: var(--space-10) 0;
