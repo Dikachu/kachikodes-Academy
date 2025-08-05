@@ -535,10 +535,10 @@
   transform: scale(1.1);
 }
 
-.feature-card .feature-icon svg {
-  width: 32px;
-  height: 32px;
-  fill: var(--color-text-inverse);
+.feature-card .feature-icon i {
+  /* width: 32px;
+  height: 32px; */
+  color: var(--color-text-inverse);
   transition: fill var(--transition-slow);
 }
 
@@ -900,22 +900,22 @@
     color: var(--color-text-secondary);
   }
 
-  .swiper-pagination {
+  /* .swiper-pagination {
     position: static;
     margin-top: var(--space-8);
-  }
+  } */
 
   .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     background: var(--color-border-dark);
-    opacity: 1;
+    opacity: 0.6;
     transition: all var(--transition-base);
   }
 
   .swiper-pagination-bullet-active {
     background: var(--color-secondary);
-    transform: scale(1.2);
+    opacity: 1;
   }
 
   .swiper-button-prev,

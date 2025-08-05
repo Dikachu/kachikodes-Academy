@@ -174,3 +174,60 @@ function toggleFAQ(element) {
     icon.textContent = "+";
   }
 }
+
+function viewStudentDetails() {
+  // console.log(this);
+  
+
+  // Profile Header 
+  const studentHeader = `
+  <div class="profile-header">
+    <img src="assets/images/students_image/student-1.jpg" alt="Sarah Johnson" class="profile-image">
+    <h2 class="profile-name">Sarah Johnson</h2>
+    <!-- <span class="profile-course">Web Development Bootcamp</span> -->
+  </div>
+  `
+
+  // Profile Body 
+  const profileBody = `
+  <div class="profile-body">
+  
+    <div class="profile-section">
+        <h3 class="section-title">About</h3>
+        <p class="profile-bio">
+            Passionate frontend developer with a keen eye for UI/UX design. 
+            Currently mastering React and modern web technologies to build 
+            engaging user experiences.
+        </p>
+    </div>
+
+    <div class="profile-section">
+        <h3 class="section-title">Email</h3>
+        <a href="mailto:sarah.johnson@email.com" class="profile-email">
+            sarah.johnson@email.com
+        </a>
+    </div>
+
+    <div class="profile-section">
+        <h3 class="section-title">Connect</h3>
+        <div class="social-links">
+            <a href="tel:+1234567890" class="social-link phone" title="Call">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="https://wa.me/1234567890" class="social-link whatsapp" title="WhatsApp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://linkedin.com/in/sarahjohnson" class="social-link linkedin" title="LinkedIn" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/sarahjohnson" class="social-link github" title="GitHub" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+  </div>
+  `
+  const modalBody = `${studentHeader} ${profileBody}`
+
+  openModal(modalBody);
+}

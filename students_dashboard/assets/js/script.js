@@ -312,25 +312,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // Save Notifications
-        document.getElementById('save-notifications').addEventListener('click', () => {
-            const successAlert = document.getElementById('notifications-success');
-            successAlert.classList.add('show');
-            setTimeout(() => successAlert.classList.remove('show'), 3000);
-        });
+  document.getElementById('save-notifications').addEventListener('click', () => {
+    const successAlert = document.getElementById('notifications-success');
+    successAlert.classList.add('show');
+    setTimeout(() => successAlert.classList.remove('show'), 3000);
+  });
 
-        // Save Privacy Settings
-        document.getElementById('save-privacy').addEventListener('click', () => {
-            const successAlert = document.getElementById('privacy-success');
-            successAlert.classList.add('show');
-            setTimeout(() => successAlert.classList.remove('show'), 3000);
-        });
+  // Save Privacy Settings
+  document.getElementById('save-privacy').addEventListener('click', () => {
+    const successAlert = document.getElementById('privacy-success');
+    successAlert.classList.add('show');
+    setTimeout(() => successAlert.classList.remove('show'), 3000);
+  });
 
-        // Save Language Preference
-        // document.getElementById('save-language').addEventListener('click', () => {
-        //     const successAlert = document.getElementById('language-success');
-        //     successAlert.classList.add('show');
-        //     setTimeout(() => successAlert.classList.remove('show'), 3000);
-        // });
+  // Save Language Preference
+  // document.getElementById('save-language').addEventListener('click', () => {
+  //     const successAlert = document.getElementById('language-success');
+  //     successAlert.classList.add('show');
+  //     setTimeout(() => successAlert.classList.remove('show'), 3000);
+  // });
 
 
   // Messeage Scripts
@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const chatName = item.querySelector(".chat-name").textContent;
       // console.log(document.querySelector(".chat-header .chat-name"));
-      
+
       document.querySelector(".chat-header .chat-name").textContent = chatName;
 
       // Optionally, scroll to bottom of messages
@@ -368,284 +368,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Utilitis
-
-// class Calendar {
-//   constructor() {
-//     this.currentDate = new Date();
-//     this.events = {
-//       "2025-07-15": {
-//         type: "class",
-//         name: "Web Development",
-//         time: "9:00 AM",
-//         instructor: "John Doe",
-//         description: "Introduction to HTML tags and their uses",
-//       },
-//       "2025-07-18": {
-//         type: "class",
-//         name: "JavaScript Fundamentals",
-//         time: "10:30 AM",
-//         instructor: "Sarah Wilson",
-//         description: "Basic JavaScript concepts and DOM manipulation",
-//       },
-//       "2025-07-20": {
-//         type: "assignment",
-//         name: "CSS Project",
-//         time: "11:59 PM",
-//         instructor: "Jane Smith",
-//         description: "Submit your CSS styling project",
-//       },
-//       "2025-07-22": {
-//         type: "class",
-//         name: "React Basics",
-//         time: "2:00 PM",
-//         instructor: "Mike Johnson",
-//         description: "Introduction to React components and state",
-//       },
-//       "2025-07-25": {
-//         type: "meeting",
-//         name: "General Meeting",
-//         time: "1:00 PM",
-//         instructor: "Admin",
-//         description: "Monthly general meeting for all students",
-//       },
-//       "2025-07-28": {
-//         type: "assignment",
-//         name: "JavaScript Quiz",
-//         time: "11:59 PM",
-//         instructor: "Sarah Wilson",
-//         description: "Complete online JavaScript fundamentals quiz",
-//       },
-//       "2025-07-30": {
-//         type: "class",
-//         name: "Database Design",
-//         time: "9:00 AM",
-//         instructor: "David Chen",
-//         description: "Introduction to database design principles",
-//       },
-//     };
-//     this.init();
-//   }
-
-//   init() {
-//     this.renderCalendar();
-//     this.bindEvents();
-//   }
-
-//   bindEvents() {
-//     document
-//       .getElementById("prevMonth")
-//       .addEventListener("click", () => this.previousMonth());
-//     document
-//       .getElementById("nextMonth")
-//       .addEventListener("click", () => this.nextMonth());
-//     document
-//       .getElementById("addEventBtn")
-//       .addEventListener("click", () => this.openModal());
-//     document
-//       .getElementById("closeModal")
-//       .addEventListener("click", () => this.closeModal());
-//     document
-//       .getElementById("cancelBtn")
-//       .addEventListener("click", () => this.closeModal());
-//     document
-//       .getElementById("eventForm")
-//       .addEventListener("submit", (e) => this.addEvent(e));
-
-//     // Color option selection
-//     document.querySelectorAll(".color-option").forEach((option) => {
-//       option.addEventListener("click", () => {
-//         document
-//           .querySelectorAll(".color-option")
-//           .forEach((opt) => opt.classList.remove("selected"));
-//         option.classList.add("selected");
-//       });
-//     });
-
-//     // Modal close on backdrop click
-//     document.getElementById("eventModal").addEventListener("click", (e) => {
-//       if (e.target.id === "eventModal") {
-//         this.closeModal();
-//       }
-//     });
-//   }
-
-//   renderCalendar() {
-//     const monthYear = document.getElementById("monthYear");
-//     const calendarDays = document.getElementById("calendarDays");
-
-//     const year = this.currentDate.getFullYear();
-//     const month = this.currentDate.getMonth();
-
-//     monthYear.textContent = `${this.currentDate.toLocaleString("default", {
-//       month: "long",
-//     })}, ${year}`;
-
-//     calendarDays.innerHTML = "";
-
-//     const firstDay = new Date(year, month, 1);
-//     const lastDay = new Date(year, month + 1, 0);
-//     const startDate = new Date(firstDay);
-//     startDate.setDate(startDate.getDate() - firstDay.getDay());
-
-//     const today = new Date();
-//     const todayString = today.toISOString().split("T")[0];
-
-//     for (let i = 0; i < 42; i++) {
-//       const date = new Date(startDate);
-//       date.setDate(startDate.getDate() + i);
-
-//       const dayCell = document.createElement("div");
-//       dayCell.className = "day-cell";
-
-//       const dayNumber = document.createElement("div");
-//       dayNumber.className = "day-number";
-//       dayNumber.textContent = date.getDate();
-
-//       if (date.getMonth() !== month) {
-//         dayCell.classList.add("other-month");
-//       }
-
-//       const dateString = date.toISOString().split("T")[0];
-
-//       if (dateString === todayString) {
-//         dayCell.classList.add("today");
-//       }
-
-//       dayCell.appendChild(dayNumber);
-
-//       // Add event if exists
-//       if (this.events[dateString]) {
-//         const event = this.events[dateString];
-
-//         const indicator = document.createElement("div");
-//         indicator.className = `event-indicator ${event.type}`;
-//         dayCell.appendChild(indicator);
-
-//         const eventText = document.createElement("div");
-//         eventText.className = `event-text ${event.type}`;
-//         eventText.textContent = `${
-//           event.type === "class"
-//             ? "Class"
-//             : event.type === "meeting"
-//             ? "Meeting"
-//             : "Due"
-//         } - ${event.time}`;
-//         dayCell.appendChild(eventText);
-
-//         this.addTooltip(dayCell, event);
-//       }
-
-//       calendarDays.appendChild(dayCell);
-//     }
-//   }
-
-//   addTooltip(element, event) {
-//     const tooltip = document.getElementById("tooltip");
-
-//     element.addEventListener("mouseenter", (e) => {
-//       const typeLabel =
-//         event.type === "class"
-//           ? "Class"
-//           : event.type === "meeting"
-//           ? "Meeting"
-//           : "Assignment";
-//       tooltip.innerHTML = `
-//                         <strong>${typeLabel} - ${event.time}</strong><br>
-//                         ${
-//                           event.instructor
-//                             ? `Instructor: ${event.instructor}<br>`
-//                             : ""
-//                         }
-//                         ${event.description}
-//                     `;
-
-//       const rect = element.getBoundingClientRect();
-//       tooltip.style.left = `${rect.left + window.scrollX}px`;
-//       tooltip.style.top = `${
-//         rect.top + window.scrollY - tooltip.offsetHeight - 10
-//       }px`;
-
-//       tooltip.classList.add("show");
-//     });
-
-//     element.addEventListener("mouseleave", () => {
-//       tooltip.classList.remove("show");
-//     });
-//   }
-
-//   previousMonth() {
-//     this.currentDate.setMonth(this.currentDate.getMonth() - 1);
-//     this.renderCalendar();
-//   }
-
-//   nextMonth() {
-//     this.currentDate.setMonth(this.currentDate.getMonth() + 1);
-//     this.renderCalendar();
-//   }
-
-//   openModal() {
-//     const modal = document.getElementById("eventModal");
-//     modal.classList.add("show");
-
-//     // Set default date to today or selected date
-//     const today = new Date();
-//     const defaultDate = today.toISOString().split("T")[0];
-//     document.getElementById("eventDate").value = defaultDate;
-
-//     // Focus on the first input
-//     setTimeout(() => {
-//       document.getElementById("eventName").focus();
-//     }, 100);
-//   }
-
-//   closeModal() {
-//     document.getElementById("eventModal").classList.remove("show");
-//     document.getElementById("eventForm").reset();
-//     document
-//       .querySelectorAll(".color-option")
-//       .forEach((opt) => opt.classList.remove("selected"));
-//     document.querySelector(".color-option.class").classList.add("selected");
-//   }
-
-//   addEvent(e) {
-//     e.preventDefault();
-
-//     const eventData = {
-//       name: document.getElementById("eventName").value,
-//       date: document.getElementById("eventDate").value,
-//       time: document.getElementById("eventTime").value,
-//       instructor: document.getElementById("eventInstructor").value || "TBD",
-//       description:
-//         document.getElementById("eventDescription").value ||
-//         "No description provided",
-//       type: document.querySelector(".color-option.selected").dataset.type,
-//     };
-
-//     // Format time to 12-hour format
-//     const timeFormatted = new Date(
-//       `2000-01-01T${eventData.time}`
-//     ).toLocaleString("en-US", {
-//       hour: "numeric",
-//       minute: "2-digit",
-//       hour12: true,
-//     });
-
-//     this.events[eventData.date] = {
-//       type: eventData.type,
-//       name: eventData.name,
-//       time: timeFormatted,
-//       instructor: eventData.instructor,
-//       description: eventData.description,
-//     };
-
-//     // Re-render calendar to show new event
-//     this.renderCalendar();
-//     this.closeModal();
-
-//     // Show success message (optional)
-//     console.log("Event added successfully:", eventData);
-//   }
-// }
 
 let isEditMode = false;
 
@@ -700,18 +422,12 @@ function saveChanges() {
   document.getElementById("username").textContent = username;
 
   // Update full name
-  document.getElementById(
-    "studentName"
-  ).textContent = `${firstName} ${lastName}`;
+  document.getElementById("studentName").textContent = `${firstName} ${lastName}`;
 
   // Format and update date of birth
   if (dob) {
     const dateObj = new Date(dob);
-    const formattedDate = dateObj.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+    const formattedDate = dateObj.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", });
     document.getElementById("dob").textContent = formattedDate;
   }
 
@@ -719,21 +435,16 @@ function saveChanges() {
   toggleEdit();
 
   // Show success message (you can customize this)
-  alert("Profile updated successfully!");
+  // alert("Profile updated successfully!");
 }
 
 function cancelEdit() {
   // Reset input values to original display values
-  document.getElementById("firstNameInput").value =
-    document.getElementById("firstName").textContent;
-  document.getElementById("lastNameInput").value =
-    document.getElementById("lastName").textContent;
-  document.getElementById("emailInput").value =
-    document.getElementById("email").textContent;
-  document.getElementById("phoneInput").value =
-    document.getElementById("phone").textContent;
-  document.getElementById("usernameInput").value =
-    document.getElementById("username").textContent;
+  document.getElementById("firstNameInput").value = document.getElementById("firstName").textContent;
+  document.getElementById("lastNameInput").value = document.getElementById("lastName").textContent;
+  document.getElementById("emailInput").value = document.getElementById("email").textContent;
+  document.getElementById("phoneInput").value = document.getElementById("phone").textContent;
+  document.getElementById("usernameInput").value = document.getElementById("username").textContent;
 
   // Exit edit mode
   toggleEdit();
@@ -775,6 +486,7 @@ function copyReferralCode() {
 
       setTimeout(function () {
         copyBtn.className = originalClass;
+        // alert("Referral code copied to clipboard!");
       }, 1500);
     })
     .catch(function () {
@@ -786,7 +498,7 @@ function copyReferralCode() {
       document.execCommand("copy");
       document.body.removeChild(textarea);
 
-      alert("Referral code copied to clipboard!");
+      // alert("Referral code copied to clipboard!");
     });
 }
 
@@ -1397,7 +1109,6 @@ const courseOutline = `
 const viewCourseOutlineBtn = document.querySelectorAll(
   ".view-course-outline-btn"
 );
-// console.log(viewCourseOutlineBtn);
 
 if (viewCourseOutlineBtn) {
   viewCourseOutlineBtn.forEach((btn) => {
@@ -1417,7 +1128,7 @@ function toggleSubTopics(clickedElement) {
 // Show Assignment details
 const assignmentDetails = `
 <h4 class="modal-title">Submit Assignment</h4>
-<div class="assignment-modal-body>
+<div class="assignment-modal-body">
   <div class="instructions">
     <h6>Assignment Instructions</h6>
     <p id="assignmentInstructions">
@@ -1431,7 +1142,7 @@ const assignmentDetails = `
     <button class="tab-btn" onclick="switchTab('github')">GitHub Submission</button>
   </div>
 
-  <div id="fileTab" class="tab-content active">
+  <div id="fileTab" class="assignment-tab-content active">
     <div class="file-upload" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)" ondragleave="dragLeaveHandler(event)" onclick="document.getElementById('fileInput').click()">
         <div class="file-upload-icon">
             <i class="fas fa-cloud-upload-alt"></i>
@@ -1443,7 +1154,7 @@ const assignmentDetails = `
     <div id="fileList" class="file-list"></div>
   </div>
 
-  <div id="codeTab" class="tab-content">
+  <div id="codeTab" class="assignment-tab-content">
       <div class="code-editor">
           <div class="editor-header">
             <h5>Paste Your Code</h5>
@@ -1452,21 +1163,21 @@ const assignmentDetails = `
       </div>
   </div>
 
-  <div id="githubTab" class="tab-content">
+  <div id="githubTab" class="assignment-tab-content">
       <div class="form-group">
           <label for="repoUrl">GitHub Repository URL:</label>
-          <input type="url" id="repoUrl" placeholder="https://github.com/username/repository">
+          <input type="url" id="repoUrl" placeholder="https://github.com/username/repository" onInput="updateGitHubLinks()">
           <div class="github-links">
-              <a href="#" class="github-btn" id="viewRepoBtn" target="_blank" style="display: none;">
+              <a href="#" class="btn btn-primary btn-sm" id="viewRepoBtn" target="_blank" style="display: none;">
                   🔗 View Repository
               </a>
           </div>
       </div>
       <div class="form-group">
           <label for="pagesUrl">GitHub Pages URL (if applicable):</label>
-          <input type="url" id="pagesUrl" placeholder="https://username.github.io/repository">
+          <input type="url" id="pagesUrl" placeholder="https://username.github.io/repository" onInput="updateGitHubLinks()">
           <div class="github-links">
-              <a href="#" class="github-btn" id="viewLiveBtn" target="_blank" style="display: none;">
+              <a href="#" class="btn btn-primary btn-sm" id="viewLiveBtn" target="_blank" style="display: none;">
                   🌐 View Live Demo
               </a>
           </div>
@@ -1480,10 +1191,7 @@ const assignmentDetails = `
 </div>
 `;
 
-const viewAssignmentDetailsBtn = document.querySelectorAll(
-  ".view-assignment-btn"
-);
-// console.log(viewAssignmentDetailsBtn);
+const viewAssignmentDetailsBtn = document.querySelectorAll(".view-assignment-btn");
 
 if (viewAssignmentDetailsBtn) {
   viewAssignmentDetailsBtn.forEach((btn) => {
@@ -1497,15 +1205,11 @@ if (viewAssignmentDetailsBtn) {
 
 function switchTab(tabName) {
   // Update tab buttons
-  document
-    .querySelectorAll(".tab-btn")
-    .forEach((btn) => btn.classList.remove("active"));
+  document.querySelectorAll(".tab-btn").forEach((btn) => btn.classList.remove("active"));
   event.target.classList.add("active");
 
   // Update tab content
-  document
-    .querySelectorAll(".tab-content")
-    .forEach((content) => content.classList.remove("active"));
+  document.querySelectorAll(".assignment-tab-content").forEach((content) => content.classList.remove("active"));
   document.getElementById(tabName + "Tab").classList.add("active");
 }
 
@@ -1523,10 +1227,18 @@ function dropHandler(event) {
   event.preventDefault();
   event.currentTarget.classList.remove("dragover");
   const files = event.dataTransfer.files;
+
   handleFiles(files);
 }
 
+document.getElementById('fileInput').addEventListener('change', (e) => {
+  handleFiles(e.target.files)
+})
+
+let uploadedFiles = [];
+
 function handleFiles(files) {
+
   Array.from(files).forEach((file) => {
     if (isValidFileType(file)) {
       uploadedFiles.push(file);
@@ -1549,7 +1261,7 @@ function isValidFileType(file) {
     "text/javascript",
     "application/javascript",
   ];
-  const validExtensions = [".pdf", ".zip", ".html", ".css", ".js"];
+  const validExtensions = [".pdf", ".zip", ".html", ".css", ".js", "jsx"];
 
   return (
     validTypes.includes(file.type) ||
@@ -1562,10 +1274,9 @@ function addFileToList(file) {
   const fileItem = document.createElement("div");
   fileItem.className = "file-item";
   fileItem.innerHTML = `
-                <span>${file.name} (${formatFileSize(file.size)})</span>
-                <button class="remove-file" onclick="removeFile('${file.name
-    }')">Remove</button>
-            `;
+  <span>${file.name} (${formatFileSize(file.size)})</span>
+  <button class="remove-file" onclick="removeFile('${file.name}')">Remove</button>
+  `;
   fileList.appendChild(fileItem);
 }
 
@@ -1586,24 +1297,6 @@ function formatFileSize(bytes) {
   const sizes = ["Bytes", "KB", "MB", "GB"];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
-}
-
-// Code editor functionality
-function updateLanguage() {
-  const language = document.getElementById("languageSelect").value;
-  const textarea = document.getElementById("codeTextarea");
-
-  // Update placeholder based on language
-  const placeholders = {
-    html: "<!DOCTYPE html>\n<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <!-- Your HTML here -->\n</body>\n</html>",
-    css: "/* Your CSS styles here */\nbody {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 20px;\n}",
-    javascript:
-      '// Your JavaScript code here\nfunction myFunction() {\n    console.log("Hello, World!");\n}\n\nmyFunction();',
-  };
-
-  if (!textarea.value) {
-    textarea.placeholder = placeholders[language] || "Write your code here...";
-  }
 }
 
 // GitHub integration
@@ -1645,8 +1338,9 @@ function isValidUrl(url) {
 }
 
 // Submit assignment
-function submitAssignment() {
-  const activeTab = document.querySelector(".tab-content.active").id;
+function submitAssignment(event) {
+  const activeTab = document.querySelector(".assignment-tab-content.active").id;
+
   let submissionData = {
     // assignmentId: currentAssignment.id,
     submissionType: activeTab.replace("Tab", ""),
@@ -1672,10 +1366,10 @@ function submitAssignment() {
 
     case "codeTab":
       const code = document.getElementById("codeTextarea").value.trim();
-      const language = document.getElementById("languageSelect").value;
+      // const language = document.getElementById("languageSelect").value;
       if (code) {
         submissionData.code = code;
-        submissionData.language = language;
+        // submissionData.language = language;
         isValid = true;
       } else {
         alert("Please enter your code.");
@@ -1698,6 +1392,7 @@ function submitAssignment() {
   }
 
   if (isValid) {
+
     // Simulate submission process
     const submitBtn = document.querySelector(".submit-btn");
     submitBtn.textContent = "Submitting...";
@@ -1723,15 +1418,10 @@ function submitAssignment() {
         closeModal();
       }, 2000);
 
-      console.log("Assignment submitted:", submissionData);
+      // console.log("Assignment submitted:", submissionData);
     }, 1500);
   }
 }
-
-// function closeModal() {
-//   document.getElementById("modal").classList.remove("show");
-//   resetForm();
-// }
 
 function resetForm() {
   uploadedFiles = [];
@@ -1743,7 +1433,7 @@ function resetForm() {
   updateGitHubLinks();
 }
 
-// Show Assignment details
+// Show Notification details
 const notificationDetails = `
 <div class="modal-body-sub-header">
   <h4 class="modal-title">New Grade: Python Basics Assignment #3</h4>
@@ -1764,9 +1454,7 @@ const notificationDetails = `
 </p>
 `;
 
-const notificationDetailsBtn = document.querySelectorAll(
-  ".view-notification-btn"
-);
+const notificationDetailsBtn = document.querySelectorAll(".view-notification-btn");
 // console.log(notificationDetailsBtn);
 
 if (notificationDetailsBtn) {
@@ -1826,11 +1514,12 @@ class KachikodesCalendar {
     this.setupEventListeners();
     this.populateYearSelector();
     this.renderCalendar();
-    this.renderUpcomingEvents();
+    // this.renderUpcomingEvents();
   }
 
   generateSampleEvents() {
     const events = [];
+    const usedDates = new Set(); // Track used dates
     const eventTypes = ["assignment", "live-class", "quiz", "holiday"];
     const courses = [
       "JavaScript Fundamentals",
@@ -1840,74 +1529,71 @@ class KachikodesCalendar {
       "Data Structures",
     ];
 
-    // Generate events for the next 3 months
-    for (let i = 0; i < 50; i++) {
+    const eventTitles = {
+      assignment: [
+        `Assignment`,
+        `Project Submission`,
+        `Homework Due`,
+      ],
+      "live-class": [
+        `Live Session`,
+        `Interactive Workshop`,
+        `Q&A Session`,
+      ],
+      quiz: [
+        `Quiz`,
+        `Assessment`,
+        `Weekly Test`,
+      ],
+      holiday: [
+        "Platform Maintenance",
+        "Public Holiday",
+        "Academy Break",
+        "System Update",
+      ],
+    };
+
+    let i = 0;
+    while (events.length < 50 && i < 1000) { // limit tries to avoid infinite loop
+      i++;
       const randomDate = new Date();
       randomDate.setDate(randomDate.getDate() + Math.floor(Math.random() * 90));
+      const dateStr = randomDate.toISOString().split("T")[0];
+
+      if (usedDates.has(dateStr)) continue; // Skip if date already used
 
       const type = eventTypes[Math.floor(Math.random() * eventTypes.length)];
       const course = courses[Math.floor(Math.random() * courses.length)];
-
-      const eventTitles = {
-        assignment: [
-          `${course} - Assignment ${Math.floor(Math.random() * 5) + 1}`,
-          `Project Submission - ${course}`,
-          `Homework Due - ${course}`,
-        ],
-        "live-class": [
-          `Live Session: ${course}`,
-          `Interactive Workshop: ${course}`,
-          `Q&A Session: ${course}`,
-        ],
-        quiz: [
-          `Quiz: ${course}`,
-          `Assessment - ${course}`,
-          `Weekly Test: ${course}`,
-        ],
-        holiday: [
-          "Platform Maintenance",
-          "Public Holiday",
-          "Academy Break",
-          "System Update",
-        ],
-      };
-
       const titles = eventTitles[type];
-      const title = titles[Math.floor(Math.random() * titles.length)];
+      const baseTitle = titles[Math.floor(Math.random() * titles.length)];
+      const title = type === "holiday" ? baseTitle : `${baseTitle} - ${course}`;
 
       const startHour = Math.floor(Math.random() * 12) + 8; // 8 AM to 8 PM
-      const duration =
-        type === "live-class" ? 120 : Math.floor(Math.random() * 90) + 30;
+      const duration = type === "live-class" ? 120 : Math.floor(Math.random() * 90) + 30;
+      const endHour = Math.floor((startHour * 60 + duration) / 60);
+      const endMinutes = (startHour * 60 + duration) % 60;
 
       events.push({
-        id: i + 1,
-        title: title,
-        type: type,
-        date: randomDate.toISOString().split("T")[0],
+        id: events.length + 1,
+        title,
+        type,
+        date: dateStr,
         time: `${startHour.toString().padStart(2, "0")}:00`,
-        endTime: `${Math.floor((startHour * 60 + duration) / 60)
-          .toString()
-          .padStart(2, "0")}:${((startHour * 60 + duration) % 60)
-            .toString()
-            .padStart(2, "0")}`,
+        endTime: `${endHour.toString().padStart(2, "0")}:${endMinutes.toString().padStart(2, "0")}`,
         duration: `${duration} minutes`,
         course: type === "holiday" ? "N/A" : course,
-        location:
-          type === "live-class" ? "Virtual Classroom" : "Online Platform",
+        location: type === "live-class" ? "Virtual Classroom" : "Online Platform",
         description: this.generateEventDescription(type, title),
-        link:
-          type === "holiday"
-            ? null
-            : "https://academy.kachikodes.com/class/" + (i + 1),
+        link: type === "holiday" ? null : `https://academy.kachikodes.com/class/${events.length + 1}`,
         timezone: "WAT (West Africa Time)",
       });
+
+      usedDates.add(dateStr); // Mark date as used
     }
 
-    return events.sort(
-      (a, b) =>
-        new Date(a.date + " " + a.time) - new Date(b.date + " " + b.time)
-    );
+    return events.sort((a, b) => new Date(a.date + " " + a.time) - new Date(b.date + " " + b.time));
   }
+
 
   generateEventDescription(type, title) {
     const descriptions = {
@@ -1940,14 +1626,6 @@ class KachikodesCalendar {
     document.getElementById("yearSelector").addEventListener("change", (e) => {
       this.currentDate.setFullYear(parseInt(e.target.value));
       this.renderCalendar();
-    });
-
-    // Modal controls
-    document
-      .getElementById("closeModal")
-      .addEventListener("click", () => this.closeModal());
-    document.getElementById("modal").addEventListener("click", (e) => {
-      if (e.target.id === "modal") this.closeModal();
     });
 
     // Touch gestures for mobile
@@ -2118,49 +1796,47 @@ class KachikodesCalendar {
     return this.events.filter((event) => event.date === dateString);
   }
 
-  // showDayEvents(date, events) {
-  //   if (events.length === 1) {
-  //     this.showEventDetails(events[0]);
-  //   } else {
-  //     // Show multiple events for the day
-  //     this.showMultipleEvents(date, events);
-  //   }
+  showDayEvents(date, events) {
+    if (events.length === 1) {
+      this.showEventDetails(events[0]);
+    } else {
+      // Show multiple events for the day
+      this.showMultipleEvents(date, events);
+    }
+  }
+
+  // showMultipleEvents(date, events) {
+  //   const modal = document.getElementById("modal");
+  //   const modalBody = document.getElementById("modal-body");
+
+  //   let modalTitle = `Events for ${date.toLocaleDateString("en-GB")}`;
+
+  //   let content = '<div style="display: grid; gap: 1rem;">';
+
+  //   events.forEach((event) => {
+  //     content += `
+  //         <div class="event-item ${event.type}" onclick="calendar.showEventDetails(calendar.events.find(e => e.id === ${event.id}))" style="margin: 0; cursor: pointer;">
+  //           <div class="event-icon ${event.type}">
+  //             ${this.getEventIcon(event.type)}
+  //           </div>
+  //           <div class="event-details">
+  //             <h6>${event.title}</h6>
+  //             <div class="event-meta">${event.time} - ${event.course}</div>
+  //           </div>
+  //         </div>
+  //       `;
+  //   });
+  //   content += "</div>";
+
+  //   modalBody.innerHTML = content;
+  //   modal.style.display = "block";
   // }
-
-  //   showMultipleEvents(date, events) {
-  //     const modal = document.getElementById("modal");
-  //     const modalBody = document.getElementById("modal-body");
-
-  //     let modalTitle = `Events for ${date.toLocaleDateString("en-GB")}`;
-
-  //     let content = '<div style="display: grid; gap: 1rem;">';
-
-  //     events.forEach((event) => {
-  //       content += `
-  //                 <div class="event-item ${ event.type }" onclick="calendar.showEventDetails(calendar.events.find(e => e.id === ${ event.id }))" style="margin: 0; cursor: pointer;">
-  //                   <div class="event-icon ${event.type}">
-  //                     ${this.getEventIcon(event.type)}
-  //                   </div>
-  //                   <div class="event-details">
-  //                     <h6>${event.title}</h6>
-  //                     <div class="event-meta">${event.time} - ${ event.course }</div>
-  //                   </div>
-  //                 </div>
-  // `;
-  //     });
-  //     content += "</div>";
-
-  //     modalBody.innerHTML = content;
-  //     modal.style.display = "block";
-  //   }
 
   showEventDetails(event) {
     // console.log(event);
 
     const modal = document.getElementById("modal");
     const modalBody = document.getElementById("modal-body");
-
-    // modalTitle.textContent = jsxs;
 
     const eventDate = new Date(event.date + "T" + event.time);
 
@@ -2177,14 +1853,11 @@ class KachikodesCalendar {
                     </div>
                     <div class="detail-row">
                         <div class="detail-label">Date</div>
-                        <div class="detail-value">${eventDate.toLocaleDateString(
-      "en-GB"
-    )}</div>
+                        <div class="detail-value">${eventDate.toLocaleDateString("en-GB")}</div>
                     </div>
                     <div class="detail-row">
                         <div class="detail-label">Time</div>
-                        <div class="detail-value">${event.time} - ${event.endTime
-      } (${event.timezone})</div>
+                        <div class="detail-value">${event.time} - ${event.endTime} (${event.timezone})</div>
                     </div>
                     <div class="detail-row">
                         <div class="detail-label">Duration</div>
@@ -2231,81 +1904,77 @@ class KachikodesCalendar {
     return labels[type] || type;
   }
 
-  getEventIcon(type) {
-    const icons = {
-      assignment: '<i class="fas fa-file-alt"></i>',
-      "live-class": '<i class="fas fa-chalkboard-teacher"></i>',
-      quiz: '<i class="fas fa-question-circle"></i>',
-      holiday: '<i class="fas fa-umbrella-beach"></i>',
-    };
-    return icons[type] || '<i class="fas fa-calendar-alt"></i>';
-  }
+  // getEventIcon(type) {
+  //   const icons = {
+  //     assignment: '<i class="fas fa-file-alt"></i>',
+  //     "live-class": '<i class="fas fa-chalkboard-teacher"></i>',
+  //     quiz: '<i class="fas fa-question-circle"></i>',
+  //     holiday: '<i class="fas fa-umbrella-beach"></i>',
+  //   };
+  //   return icons[type] || '<i class="fas fa-calendar-alt"></i>';
+  // }
 
-  renderUpcomingEvents() {
-    const upcomingEventsContainer = document.getElementById("upcomingEvents");
-    const now = new Date();
-    const twoWeeksFromNow = new Date();
-    twoWeeksFromNow.setDate(now.getDate() + 14);
+  // renderUpcomingEvents() {
+  //   const upcomingEventsContainer = document.getElementById("upcomingEvents");
+  //   const now = new Date();
+  //   const twoWeeksFromNow = new Date();
+  //   twoWeeksFromNow.setDate(now.getDate() + 14);
 
-    const upcomingEvents = this.events
-      .filter((event) => {
-        const eventDate = new Date(event.date + "T" + event.time);
-        return eventDate >= now && eventDate <= twoWeeksFromNow;
-      })
-      .slice(0, 10); // Show max 10 events
+  //   const upcomingEvents = this.events
+  //     .filter((event) => {
+  //       const eventDate = new Date(event.date + "T" + event.time);
+  //       return eventDate >= now && eventDate <= twoWeeksFromNow;
+  //     })
+  //     .slice(0, 10); // Show max 10 events
 
-    if (upcomingEvents.length === 0) {
-      upcomingEventsContainer.innerHTML = `
-                        <div style="text-align: center; padding: 2rem; color: var(--text-light);">
-                            <div style="font-size: 3rem; margin-bottom: 1rem;">
-                              <i class="fas fa-calendar-alt"></i>
-                            </div>
-                            <p>No upcoming events in the next 14 days</p>
-                        </div>
-                    `;
-      return;
-    }
+  //   if (upcomingEvents.length === 0) {
+  //     upcomingEventsContainer.innerHTML = `
+  //                       <div style="text-align: center; padding: 2rem; color: var(--text-light);">
+  //                           <div style="font-size: 3rem; margin-bottom: 1rem;">
+  //                             <i class="fas fa-calendar-alt"></i>
+  //                           </div>
+  //                           <p>No upcoming events in the next 14 days</p>
+  //                       </div>
+  //                   `;
+  //     return;
+  //   }
 
-    upcomingEventsContainer.innerHTML = upcomingEvents
-      .map((event) => {
-        const eventDate = new Date(event.date + "T" + event.time);
-        const isToday = eventDate.toDateString() === now.toDateString();
-        const isTomorrow =
-          eventDate.toDateString() ===
-          new Date(now.getTime() + 24 * 60 * 60 * 1000).toDateString();
+  //   upcomingEventsContainer.innerHTML = upcomingEvents
+  //     .map((event) => {
+  //       const eventDate = new Date(event.date + "T" + event.time);
+  //       const isToday = eventDate.toDateString() === now.toDateString();
+  //       const isTomorrow =
+  //         eventDate.toDateString() ===
+  //         new Date(now.getTime() + 24 * 60 * 60 * 1000).toDateString();
 
-        let dateDisplay;
-        if (isToday) {
-          dateDisplay = "Today";
-        } else if (isTomorrow) {
-          dateDisplay = "Tomorrow";
-        } else {
-          dateDisplay = eventDate.toLocaleDateString("en-GB");
-        }
+  //       let dateDisplay;
+  //       if (isToday) {
+  //         dateDisplay = "Today";
+  //       } else if (isTomorrow) {
+  //         dateDisplay = "Tomorrow";
+  //       } else {
+  //         dateDisplay = eventDate.toLocaleDateString("en-GB");
+  //       }
 
-        return `
-                        <div class="event-item ${event.type
-          }" onclick="calendar.showEventDetails(calendar.events.find(e => e.id === ${event.id
-          }))">
-                            <div class="event-icon ${event.type}">
-                                ${this.getEventIcon(event.type)}
-                            </div>
-                            <div class="event-details">
-                                <h6>${event.title}</h6>
-                                <div class="event-meta">
-                                    ${dateDisplay} at ${event.time} • ${event.course
-          }
-                                </div>
-                            </div>
-                        </div>
-                    `;
-      })
-      .join("");
-  }
-
-  closeModal() {
-    document.getElementById("modal").classList.remove("show");
-  }
+  //       return `
+  //                       <div class="event-item ${event.type
+  //         }" onclick="calendar.showEventDetails(calendar.events.find(e => e.id === ${event.id
+  //         }))">
+  //                           <div class="event-icon ${event.type}">
+  //                               ${this.getEventIcon(event.type)}
+  //                           </div>
+  //                           <div class="event-details">
+  //                               <h6>${event.title}</h6>
+  //                               <div class="event-meta">
+  //                                   ${dateDisplay} at ${event.time} • ${event.course
+  //         }
+  //                               </div>
+  //                           </div>
+  //                       </div>
+  //                   `;
+  //     })
+  //     .join("");
+  // }
 
   previousMonth() {
     this.currentDate.setMonth(this.currentDate.getMonth() - 1);
@@ -2324,10 +1993,10 @@ class KachikodesCalendar {
 }
 
 // Add some additional utility functions
-function formatTimeToAMPM(time24) {
-  const [hours, minutes] = time24.split(":");
-  const hour = parseInt(hours);
-  const ampm = hour >= 12 ? "PM" : "AM";
-  const hour12 = hour % 12 || 12;
-  return `${hour12}:${minutes} ${ampm}`;
-}
+// function formatTimeToAMPM(time24) {
+//   const [hours, minutes] = time24.split(":");
+//   const hour = parseInt(hours);
+//   const ampm = hour >= 12 ? "PM" : "AM";
+//   const hour12 = hour % 12 || 12;
+//   return `${hour12}:${minutes} ${ampm}`;
+// }

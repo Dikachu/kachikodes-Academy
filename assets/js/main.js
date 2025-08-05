@@ -6,6 +6,11 @@ function openModal(modalBody) {
 
 function closeModal() {
   document.getElementById('modal').classList.remove('show');
+
+  if (document.getElementById('modal').querySelector('.assignment-modal-body')) {
+    resetForm()
+  };
+  
 }
 
 
